@@ -1,29 +1,28 @@
-import { INCREMENT, GETGRAPHTYPE, SEARCHEDTEXT } from '../actions/index.jsx'
 import stringConstants from '../stringConstants.jsx'
 
 
-let defaultState =  {
-    num: 0, graphType: "line" 
+let defaultState = {
+    num: 0, graphType: "line"
 }
-export default function performAction(state = defaultState , action) {
+export default function performAction(state = defaultState, action) {
     switch (action.type) {
-        case INCREMENT:
-            return state
-
-        case GETGRAPHTYPE:
+        case stringConstants.GETGRAPHTYPE:
             return Object.assign({}, state, {
                 graphType:
                     action.graphType,
             })
-        case SEARCHEDTEXT:
-            return Object.assign({}, state, {
-                searchedText: action.searchedText
-            })
         case stringConstants.INDIAGEOJSONACTION:
-                return Object.assign({}, state, {
-                    getindiageojson: action.getindiageojson
-                })
-
+            return Object.assign({}, state, {
+                getindiageojson: action.getindiageojson
+            })
+        case stringConstants.COUNTRYJSONACTION:
+            return Object.assign({}, state, {
+                getCountryjson: action.getCountryjson
+            })
+        case stringConstants.INDIA_DISTRICT_JSON_ACTION:
+            return Object.assign({}, state, {
+                getIndiaDistrictjson: action.getIndiaDistrictjson
+            })
         default:
             return state
     }

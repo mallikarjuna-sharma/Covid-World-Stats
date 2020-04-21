@@ -1,15 +1,11 @@
 import stringConstants from '../stringConstants.jsx'
 import axios from 'axios'
 
-export const INCREMENT = 'increment'
-export const GETGRAPHTYPE = 'GETGRAPHTYPE'
-export const SEARCHEDTEXT = "SEARCHEDTEXT"
-
-
+/* api calls */
 export  function loadIndiaGeojson() {
     return (dispatch) => {
         return axios.get(stringConstants.INDIA_STATE_WISE, {
-            headers: stringConstants.RAPID_API_HEADER  ,
+            headers: stringConstants.RAPID_API_INDIA_STATE_WISE  ,
         })
         .then(res => {
             dispatch(getIndiaGeojson(res.data));
@@ -17,17 +13,37 @@ export  function loadIndiaGeojson() {
     }
 }
 
-export function incrementFunction(num) {
-    const action = {
-        type: INCREMENT,
-        num
+export  function loadCountryjson(country) {
+    if(!country) country = ''
+    console.log(country)
+    return (dispatch) => {
+        return axios.get(stringConstants.COUNTRY_STATE_WISE+country, {
+            headers: stringConstants.RAPID_API_COUNTRY_STATE_WISE  ,
+        })
+        .then(res => {
+            dispatch(getCountryjson(res.data));
+        })
     }
-    return action
 }
+
+export  function loadIndiaDistrictjson() {
+    return (dispatch) => {
+        return axios.get(stringConstants.INDIA_DISTRICT_WISE, {
+            headers: stringConstants.RAPID_API_INDIA_STATE_WISE  ,
+        })
+        .then(res => {
+            dispatch(getIndiaDistrictjson(res.data));
+        })
+    }
+}
+
+
+
+/* api actions */
 
 export function getgraphTypeAction(graphType) {
     const action = {
-        type: GETGRAPHTYPE,
+        type: stringConstants.GETGRAPHTYPE,
         graphType
     }
     return action
@@ -40,3 +56,22 @@ export function getIndiaGeojson(getindiageojson) {
     }
     return action
 }
+
+export function getIndiaDistrictjson(getIndiaDistrictjson) {
+    const action = {
+        type: stringConstants.INDIA_DISTRICT_JSON_ACTION,
+        getIndiaDistrictjson
+    }
+    return action
+}
+
+
+export function getCountryjson(getCountryjson) {
+    const action = {
+        type: stringConstants.COUNTRYJSONACTION,
+        getCountryjson
+    }
+    return action
+}
+
+

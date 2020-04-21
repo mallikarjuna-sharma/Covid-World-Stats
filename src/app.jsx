@@ -4,7 +4,8 @@ import GenerateGraphComponent from './components/graph/graph.jsx'
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { incrementFunction, getgraphTypeAction,loadIndiaGeojson } from './components/actions/index.jsx'
+import {  getgraphTypeAction,
+        loadIndiaGeojson,loadCountryjson , loadIndiaDistrictjson } from './components/actions/index.jsx'
 
 import { Button, Grid, NativeSelect, Select, FormControl, FormHelperText, InputLabel, withStyles } from '@material-ui/core';
 
@@ -22,6 +23,8 @@ class App extends React.Component {
 
     toggleGraphType = (e) => {
         this.props.loadIndiaGeojson();
+        this.props.loadIndiaDistrictjson();
+        this.props.loadCountryjson('Sri Lanka');
         this.props.getgraphTypeAction(e.target.value)
     }
 
@@ -73,7 +76,8 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ incrementFunction, getgraphTypeAction ,  loadIndiaGeojson}, dispatch)
+    return bindActionCreators({  getgraphTypeAction ,
+          loadIndiaGeojson, loadCountryjson, loadIndiaDistrictjson}, dispatch)
 }
 
 export default compose(withStyles(Styles), connect(mapStateToProps, mapDispatchToProps))(App)
