@@ -2,7 +2,7 @@ import React from 'react';
 import 'chart.js'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { incrementFunction, getgraphTypeAction,loadIndiaGeojson } from '../actions/index.jsx'
+import { getgraphTypeAction, loadIndiaGeojson } from '../actions/index.jsx'
 
 class GenerateGraphComponent extends React.Component {
 
@@ -65,7 +65,7 @@ class GenerateGraphComponent extends React.Component {
 
 
 function mapStateToProps(state) {
-    console.log('stateingraph',state)
+    console.log('stateingraph', state)
     return {
         num: state.num,
         graphType: state.graphType,
@@ -74,7 +74,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ incrementFunction, getgraphTypeAction ,  loadIndiaGeojson }, dispatch)
+    return bindActionCreators({ getgraphTypeAction, loadIndiaGeojson }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(GenerateGraphComponent)

@@ -2,38 +2,38 @@ import stringConstants from '../stringConstants.jsx'
 import axios from 'axios'
 
 /* api calls */
-export  function loadIndiaGeojson() {
+export function loadIndiaGeojson() {
     return (dispatch) => {
         return axios.get(stringConstants.INDIA_STATE_WISE, {
-            headers: stringConstants.RAPID_API_INDIA_STATE_WISE  ,
+            headers: stringConstants.RAPID_API_INDIA_STATE_WISE,
         })
-        .then(res => {
-            dispatch(getIndiaGeojson(res.data));
-        })
+            .then(res => {
+                dispatch(getIndiaGeojson(res.data));
+            })
     }
 }
 
-export  function loadCountryjson(country) {
-    if(!country) country = ''
+export function loadCountryjson(country) {
+    if (!country) country = ''
     console.log(country)
     return (dispatch) => {
-        return axios.get(stringConstants.COUNTRY_STATE_WISE+country, {
-            headers: stringConstants.RAPID_API_COUNTRY_STATE_WISE  ,
+        return axios.get(stringConstants.COUNTRY_STATE_WISE + country, {
+            headers: stringConstants.RAPID_API_COUNTRY_STATE_WISE,
         })
-        .then(res => {
-            dispatch(getCountryjson(res.data));
-        })
+            .then(res => {
+                dispatch(getCountryjson(res.data));
+            })
     }
 }
 
-export  function loadIndiaDistrictjson() {
+export function loadIndiaDistrictjson() {
     return (dispatch) => {
         return axios.get(stringConstants.INDIA_DISTRICT_WISE, {
-            headers: stringConstants.RAPID_API_INDIA_STATE_WISE  ,
+            headers: stringConstants.RAPID_API_INDIA_STATE_WISE,
         })
-        .then(res => {
-            dispatch(getIndiaDistrictjson(res.data));
-        })
+            .then(res => {
+                dispatch(getIndiaDistrictjson(res.data));
+            })
     }
 }
 
@@ -45,6 +45,14 @@ export function getgraphTypeAction(graphType) {
     const action = {
         type: stringConstants.GETGRAPHTYPE,
         graphType
+    }
+    return action
+}
+
+export function getSortTypes(sortType) {
+    const action = {
+        type: stringConstants.SORT_TYPES_ACTION,
+        sortType
     }
     return action
 }
