@@ -3,7 +3,8 @@
 const Styles = theme => ({
 
     formControl: {
-        color: "blue"
+        margin: theme.spacing(1),
+        minWidth: 120,
     }
 
 

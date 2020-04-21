@@ -5,9 +5,11 @@ import { BrowserRouter } from 'react-router-dom';
 import { Switch, Route } from 'react-router-dom';
 
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import { createStore,applyMiddleware } from 'redux'
 import rootReducer from './src/components/reducer/index.jsx'
-const store = createStore(rootReducer);
+import thunk from "redux-thunk";
+
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
     <React.StrictMode>

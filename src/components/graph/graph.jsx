@@ -1,8 +1,8 @@
 import React from 'react';
 import 'chart.js'
-import axios from 'axios'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { incrementFunction, getgraphTypeAction,loadIndiaGeojson } from '../actions/index.jsx'
 
 class GenerateGraphComponent extends React.Component {
 
@@ -15,18 +15,6 @@ class GenerateGraphComponent extends React.Component {
 
     componentDidMount() {
         this.generateGraph();
-
-        axios.get('https://covid19-data.p.rapidapi.com/india', {
-            headers: {
-                'X-RapidAPI-Host': 'covid19-data.p.rapidapi.com',
-                "X-RapidAPI-Key": "d55fe518a0mshfaba210c9470cefp1be9e7jsn4ee844d0190d"
-            },
-        })
-            .then(res => {
-                console.log(res)
-            })
-
-        console.log("componentDidMount graph");
     }
 
     componentDidUpdate(prevProps) {
@@ -77,6 +65,7 @@ class GenerateGraphComponent extends React.Component {
 
 
 function mapStateToProps(state) {
+    console.log('stateingraph',state)
     return {
         num: state.num,
         graphType: state.graphType,
@@ -84,4 +73,8 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, null)(GenerateGraphComponent)
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({ incrementFunction, getgraphTypeAction ,  loadIndiaGeojson }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(GenerateGraphComponent)

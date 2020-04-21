@@ -4,7 +4,7 @@ import GenerateGraphComponent from './components/graph/graph.jsx'
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { incrementFunction, getgraphTypeAction } from './components/actions/index.jsx'
+import { incrementFunction, getgraphTypeAction,loadIndiaGeojson } from './components/actions/index.jsx'
 
 import { Button, Grid, NativeSelect, Select, FormControl, FormHelperText, InputLabel, withStyles } from '@material-ui/core';
 
@@ -21,7 +21,7 @@ class App extends React.Component {
     }
 
     toggleGraphType = (e) => {
-
+        this.props.loadIndiaGeojson();
         this.props.getgraphTypeAction(e.target.value)
     }
 
@@ -29,8 +29,6 @@ class App extends React.Component {
         const { classes } = this.props;
         return (
             <Grid >
-
-                <Button onClick={e => this.toggleGraphType()}  >   Change type    </Button>
 
                 <FormControl className={classes.formControl}>
                     <InputLabel htmlFor="uncontrolled-native">Graph Type</InputLabel>
@@ -43,15 +41,11 @@ class App extends React.Component {
                         }}
                     >
 
-                        {stringConstants.GRAPHTYPES.map(e => {
-                            return <option value={e.value} >{e.label}</option>
+                        {stringConstants.GRAPHTYPES.map((e,index) => {
+                            return <option value={e.value} key={index}  >{e.label}</option>
                         })}
-                        {/* <option value={10}>line</option>
-                        <option value={20}>Twenty</option>
-                        <option value={30}>Thirty</option> */}
 
                     </NativeSelect>
-                    {/* <FormHelperText>Uncontrolled</FormHelperText> */}
                 </FormControl>
 
 
@@ -79,7 +73,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ incrementFunction, getgraphTypeAction }, dispatch)
+    return bindActionCreators({ incrementFunction, getgraphTypeAction ,  loadIndiaGeojson}, dispatch)
 }
 
 export default compose(withStyles(Styles), connect(mapStateToProps, mapDispatchToProps))(App)
