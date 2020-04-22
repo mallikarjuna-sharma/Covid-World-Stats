@@ -83,3 +83,12 @@ export function getCountryjson(getCountryjson) {
 }
 
 
+
+export function setSelectedState(selectedState) {
+    const action = {
+        type: stringConstants.SELECTEDSTATE,
+        selectedState
+    }
+    return action
+}
+

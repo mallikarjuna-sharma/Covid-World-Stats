@@ -1,25 +1,24 @@
 import React from 'react';
 import GenerateTableComponent from './table/table.jsx'
 import GenerateGraphComponent from './graph/graph.jsx'
-
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {
     getgraphTypeAction, getSortTypes,
-    loadIndiaGeojson, loadCountryjson, loadIndiaDistrictjson
+    loadIndiaGeojson, loadCountryjson, loadIndiaDistrictjson,
+    setSelectedState
 } from './actions/index.jsx'
-
 import {
     Grid, NativeSelect, FormControl,
-    InputLabel, withStyles
+    InputLabel, withStyles, TextField
 } from '@material-ui/core';
-
 import Styles from './styles.jsx'
 import { compose } from 'recompose'
-
 import stringConstants from './stringConstants.jsx'
-
 import getTableData from './table/getTableData.jsx'
+import SearchIndiaStates from '../components/search-select/SearchIndiaStates.jsx'
+import getGroupedData from '../components/search-select/getGroupedData.jsx'
+import SearchCountry from '../components/search-select/SearchCountry.jsx'
 
 
 class Dashboard extends React.Component {
@@ -27,11 +26,6 @@ class Dashboard extends React.Component {
     constructor(props) {
         super(props)
 
-    }
-
-    componentDidMount() {
-        console.log("updated")
-        // this.props.loadIndiaDistrictjson();
     }
 
     toggleGraphType = (e, type) => {
@@ -52,14 +46,9 @@ class Dashboard extends React.Component {
                     return this.props.loadCountryjson();
                 default:
                     return 0;
-
             }
-
-
         }
-
     }
-
 
     getColForTable = () => {
 
@@ -76,7 +65,6 @@ class Dashboard extends React.Component {
 
     }
 
-
     getApiData_Table = () => {
 
         switch (this.props.sortType) {
@@ -89,8 +77,17 @@ class Dashboard extends React.Component {
             default:
                 return 0;
         }
-
     }
+
+    selectedState_Country = (selectedItem) => {
+
+        console.log(selectedItem, "selectedItem");
+        this.props.setSelectedState(selectedItem)
+
+        if (this.props.sortType === 'world_country')
+            this.props.loadCountryjson(selectedItem)
+    }
+
 
     render() {
         const { classes } = this.props;
@@ -133,13 +130,33 @@ class Dashboard extends React.Component {
                     </NativeSelect>
                 </FormControl>
 
-                <Grid>
-                    {(this.props.sortType) && <GenerateTableComponent
-                        columns={this.getColForTable()}
-                        // rows={this.getRowForTable()}
-                        tableData={
-                            getTableData(this.props.sortType, this.getApiData_Table())}
+                {this.props.sortType === ('india_district') &&
+                    <Grid>
+                        <SearchIndiaStates
+                            items={getGroupedData(this.props.sortType, this.getApiData_Table())}
+                            selectedState_india={(item) => this.selectedState_Country(item)}
+                        />
+                    </Grid>
+                }
 
+                {this.props.sortType === ('world_country') &&
+                    <Grid>
+                        <SearchCountry
+                            items={getGroupedData(this.props.sortType, this.getApiData_Table())}
+                            selectedCountry={(item) => this.selectedState_Country(item)}
+                        />
+                    </Grid>
+                }
+
+                <Grid>
+                    {(this.props.sortType || this.props.selectedState) && <GenerateTableComponent
+                        columns={this.getColForTable()}
+                        tableData={
+                            getTableData(
+                                this.props.sortType,
+                                this.getApiData_Table(),
+                                this.props.selectedState)
+                        }
                         {...this.state} />}
                 </Grid>
 
@@ -159,14 +176,16 @@ function mapStateToProps(state) {
         getindiageojson: state.getindiageojson,
         getIndiaDistrictjson: state.getIndiaDistrictjson,
         getCountryjson: state.getCountryjson,
-        sortType: state.sortType
+        sortType: state.sortType,
+        selectedState: state.selectedState
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         getgraphTypeAction, getSortTypes,
-        loadIndiaGeojson, loadCountryjson, loadIndiaDistrictjson
+        loadIndiaGeojson, loadCountryjson, loadIndiaDistrictjson,
+        setSelectedState
     }, dispatch)
 }
 

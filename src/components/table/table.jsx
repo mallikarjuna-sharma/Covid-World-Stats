@@ -20,12 +20,7 @@ export default function GenerateTableComponent(props) {
 
   const [order, setOrder] = React.useState('asc');
   const [orderBy, setOrderBy] = React.useState('state');
-
   const { columns, tableData } = props
-  useEffect(() => {
-    // console.log(columns)
-    // console.log(tableData)
-  }, [columns, tableData])
 
   const useStyles1 = makeStyles((theme) => ({
     root: {
