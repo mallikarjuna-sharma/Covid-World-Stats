@@ -14,16 +14,18 @@ import FirstPageIcon from '@material-ui/icons/FirstPage';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import LastPageIcon from '@material-ui/icons/LastPage';
+import TableSortLabel from '@material-ui/core/TableSortLabel';
 
 export default function GenerateTableComponent(props) {
 
-  const { columns, tableData, rows } = props
+  const [order, setOrder] = React.useState('asc');
+  const [orderBy, setOrderBy] = React.useState('state');
 
+  const { columns, tableData } = props
   useEffect(() => {
-    console.log(columns)
-    console.log(tableData)
-    console.log(rows)
-  }, [columns, tableData, rows])
+    // console.log(columns)
+    // console.log(tableData)
+  }, [columns, tableData])
 
   const useStyles1 = makeStyles((theme) => ({
     root: {
@@ -87,18 +89,7 @@ export default function GenerateTableComponent(props) {
     return { state, confirmed, recovered, deaths, active };
   }
 
-  const generateTableRowData = () => {
 
-    let arr = [];
-
-    tableData.map(values => {
-      arr.push(createData(values[rows[0]], values[rows[1]],
-        values[rows[2]], values[rows[3]], values[rows[4]]))
-    })
-
-    return arr;
-
-  }
 
 
   const useStyles = makeStyles({
@@ -124,6 +115,39 @@ export default function GenerateTableComponent(props) {
     setPage(0);
   };
 
+  function descendingComparator(a, b, orderBy) {
+    if (b[orderBy] < a[orderBy]) {
+      return -1;
+    }
+    if (b[orderBy] > a[orderBy]) {
+      return 1;
+    }
+    return 0;
+  }
+  
+  function getComparator(order, orderBy) {
+    return order === 'desc'
+      ? (a, b) => descendingComparator(a, b, orderBy)
+      : (a, b) => -descendingComparator(a, b, orderBy);
+  }
+  
+  function stableSort(array, comparator) {
+    const stabilizedThis = array.map((el, index) => [el, index]);
+    stabilizedThis.sort((a, b) => {
+      const order = comparator(a[0], b[0]);
+      if (order !== 0) return order;
+      return a[1] - b[1];
+    });
+    return stabilizedThis.map((el) => el[0]);
+  }
+
+  const createSortHandler = (event, property) => {
+    const isAsc = orderBy === property && order === 'asc';
+    setOrder(isAsc ? 'desc' : 'asc');
+    setOrderBy(property);
+  };
+
+
   return (
     <Paper className={classes.root}>
       <TableContainer className={classes.container}>
@@ -135,14 +159,28 @@ export default function GenerateTableComponent(props) {
                   key={column.id}
                   align={column.align}
                   style={{ minWidth: column.minWidth }}
+                  sortDirection={orderBy === column.id ? order : false}
                 >
-                  {column.label}
+                    <TableSortLabel
+              active={orderBy === column.id}
+              direction={orderBy === column.id ? order : 'asc'}
+              onClick={e => createSortHandler(e,column.id)}
+            >
+                    {column.label}
+              {orderBy === column.id ? (
+                <span className={classes.visuallyHidden}>
+                  {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
+                </span>
+              ) : null}
+            </TableSortLabel>
                 </TableCell>
               ))}
             </TableRow>
           </TableHead>
           {tableData && <TableBody>
-            {generateTableRowData().slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
+            {
+            stableSort(tableData, getComparator(order, orderBy))
+            .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
               return (
                 <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
                   {columns.map((column) => {
@@ -163,8 +201,8 @@ export default function GenerateTableComponent(props) {
       {tableData && <TableRow>
         <TablePagination
           rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
-          colSpan={3}
-          count={rows.length}
+          colSpan={9}
+          count={tableData.length}
           rowsPerPage={rowsPerPage}
           page={page}
           SelectProps={{

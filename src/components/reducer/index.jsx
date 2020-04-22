@@ -2,7 +2,12 @@ import stringConstants from '../stringConstants.jsx'
 
 
 let defaultState = {
-    num: 0, graphType: "line", sortType: 'india_state'
+    num: 0,
+    graphType: "line",
+    sortType: 'india_state',
+    getIndiaDistrictjson: 0,
+    getindiageojson: 0,
+    getCountryjson: 0
 }
 export default function performAction(state = defaultState, action) {
     switch (action.type) {
@@ -23,6 +28,10 @@ export default function performAction(state = defaultState, action) {
         case stringConstants.COUNTRYJSONACTION:
             return Object.assign({}, state, {
                 getCountryjson: action.getCountryjson
+            })
+        case stringConstants.INDIA_DISTRICT_JSON_ACTION:
+            return Object.assign({}, state, {
+                getIndiaDistrictjson: action.getIndiaDistrictjson
             })
         case stringConstants.INDIA_DISTRICT_JSON_ACTION:
             return Object.assign({}, state, {

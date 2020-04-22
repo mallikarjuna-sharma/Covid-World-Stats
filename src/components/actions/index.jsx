@@ -15,7 +15,7 @@ export function loadIndiaGeojson() {
 
 export function loadCountryjson(country) {
     if (!country) country = ''
-    console.log(country)
+
     return (dispatch) => {
         return axios.get(stringConstants.COUNTRY_STATE_WISE + country, {
             headers: stringConstants.RAPID_API_COUNTRY_STATE_WISE,

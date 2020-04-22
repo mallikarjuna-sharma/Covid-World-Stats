@@ -13,6 +13,7 @@ const stringConstants = {
     SORT_TYPES: [
         { value: 'india_state', label: 'states in india' },
         { value: 'india_district', label: 'districts in india' },
+        { value: 'world_country', label: 'states in world' },
     ],
     SORT_TYPES_ACTION: 'SORT_TYPES',
 
@@ -77,7 +78,16 @@ const stringConstants = {
         { id: 'confirmed', label: 'Confirmed', minWidth: "30%" },
     ],
 
-    INDIA_DISTRICT_JSON_ROWS: ['District', 'Confirmed']
+    INDIA_DISTRICT_JSON_ROWS: ['District', 'Confirmed'],
+
+
+    WORLD_JSON_COLUMNS: [
+        { id: 'city', label: 'city', minWidth: "25%" },
+        { id: 'province', label: 'province', minWidth: "25%" },
+        { id: 'confirmed', label: 'confirmed', minWidth: "10%" },
+        { id: 'deaths', label: 'deaths', minWidth: "10%" },
+        { id: 'recovered', label: 'recovered', minWidth: "10%" },
+    ],
 
 
 }
