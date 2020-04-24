@@ -13,6 +13,7 @@ function getIndiaDistrictjson(apiResponse, statename) {
         if (!statename) {
             if (values.DistrictReport) {
                 values.DistrictReport.map(dist => {
+                    if(dist.District !== "Unknown")
                     arr.push(createData(dist.District, dist.confirmed))
                 })
             }
@@ -21,6 +22,7 @@ function getIndiaDistrictjson(apiResponse, statename) {
             if (statename == values.state)
                 if (values.DistrictReport) {
                     values.DistrictReport.map(dist => {
+                        if(dist.District !== "Unknown")
                         arr.push(createData(dist.District, dist.confirmed))
                     })
                 }

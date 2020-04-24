@@ -11,7 +11,7 @@ import {
 } from './actions/index.jsx'
 import {
     Grid, NativeSelect, FormControl,
-    InputLabel, withStyles, TextField
+    InputLabel, withStyles, Button
 } from '@material-ui/core';
 import Styles from './styles.jsx'
 import { compose } from 'recompose'
@@ -226,6 +226,19 @@ class Dashboard extends React.Component {
                             </FormControl>
 
                         </Grid>
+
+                        {(this.props.graphType === 'pie' ||
+                            this.props.graphType === 'doughnut') && <Grid md={4} xs={4} item>
+
+                                <Button onClick={e => {
+                                    if (this.props.graphType === 'pie')
+                                        this.props.getgraphTypeAction('doughnut')
+                                    else
+                                        this.props.getgraphTypeAction('pie')
+                                }}> Toggle Doughnut View</Button>
+
+                            </Grid>}
+
                     </Grid>
 
                     <GenerateGraphComponent
@@ -252,6 +265,7 @@ function mapStateToProps(state) {
         getWorldStats: state.getWorldStats,
         xAxisLabel: state.xAxisLabel,
         yAxisLabel: state.yAxisLabel,
+        graphType: state.graphType
     }
 }
 
