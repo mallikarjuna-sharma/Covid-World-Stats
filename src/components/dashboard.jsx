@@ -8,7 +8,7 @@ import {
     getgraphTypeAction, getSortTypes,
     loadIndiaGeojson, loadCountryjson, loadIndiaDistrictjson,
     setSelectedState, loadWorldStats, setXaxisLabel,
-    setYaxisLabel
+    setYaxisLabel,setGraphSlice
 } from './actions/index.jsx'
 import {
     Grid, NativeSelect, FormControl,
@@ -110,6 +110,33 @@ class Dashboard extends React.Component {
 
         if (this.props.sortType === 'world_country')
             this.props.loadCountryjson(selectedItem)
+    }
+
+    sliceGraphData = (type) => {
+
+        if(type === 'next' ){
+
+            let arr =  getTableData(
+                this.props.sortType,
+                this.getApiData_Table(),
+                this.props.selectedState)
+
+                console.log(arr,'arr')
+
+            let count = this.props.graphStart + 1;
+            if( !(count * 30 > arr.length) )
+            this.props.setGraphSlice(count)
+
+        }
+        else if(type === 'previous') {
+
+            let count = this.props.graphStart - 1;
+            if(count >= 0)
+             this.props.setGraphSlice(count)
+        
+
+        }
+
     }
 
 
@@ -231,7 +258,7 @@ class Dashboard extends React.Component {
                         {(this.props.graphType === 'pie' ||
                             this.props.graphType === 'doughnut') && <Grid md={4} xs={4} item>
 
-                                <Button onClick={e => {
+                                <Button onClick={e => { 
                                     if (this.props.graphType === 'pie')
                                         this.props.getgraphTypeAction('doughnut')
                                     else
@@ -241,14 +268,18 @@ class Dashboard extends React.Component {
                             </Grid>}
 
                     </Grid>
-
+                    <Grid item md={12} xs={12} >
+                        <Button onClick={e => { this.sliceGraphData('next')}}>
+                            Load more Data
+                    </Button>
+                        <Button onClick={e => { this.sliceGraphData('previous') }}>
+                            Load previous Data
+                    </Button>
+                    </Grid>
                     {(this.props.graphType === 'pie' ||
-                        this.props.graphType === 'doughnut' ||
-                        getTableData(
-                            this.props.sortType,
-                            this.getApiData_Table(),
-                            this.props.selectedState).length === 1) &&
+                        this.props.graphType === 'doughnut') &&
                         <GeneratePieComponent
+                            count = {this.props.graphStart}
                             graphData={getTableData(
                                 this.props.sortType,
                                 this.getApiData_Table(),
@@ -257,13 +288,10 @@ class Dashboard extends React.Component {
                         />
                     }
                     {(this.props.graphType === 'line' ||
-                        this.props.graphType === 'bar') &&
-                        (getTableData(
-                            this.props.sortType,
-                            this.getApiData_Table(),
-                            this.props.selectedState).length !== 1)
+                        this.props.graphType === 'bar')
                         &&
                         <GenerateGraphComponent
+                            count = {this.props.graphStart}
                             graphData={getTableData(
                                 this.props.sortType,
                                 this.getApiData_Table(),
@@ -288,7 +316,8 @@ function mapStateToProps(state) {
         getWorldStats: state.getWorldStats,
         xAxisLabel: state.xAxisLabel,
         yAxisLabel: state.yAxisLabel,
-        graphType: state.graphType
+        graphType: state.graphType,
+        graphStart: state.graphStart
     }
 }
 
@@ -296,7 +325,8 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         getgraphTypeAction, getSortTypes,
         loadIndiaGeojson, loadCountryjson, loadIndiaDistrictjson,
-        setSelectedState, loadWorldStats, setXaxisLabel, setYaxisLabel
+        setSelectedState, loadWorldStats, setXaxisLabel, setYaxisLabel,
+        setGraphSlice
     }, dispatch)
 }
 

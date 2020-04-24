@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getgraphTypeAction, loadIndiaGeojson } from '../actions/index.jsx'
 
+
 class GeneratePieComponent extends React.Component {
 
     constructor(props) {
@@ -23,7 +24,7 @@ class GeneratePieComponent extends React.Component {
         console.log('screenChanged');
     }
 
-  
+
     componentDidUpdate(prevProps) {
 
         console.log(this.props.graphType, 'graphType');
@@ -33,7 +34,8 @@ class GeneratePieComponent extends React.Component {
 
         if (prevProps.xAxisLabel !== this.props.xAxisLabel ||
             prevProps.yAxisLabel !== this.props.yAxisLabel ||
-            prevProps.sortType !== this.props.sortType
+            prevProps.sortType !== this.props.sortType ||
+            prevProps.count !== this.props.count
         ) {
             setTimeout(() => this.generatePieChart(), 1000)
         }
@@ -50,21 +52,25 @@ class GeneratePieComponent extends React.Component {
     removePieGraph = () => {
         var parent = document.getElementById('resultsGraph');
         var child = document.getElementById('pieChart');
-        if(child)
-        parent.removeChild(child);
-        parent.innerHTML = '<canvas id="pieChart" width="350px" height="99px" ></canvas>';
+        if (child)
+            parent.removeChild(child);
+        parent.innerHTML = '<canvas id="pieChart"  ></canvas>';
     }
 
 
     randomColor = () => {
-        let color = 'rgb(' + ( (Math.round(Math.random() * 255) > 25) ?  Math.round(Math.random() * 255) : 35 )  + ',' +( (Math.round(Math.random() * 255) > 25) ?  Math.round(Math.random() * 255) : 45 )+ ',' +( (Math.round(Math.random() * 255) > 25) ?  Math.round(Math.random() * 255) : 55 )+ ')';
+        let color = 'rgb(' + ((Math.round(Math.random() * 255) > 25) ? Math.round(Math.random() * 255) : 35) + ',' + ((Math.round(Math.random() * 255) > 25) ? Math.round(Math.random() * 255) : 45) + ',' + ((Math.round(Math.random() * 255) > 25) ? Math.round(Math.random() * 255) : 55) + ')';
         return color;
     }
 
     generatePieChart = () => {
 
-        let xlabelData = (this.props.graphData) ? this.props.graphData.map(e => e[this.props.xAxisLabel]).slice(0, 30) : [1, 2, 3];
-        let ylabelData = (this.props.graphData) ? this.props.graphData.map(e => e[this.props.yAxisLabel]).slice(0, 30) : [1, 1, 1];
+        let sliceStart = !(this.props.count <= 0) ? this.props.count*30 : 0;
+        let sliceEnd =    this.props.count ? (this.props.count+1)*30 : 30;
+
+
+        let xlabelData = (this.props.graphData) ? this.props.graphData.map(e => e[this.props.xAxisLabel]).slice(sliceStart, sliceEnd) : [1, 2, 3];
+        let ylabelData = (this.props.graphData) ? this.props.graphData.map(e => e[this.props.yAxisLabel]).slice(sliceStart, sliceEnd) : [1, 1, 1];
         let colors = [];
 
         if (ylabelData) {
@@ -122,11 +128,13 @@ class GeneratePieComponent extends React.Component {
 
     render() {
         return (
-            <div id="resultspieGraph">
-                {
-                    <canvas id="pieChart" width="300" height="300"></canvas>
-                }
-            </div>
+            <div>
+                <div id="resultspieGraph">
+                    {
+                        <canvas id="pieChart"></canvas>
+                    }
+                </div>
+                </div>
         )
     }
 }

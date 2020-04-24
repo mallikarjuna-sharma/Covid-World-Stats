@@ -127,3 +127,11 @@ export function setYaxisLabel(yAxisLabel) {
     }
     return action
 }
+
+export function setGraphSlice(graphStart) {
+    const action = {
+        type: stringConstants.GRAPH_SLICE,
+        graphStart
+    }
+    return action
+}

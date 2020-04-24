@@ -30,7 +30,6 @@ class GenerateGraphComponent extends React.Component {
 
         if (this.props.graphData)
             this.props.graphData.slice(0, 30).map(e => {
-
                 if (typeof e[this.props.yAxisLabel] === "number" && e[this.props.yAxisLabel] > max) {
                     max = e[this.props.yAxisLabel];
                 }
@@ -49,10 +48,12 @@ class GenerateGraphComponent extends React.Component {
         console.log(this.props.graphData, 'graphData');
         console.log(this.props.xAxisLabel, 'xAxisLabel');
         console.log(this.props.yAxisLabel, 'yAxisLabel');
+        console.log(this.props.count, 'yAxisLabel');
 
         if (prevProps.xAxisLabel !== this.props.xAxisLabel ||
             prevProps.yAxisLabel !== this.props.yAxisLabel ||
-            prevProps.sortType !== this.props.sortType
+            prevProps.sortType !== this.props.sortType ||
+            prevProps.count !== this.props.count
         ) {
             // this.removeLineGraph();
             setTimeout(() => this.generateGraph(), 1000)
@@ -72,17 +73,21 @@ class GenerateGraphComponent extends React.Component {
     removeLineGraph = () => {
         var parent = document.getElementById('resultsGraph');
         var child = document.getElementById('canvas');
-        if(child)
-        parent.removeChild(child);
+        if (child)
+            parent.removeChild(child);
         parent.innerHTML = '<canvas id="canvas" width="350px" height="99px" ></canvas>';
     }
 
 
     generateGraph = () => {
 
-        let xlabelData = (this.props.graphData) ? this.props.graphData.map(e => e[this.props.xAxisLabel]).slice(0, 30) : [1, 2, 3];
-        let ylabelData = (this.props.graphData) ? this.props.graphData.map(e => e[this.props.yAxisLabel]).slice(0, 30) : [1, 1, 1];
+        let sliceStart = !(this.props.count <= 0) ? this.props.count*30 : 0;
+        let sliceEnd =    this.props.count ? (this.props.count+1)*30 : 30;
 
+
+        let xlabelData = (this.props.graphData) ? this.props.graphData.map(e => e[this.props.xAxisLabel]).slice(sliceStart, sliceEnd) : [1, 2, 3];
+        let ylabelData = (this.props.graphData) ? this.props.graphData.map(e => e[this.props.yAxisLabel]).slice(sliceStart, sliceEnd) : [1, 1, 1];
+       
         if (window.chart != undefined) {
             window.chart.destroy()
         }
@@ -140,7 +145,7 @@ class GenerateGraphComponent extends React.Component {
                             lineWidth: 1
                         },
                         ticks: {
-                            callback: function(tick) {
+                            callback: function (tick) {
                                 var characterLimit = 10;
                                 if (tick.length >= characterLimit) {
                                     return tick.slice(0, tick.length).substring(0, characterLimit - 1).trim() + '...';
@@ -189,11 +194,13 @@ class GenerateGraphComponent extends React.Component {
 
     render() {
         return (
-            <div id="resultsGraph">
-                {
-                <canvas id="canvas" width="300" height="300"></canvas>
-                }
-            </div>
+            <div>
+                <div id="resultsGraph">
+                    {
+                        <canvas id="canvas" ></canvas>
+                    }
+                </div>
+                </div>
         )
     }
 }

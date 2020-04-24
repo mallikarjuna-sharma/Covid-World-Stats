@@ -8,9 +8,10 @@ let defaultState = {
     getindiageojson: stringConstants.INDIA_STATE,
     getCountryjson: stringConstants.US_STATE,
     selectedState: false,
-    getWorldStats:  stringConstants.WORLD_STATS,
-    xAxisLabel:'state',
-    yAxisLabel:'confirmed'
+    getWorldStats: stringConstants.WORLD_STATS,
+    xAxisLabel: 'state',
+    yAxisLabel: 'confirmed',
+    graphStart: 0
 }
 export default function performAction(state = defaultState, action) {
     switch (action.type) {
@@ -51,6 +52,10 @@ export default function performAction(state = defaultState, action) {
         case stringConstants.Y_LABEL:
             return Object.assign({}, state, {
                 yAxisLabel: action.yAxisLabel
+            })
+        case stringConstants.GRAPH_SLICE:
+            return Object.assign({}, state, {
+                graphStart: action.graphStart
             })
         default:
             return state

@@ -17,6 +17,7 @@ const stringConstants = {
         { value: 'world_stats', label: 'Get Stats for World Countries' },
     ],
     SORT_TYPES_ACTION: 'SORT_TYPES',
+    GRAPH_SLICE: 'GRAPH_SLICE',
 
     X_AXIS_LABELS_INDIA_DISTRICT:[ { value: 'district', label: 'Districts India'}],
     X_AXIS_LABELS_INDIA_STATE:[ { value: 'state', label: 'States India' } ],
