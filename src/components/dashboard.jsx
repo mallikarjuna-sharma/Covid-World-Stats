@@ -1,6 +1,7 @@
 import React from 'react';
 import GenerateTableComponent from './table/table.jsx'
 import GenerateGraphComponent from './graph/graph.jsx'
+import GeneratePieComponent from './graph/piegraph.jsx'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {
@@ -241,13 +242,35 @@ class Dashboard extends React.Component {
 
                     </Grid>
 
-                    <GenerateGraphComponent
-                        graphData={getTableData(
+                    {(this.props.graphType === 'pie' ||
+                        this.props.graphType === 'doughnut' ||
+                        getTableData(
                             this.props.sortType,
                             this.getApiData_Table(),
-                            this.props.selectedState)
-                        }
-                    />
+                            this.props.selectedState).length === 1) &&
+                        <GeneratePieComponent
+                            graphData={getTableData(
+                                this.props.sortType,
+                                this.getApiData_Table(),
+                                this.props.selectedState)
+                            }
+                        />
+                    }
+                    {(this.props.graphType === 'line' ||
+                        this.props.graphType === 'bar') &&
+                        (getTableData(
+                            this.props.sortType,
+                            this.getApiData_Table(),
+                            this.props.selectedState).length !== 1)
+                        &&
+                        <GenerateGraphComponent
+                            graphData={getTableData(
+                                this.props.sortType,
+                                this.getApiData_Table(),
+                                this.props.selectedState)
+                            }
+                        />
+                    }
                 </Grid>
 
             </Grid>

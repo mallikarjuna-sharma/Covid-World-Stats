@@ -4098,6 +4098,4046 @@ const stringConstants = {
             "active": 0
         }
     ]],
+    WORLD_STATS: {
+        "get": "statistics",
+        "parameters": [],
+        "errors": [],
+        "results": 224,
+        "response": [{
+            "country": "China",
+            "cases": {
+                "new": "+10",
+                "active": 959,
+                "critical": 63,
+                "recovered": 77207,
+                "total": 82798
+            },
+            "deaths": {
+                "new": null,
+                "total": 4632
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Italy",
+            "cases": {
+                "new": "+3370",
+                "active": 107699,
+                "critical": 2384,
+                "recovered": 54543,
+                "total": 187327
+            },
+            "deaths": {
+                "new": "+437",
+                "total": 25085
+            },
+            "tests": {
+                "total": 1513251
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Spain",
+            "cases": {
+                "new": "+4211",
+                "active": 100757,
+                "critical": 7705,
+                "recovered": 85915,
+                "total": 208389
+            },
+            "deaths": {
+                "new": "+435",
+                "total": 21717
+            },
+            "tests": {
+                "total": 930230
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "USA",
+            "cases": {
+                "new": "+375",
+                "active": 717361,
+                "critical": 14016,
+                "recovered": 84050,
+                "total": 849092
+            },
+            "deaths": {
+                "new": "+22",
+                "total": 47681
+            },
+            "tests": {
+                "total": 4326648
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Germany",
+            "cases": {
+                "new": null,
+                "active": 42033,
+                "critical": 2908,
+                "recovered": 103300,
+                "total": 150648
+            },
+            "deaths": {
+                "new": null,
+                "total": 5315
+            },
+            "tests": {
+                "total": 2072669
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Iran",
+            "cases": {
+                "new": "+1194",
+                "active": 17492,
+                "critical": 3311,
+                "recovered": 63113,
+                "total": 85996
+            },
+            "deaths": {
+                "new": "+94",
+                "total": 5391
+            },
+            "tests": {
+                "total": 377396
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "France",
+            "cases": {
+                "new": "+1827",
+                "active": 97880,
+                "critical": 5218,
+                "recovered": 40657,
+                "total": 159877
+            },
+            "deaths": {
+                "new": "+544",
+                "total": 21340
+            },
+            "tests": {
+                "total": 463662
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "S-Korea",
+            "cases": {
+                "new": "+8",
+                "active": 2051,
+                "critical": 55,
+                "recovered": 8411,
+                "total": 10702
+            },
+            "deaths": {
+                "new": "+2",
+                "total": 240
+            },
+            "tests": {
+                "total": 583971
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Switzerland",
+            "cases": {
+                "new": "+205",
+                "active": 6859,
+                "critical": 386,
+                "recovered": 19900,
+                "total": 28268
+            },
+            "deaths": {
+                "new": "+31",
+                "total": 1509
+            },
+            "tests": {
+                "total": 227554
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "UK",
+            "cases": {
+                "new": "+4451",
+                "active": 115051,
+                "critical": 1559,
+                "recovered": 0,
+                "total": 133495
+            },
+            "deaths": {
+                "new": "+763",
+                "total": 18100
+            },
+            "tests": {
+                "total": 559935
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Netherlands",
+            "cases": {
+                "new": "+708",
+                "active": 30538,
+                "critical": 1050,
+                "recovered": 0,
+                "total": 34842
+            },
+            "deaths": {
+                "new": "+138",
+                "total": 4054
+            },
+            "tests": {
+                "total": 171415
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Austria",
+            "cases": {
+                "new": "+52",
+                "active": 3087,
+                "critical": 176,
+                "recovered": 11328,
+                "total": 14925
+            },
+            "deaths": {
+                "new": "+19",
+                "total": 510
+            },
+            "tests": {
+                "total": 201794
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Belgium",
+            "cases": {
+                "new": "+933",
+                "active": 26194,
+                "critical": 1020,
+                "recovered": 9433,
+                "total": 41889
+            },
+            "deaths": {
+                "new": "+264",
+                "total": 6262
+            },
+            "tests": {
+                "total": 171400
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Norway",
+            "cases": {
+                "new": "+97",
+                "active": 7119,
+                "critical": 54,
+                "recovered": 32,
+                "total": 7338
+            },
+            "deaths": {
+                "new": "+5",
+                "total": 187
+            },
+            "tests": {
+                "total": 148656
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Sweden",
+            "cases": {
+                "new": "+682",
+                "active": 13517,
+                "critical": 515,
+                "recovered": 550,
+                "total": 16004
+            },
+            "deaths": {
+                "new": "+172",
+                "total": 1937
+            },
+            "tests": {
+                "total": 94500
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Canada",
+            "cases": {
+                "new": "+1768",
+                "active": 24230,
+                "critical": 557,
+                "recovered": 13986,
+                "total": 40190
+            },
+            "deaths": {
+                "new": "+140",
+                "total": 1974
+            },
+            "tests": {
+                "total": 612192
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Denmark",
+            "cases": {
+                "new": "+217",
+                "active": 2441,
+                "critical": 80,
+                "recovered": 5087,
+                "total": 7912
+            },
+            "deaths": {
+                "new": "+14",
+                "total": 384
+            },
+            "tests": {
+                "total": 108465
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Portugal",
+            "cases": {
+                "new": "+603",
+                "active": 20054,
+                "critical": 207,
+                "recovered": 1143,
+                "total": 21982
+            },
+            "deaths": {
+                "new": "+23",
+                "total": 785
+            },
+            "tests": {
+                "total": 284741
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Malaysia",
+            "cases": {
+                "new": "+50",
+                "active": 1987,
+                "critical": 43,
+                "recovered": 3452,
+                "total": 5532
+            },
+            "deaths": {
+                "new": "+1",
+                "total": 93
+            },
+            "tests": {
+                "total": 113755
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Brazil",
+            "cases": {
+                "new": "+425",
+                "active": 17940,
+                "critical": 8318,
+                "recovered": 25318,
+                "total": 46182
+            },
+            "deaths": {
+                "new": "+18",
+                "total": 2924
+            },
+            "tests": {
+                "total": 291922
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Australia",
+            "cases": {
+                "new": "+11",
+                "active": 1544,
+                "critical": 46,
+                "recovered": 5041,
+                "total": 6660
+            },
+            "deaths": {
+                "new": "+1",
+                "total": 75
+            },
+            "tests": {
+                "total": 463713
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Japan",
+            "cases": {
+                "new": "+438",
+                "active": 10227,
+                "critical": 241,
+                "recovered": 1424,
+                "total": 11950
+            },
+            "deaths": {
+                "new": "+18",
+                "total": 299
+            },
+            "tests": {
+                "total": 130587
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Czechia",
+            "cases": {
+                "new": "+99",
+                "active": 4935,
+                "critical": 80,
+                "recovered": 1989,
+                "total": 7132
+            },
+            "deaths": {
+                "new": "+7",
+                "total": 208
+            },
+            "tests": {
+                "total": 186918
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Turkey",
+            "cases": {
+                "new": "+3083",
+                "active": 79821,
+                "critical": 1814,
+                "recovered": 16477,
+                "total": 98674
+            },
+            "deaths": {
+                "new": "+117",
+                "total": 2376
+            },
+            "tests": {
+                "total": 750944
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Israel",
+            "cases": {
+                "new": "+94",
+                "active": 9067,
+                "critical": 136,
+                "recovered": 5334,
+                "total": 14592
+            },
+            "deaths": {
+                "new": "+2",
+                "total": 191
+            },
+            "tests": {
+                "total": 240303
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Ireland",
+            "cases": {
+                "new": "+631",
+                "active": 6669,
+                "critical": 147,
+                "recovered": 9233,
+                "total": 16671
+            },
+            "deaths": {
+                "new": "+39",
+                "total": 769
+            },
+            "tests": {
+                "total": 111584
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Diamond-Princess-",
+            "cases": {
+                "new": null,
+                "active": 82,
+                "critical": 10,
+                "recovered": 619,
+                "total": 712
+            },
+            "deaths": {
+                "new": null,
+                "total": 11
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-09",
+            "time": "2020-04-09T15:45:06+00:00"
+        }, {
+            "country": "Luxembourg",
+            "cases": {
+                "new": "+36",
+                "active": 2863,
+                "critical": 32,
+                "recovered": 711,
+                "total": 3654
+            },
+            "deaths": {
+                "new": "+2",
+                "total": 80
+            },
+            "tests": {
+                "total": 36087
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Pakistan",
+            "cases": {
+                "new": "+437",
+                "active": 7952,
+                "critical": 60,
+                "recovered": 2337,
+                "total": 10513
+            },
+            "deaths": {
+                "new": "+12",
+                "total": 224
+            },
+            "tests": {
+                "total": 124549
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Chile",
+            "cases": {
+                "new": "+464",
+                "active": 5750,
+                "critical": 399,
+                "recovered": 5386,
+                "total": 11296
+            },
+            "deaths": {
+                "new": "+13",
+                "total": 160
+            },
+            "tests": {
+                "total": 128722
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Poland",
+            "cases": {
+                "new": "+313",
+                "active": 8230,
+                "critical": 160,
+                "recovered": 1513,
+                "total": 10169
+            },
+            "deaths": {
+                "new": "+25",
+                "total": 426
+            },
+            "tests": {
+                "total": 238799
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Ecuador",
+            "cases": {
+                "new": null,
+                "active": 9051,
+                "critical": 141,
+                "recovered": 1262,
+                "total": 10850
+            },
+            "deaths": {
+                "new": null,
+                "total": 537
+            },
+            "tests": {
+                "total": 34840
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Greece",
+            "cases": {
+                "new": "+7",
+                "active": 1710,
+                "critical": 55,
+                "recovered": 577,
+                "total": 2408
+            },
+            "deaths": {
+                "new": null,
+                "total": 121
+            },
+            "tests": {
+                "total": 56944
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Finland",
+            "cases": {
+                "new": "+115",
+                "active": 1980,
+                "critical": 63,
+                "recovered": 2000,
+                "total": 4129
+            },
+            "deaths": {
+                "new": "+8",
+                "total": 149
+            },
+            "tests": {
+                "total": 68552
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Qatar",
+            "cases": {
+                "new": "+608",
+                "active": 6442,
+                "critical": 37,
+                "recovered": 689,
+                "total": 7141
+            },
+            "deaths": {
+                "new": "+1",
+                "total": 10
+            },
+            "tests": {
+                "total": 70012
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Iceland",
+            "cases": {
+                "new": "+7",
+                "active": 313,
+                "critical": 5,
+                "recovered": 1462,
+                "total": 1785
+            },
+            "deaths": {
+                "new": null,
+                "total": 10
+            },
+            "tests": {
+                "total": 44468
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Indonesia",
+            "cases": {
+                "new": "+283",
+                "active": 5870,
+                "critical": 0,
+                "recovered": 913,
+                "total": 7418
+            },
+            "deaths": {
+                "new": "+19",
+                "total": 635
+            },
+            "tests": {
+                "total": 55732
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Singapore",
+            "cases": {
+                "new": "+1016",
+                "active": 9233,
+                "critical": 27,
+                "recovered": 896,
+                "total": 10141
+            },
+            "deaths": {
+                "new": "+1",
+                "total": 12
+            },
+            "tests": {
+                "total": 94796
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Thailand",
+            "cases": {
+                "new": "+13",
+                "active": 359,
+                "critical": 61,
+                "recovered": 2430,
+                "total": 2839
+            },
+            "deaths": {
+                "new": "+1",
+                "total": 50
+            },
+            "tests": {
+                "total": 142589
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Saudi-Arabia",
+            "cases": {
+                "new": "+1141",
+                "active": 10846,
+                "critical": 82,
+                "recovered": 1812,
+                "total": 12772
+            },
+            "deaths": {
+                "new": "+5",
+                "total": 114
+            },
+            "tests": {
+                "total": 200000
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Slovenia",
+            "cases": {
+                "new": "+9",
+                "active": 1069,
+                "critical": 24,
+                "recovered": 205,
+                "total": 1353
+            },
+            "deaths": {
+                "new": "+2",
+                "total": 79
+            },
+            "tests": {
+                "total": 44435
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Romania",
+            "cases": {
+                "new": "+468",
+                "active": 6780,
+                "critical": 288,
+                "recovered": 2406,
+                "total": 9710
+            },
+            "deaths": {
+                "new": "+26",
+                "total": 524
+            },
+            "tests": {
+                "total": 106357
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "India",
+            "cases": {
+                "new": "+427",
+                "active": 16740,
+                "critical": 0,
+                "recovered": 4376,
+                "total": 21797
+            },
+            "deaths": {
+                "new": null,
+                "total": 681
+            },
+            "tests": {
+                "total": 500542
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Peru",
+            "cases": {
+                "new": "+1413",
+                "active": 11693,
+                "critical": 396,
+                "recovered": 7027,
+                "total": 19250
+            },
+            "deaths": {
+                "new": "+46",
+                "total": 530
+            },
+            "tests": {
+                "total": 170400
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Bahrain",
+            "cases": {
+                "new": "+54",
+                "active": 994,
+                "critical": 2,
+                "recovered": 1026,
+                "total": 2027
+            },
+            "deaths": {
+                "new": null,
+                "total": 7
+            },
+            "tests": {
+                "total": 97796
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Philippines",
+            "cases": {
+                "new": "+111",
+                "active": 5571,
+                "critical": 1,
+                "recovered": 693,
+                "total": 6710
+            },
+            "deaths": {
+                "new": "+9",
+                "total": 446
+            },
+            "tests": {
+                "total": 68532
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Russia",
+            "cases": {
+                "new": null,
+                "active": 53066,
+                "critical": 2300,
+                "recovered": 4420,
+                "total": 57999
+            },
+            "deaths": {
+                "new": null,
+                "total": 513
+            },
+            "tests": {
+                "total": 2250000
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Estonia",
+            "cases": {
+                "new": "+7",
+                "active": 1331,
+                "critical": 7,
+                "recovered": 184,
+                "total": 1559
+            },
+            "deaths": {
+                "new": "+1",
+                "total": 44
+            },
+            "tests": {
+                "total": 43637
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Egypt",
+            "cases": {
+                "new": "+169",
+                "active": 2448,
+                "critical": 0,
+                "recovered": 935,
+                "total": 3659
+            },
+            "deaths": {
+                "new": "+12",
+                "total": 276
+            },
+            "tests": {
+                "total": 55000
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Hong-Kong",
+            "cases": {
+                "new": "+4",
+                "active": 352,
+                "critical": 8,
+                "recovered": 678,
+                "total": 1034
+            },
+            "deaths": {
+                "new": null,
+                "total": 4
+            },
+            "tests": {
+                "total": 131786
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "South-Africa",
+            "cases": {
+                "new": "+170",
+                "active": 2515,
+                "critical": 36,
+                "recovered": 1055,
+                "total": 3635
+            },
+            "deaths": {
+                "new": "+7",
+                "total": 65
+            },
+            "tests": {
+                "total": 133774
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Lebanon",
+            "cases": {
+                "new": "+5",
+                "active": 547,
+                "critical": 26,
+                "recovered": 113,
+                "total": 682
+            },
+            "deaths": {
+                "new": "+1",
+                "total": 22
+            },
+            "tests": {
+                "total": 22853
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Iraq",
+            "cases": {
+                "new": "+29",
+                "active": 402,
+                "critical": 0,
+                "recovered": 1146,
+                "total": 1631
+            },
+            "deaths": {
+                "new": null,
+                "total": 83
+            },
+            "tests": {
+                "total": 62880
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Croatia",
+            "cases": {
+                "new": "+42",
+                "active": 1033,
+                "critical": 19,
+                "recovered": 869,
+                "total": 1950
+            },
+            "deaths": {
+                "new": null,
+                "total": 48
+            },
+            "tests": {
+                "total": 27614
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Mexico",
+            "cases": {
+                "new": "+1043",
+                "active": 6947,
+                "critical": 378,
+                "recovered": 2627,
+                "total": 10544
+            },
+            "deaths": {
+                "new": "+113",
+                "total": 970
+            },
+            "tests": {
+                "total": 49570
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Panama",
+            "cases": {
+                "new": "+171",
+                "active": 4593,
+                "critical": 97,
+                "recovered": 255,
+                "total": 4992
+            },
+            "deaths": {
+                "new": "+3",
+                "total": 144
+            },
+            "tests": {
+                "total": 22702
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Colombia",
+            "cases": {
+                "new": "+207",
+                "active": 3280,
+                "critical": 98,
+                "recovered": 870,
+                "total": 4356
+            },
+            "deaths": {
+                "new": "+10",
+                "total": 206
+            },
+            "tests": {
+                "total": 71500
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Slovakia",
+            "cases": {
+                "new": null,
+                "active": 946,
+                "critical": 8,
+                "recovered": 284,
+                "total": 1244
+            },
+            "deaths": {
+                "new": null,
+                "total": 14
+            },
+            "tests": {
+                "total": 52649
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Kuwait",
+            "cases": {
+                "new": "+168",
+                "active": 1792,
+                "critical": 50,
+                "recovered": 443,
+                "total": 2248
+            },
+            "deaths": {
+                "new": "+2",
+                "total": 13
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Serbia",
+            "cases": {
+                "new": "+224",
+                "active": 5955,
+                "critical": 101,
+                "recovered": 1025,
+                "total": 7114
+            },
+            "deaths": {
+                "new": "+4",
+                "total": 134
+            },
+            "tests": {
+                "total": 48636
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Bulgaria",
+            "cases": {
+                "new": "+57",
+                "active": 841,
+                "critical": 37,
+                "recovered": 190,
+                "total": 1081
+            },
+            "deaths": {
+                "new": "+1",
+                "total": 50
+            },
+            "tests": {
+                "total": 27000
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "San-Marino",
+            "cases": {
+                "new": "+12",
+                "active": 386,
+                "critical": 4,
+                "recovered": 62,
+                "total": 488
+            },
+            "deaths": {
+                "new": null,
+                "total": 40
+            },
+            "tests": {
+                "total": 1872
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Armenia",
+            "cases": {
+                "new": "+72",
+                "active": 816,
+                "critical": 30,
+                "recovered": 633,
+                "total": 1473
+            },
+            "deaths": {
+                "new": null,
+                "total": 24
+            },
+            "tests": {
+                "total": 14966
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Argentina",
+            "cases": {
+                "new": "+144",
+                "active": 2257,
+                "critical": 123,
+                "recovered": 872,
+                "total": 3288
+            },
+            "deaths": {
+                "new": "+8",
+                "total": 159
+            },
+            "tests": {
+                "total": 39228
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Taiwan",
+            "cases": {
+                "new": "+1",
+                "active": 168,
+                "critical": 0,
+                "recovered": 253,
+                "total": 427
+            },
+            "deaths": {
+                "new": null,
+                "total": 6
+            },
+            "tests": {
+                "total": 58003
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "UAE",
+            "cases": {
+                "new": "+483",
+                "active": 6640,
+                "critical": 1,
+                "recovered": 1546,
+                "total": 8238
+            },
+            "deaths": {
+                "new": "+6",
+                "total": 52
+            },
+            "tests": {
+                "total": 790000
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Algeria",
+            "cases": {
+                "new": "+99",
+                "active": 1304,
+                "critical": 40,
+                "recovered": 1204,
+                "total": 2910
+            },
+            "deaths": {
+                "new": "+10",
+                "total": 402
+            },
+            "tests": {
+                "total": 6500
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Latvia",
+            "cases": {
+                "new": "+13",
+                "active": 617,
+                "critical": 5,
+                "recovered": 133,
+                "total": 761
+            },
+            "deaths": {
+                "new": "+2",
+                "total": 11
+            },
+            "tests": {
+                "total": 39336
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Costa-Rica",
+            "cases": {
+                "new": "+12",
+                "active": 495,
+                "critical": 6,
+                "recovered": 180,
+                "total": 681
+            },
+            "deaths": {
+                "new": null,
+                "total": 6
+            },
+            "tests": {
+                "total": 11766
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Dominican-Republic",
+            "cases": {
+                "new": "+256",
+                "active": 4459,
+                "critical": 135,
+                "recovered": 581,
+                "total": 5300
+            },
+            "deaths": {
+                "new": "+15",
+                "total": 260
+            },
+            "tests": {
+                "total": 18261
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Uruguay",
+            "cases": {
+                "new": "+6",
+                "active": 200,
+                "critical": 10,
+                "recovered": 337,
+                "total": 549
+            },
+            "deaths": {
+                "new": null,
+                "total": 12
+            },
+            "tests": {
+                "total": 14532
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Hungary",
+            "cases": {
+                "new": "+116",
+                "active": 1655,
+                "critical": 61,
+                "recovered": 390,
+                "total": 2284
+            },
+            "deaths": {
+                "new": "+14",
+                "total": 239
+            },
+            "tests": {
+                "total": 55390
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Jordan",
+            "cases": {
+                "new": null,
+                "active": 113,
+                "critical": 5,
+                "recovered": 315,
+                "total": 435
+            },
+            "deaths": {
+                "new": null,
+                "total": 7
+            },
+            "tests": {
+                "total": 36000
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Lithuania",
+            "cases": {
+                "new": "+28",
+                "active": 961,
+                "critical": 17,
+                "recovered": 399,
+                "total": 1398
+            },
+            "deaths": {
+                "new": null,
+                "total": 38
+            },
+            "tests": {
+                "total": 83591
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Morocco",
+            "cases": {
+                "new": "+237",
+                "active": 2880,
+                "critical": 1,
+                "recovered": 417,
+                "total": 3446
+            },
+            "deaths": {
+                "new": "+4",
+                "total": 149
+            },
+            "tests": {
+                "total": 19885
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Vietnam",
+            "cases": {
+                "new": null,
+                "active": 44,
+                "critical": 8,
+                "recovered": 224,
+                "total": 268
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": 206253
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Bosnia-and-Herzegovina",
+            "cases": {
+                "new": "+26",
+                "active": 855,
+                "critical": 4,
+                "recovered": 460,
+                "total": 1368
+            },
+            "deaths": {
+                "new": "+2",
+                "total": 53
+            },
+            "tests": {
+                "total": 20125
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Faeroe-Islands",
+            "cases": {
+                "new": "+2",
+                "active": 9,
+                "critical": 0,
+                "recovered": 178,
+                "total": 187
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": 6375
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Andorra",
+            "cases": {
+                "new": "+6",
+                "active": 377,
+                "critical": 17,
+                "recovered": 309,
+                "total": 723
+            },
+            "deaths": {
+                "new": null,
+                "total": 37
+            },
+            "tests": {
+                "total": 1673
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "North-Macedonia",
+            "cases": {
+                "new": "+28",
+                "active": 931,
+                "critical": 8,
+                "recovered": 272,
+                "total": 1259
+            },
+            "deaths": {
+                "new": "+1",
+                "total": 56
+            },
+            "tests": {
+                "total": 13000
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Cyprus",
+            "cases": {
+                "new": "+6",
+                "active": 679,
+                "critical": 15,
+                "recovered": 98,
+                "total": 790
+            },
+            "deaths": {
+                "new": "+1",
+                "total": 13
+            },
+            "tests": {
+                "total": 37081
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Brunei",
+            "cases": {
+                "new": null,
+                "active": 20,
+                "critical": 2,
+                "recovered": 117,
+                "total": 138
+            },
+            "deaths": {
+                "new": null,
+                "total": 1
+            },
+            "tests": {
+                "total": 12149
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Moldova",
+            "cases": {
+                "new": "+164",
+                "active": 2143,
+                "critical": 212,
+                "recovered": 560,
+                "total": 2778
+            },
+            "deaths": {
+                "new": "+3",
+                "total": 75
+            },
+            "tests": {
+                "total": 11763
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Sri-Lanka",
+            "cases": {
+                "new": "+20",
+                "active": 218,
+                "critical": 2,
+                "recovered": 105,
+                "total": 330
+            },
+            "deaths": {
+                "new": null,
+                "total": 7
+            },
+            "tests": {
+                "total": 7393
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Albania",
+            "cases": {
+                "new": "+25",
+                "active": 251,
+                "critical": 4,
+                "recovered": 356,
+                "total": 634
+            },
+            "deaths": {
+                "new": "+1",
+                "total": 27
+            },
+            "tests": {
+                "total": 6269
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Belarus",
+            "cases": {
+                "new": "+558",
+                "active": 6454,
+                "critical": 92,
+                "recovered": 769,
+                "total": 7281
+            },
+            "deaths": {
+                "new": "+3",
+                "total": 58
+            },
+            "tests": {
+                "total": 114955
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Malta",
+            "cases": {
+                "new": "+1",
+                "active": 276,
+                "critical": 2,
+                "recovered": 165,
+                "total": 444
+            },
+            "deaths": {
+                "new": null,
+                "total": 3
+            },
+            "tests": {
+                "total": 26148
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Venezuela",
+            "cases": {
+                "new": "+10",
+                "active": 166,
+                "critical": 4,
+                "recovered": 122,
+                "total": 298
+            },
+            "deaths": {
+                "new": null,
+                "total": 10
+            },
+            "tests": {
+                "total": 347236
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Burkina-Faso",
+            "cases": {
+                "new": "+9",
+                "active": 181,
+                "critical": 0,
+                "recovered": 389,
+                "total": 609
+            },
+            "deaths": {
+                "new": "+1",
+                "total": 39
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Tunisia",
+            "cases": {
+                "new": "+8",
+                "active": 681,
+                "critical": 32,
+                "recovered": 190,
+                "total": 909
+            },
+            "deaths": {
+                "new": null,
+                "total": 38
+            },
+            "tests": {
+                "total": 18861
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Guadeloupe",
+            "cases": {
+                "new": null,
+                "active": 60,
+                "critical": 13,
+                "recovered": 76,
+                "total": 148
+            },
+            "deaths": {
+                "new": null,
+                "total": 12
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Senegal",
+            "cases": {
+                "new": "+30",
+                "active": 183,
+                "critical": 1,
+                "recovered": 253,
+                "total": 442
+            },
+            "deaths": {
+                "new": "+1",
+                "total": 6
+            },
+            "tests": {
+                "total": 466
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Kazakhstan",
+            "cases": {
+                "new": "+56",
+                "active": 1657,
+                "critical": 29,
+                "recovered": 515,
+                "total": 2191
+            },
+            "deaths": {
+                "new": null,
+                "total": 19
+            },
+            "tests": {
+                "total": 153492
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Azerbaijan",
+            "cases": {
+                "new": "+38",
+                "active": 591,
+                "critical": 14,
+                "recovered": 907,
+                "total": 1518
+            },
+            "deaths": {
+                "new": null,
+                "total": 20
+            },
+            "tests": {
+                "total": 108221
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Cambodia",
+            "cases": {
+                "new": null,
+                "active": 12,
+                "critical": 1,
+                "recovered": 110,
+                "total": 122
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": 5768
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Palestine",
+            "cases": {
+                "new": "+8",
+                "active": 399,
+                "critical": 0,
+                "recovered": 71,
+                "total": 474
+            },
+            "deaths": {
+                "new": null,
+                "total": 4
+            },
+            "tests": {
+                "total": 17329
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "New-Zealand",
+            "cases": {
+                "new": "+3",
+                "active": 370,
+                "critical": 2,
+                "recovered": 1065,
+                "total": 1451
+            },
+            "deaths": {
+                "new": "+2",
+                "total": 16
+            },
+            "tests": {
+                "total": 101277
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Oman",
+            "cases": {
+                "new": "+106",
+                "active": 1368,
+                "critical": 3,
+                "recovered": 238,
+                "total": 1614
+            },
+            "deaths": {
+                "new": null,
+                "total": 8
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Georgia",
+            "cases": {
+                "new": "+8",
+                "active": 304,
+                "critical": 6,
+                "recovered": 107,
+                "total": 416
+            },
+            "deaths": {
+                "new": "+1",
+                "total": 5
+            },
+            "tests": {
+                "total": 8375
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Trinidad-and-Tobago",
+            "cases": {
+                "new": null,
+                "active": 70,
+                "critical": 0,
+                "recovered": 37,
+                "total": 115
+            },
+            "deaths": {
+                "new": null,
+                "total": 8
+            },
+            "tests": {
+                "total": 1454
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Ukraine",
+            "cases": {
+                "new": "+467",
+                "active": 5994,
+                "critical": 45,
+                "recovered": 424,
+                "total": 6592
+            },
+            "deaths": {
+                "new": "+13",
+                "total": 174
+            },
+            "tests": {
+                "total": 67520
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "R&eacute;union",
+            "cases": {
+                "new": "+2",
+                "active": 172,
+                "critical": 2,
+                "recovered": 238,
+                "total": 410
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Uzbekistan",
+            "cases": {
+                "new": "+38",
+                "active": 1259,
+                "critical": 8,
+                "recovered": 450,
+                "total": 1716
+            },
+            "deaths": {
+                "new": "+1",
+                "total": 7
+            },
+            "tests": {
+                "total": 150000
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Cameroon",
+            "cases": {
+                "new": null,
+                "active": 723,
+                "critical": 33,
+                "recovered": 397,
+                "total": 1163
+            },
+            "deaths": {
+                "new": null,
+                "total": 43
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Martinique",
+            "cases": {
+                "new": "+1",
+                "active": 77,
+                "critical": 6,
+                "recovered": 73,
+                "total": 164
+            },
+            "deaths": {
+                "new": null,
+                "total": 14
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Liechtenstein",
+            "cases": {
+                "new": null,
+                "active": 25,
+                "critical": 0,
+                "recovered": 55,
+                "total": 81
+            },
+            "deaths": {
+                "new": null,
+                "total": 1
+            },
+            "tests": {
+                "total": 900
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Channel-Islands",
+            "cases": {
+                "new": "+2",
+                "active": 185,
+                "critical": 0,
+                "recovered": 285,
+                "total": 498
+            },
+            "deaths": {
+                "new": "+4",
+                "total": 28
+            },
+            "tests": {
+                "total": 3320
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Bangladesh",
+            "cases": {
+                "new": "+390",
+                "active": 3560,
+                "critical": 1,
+                "recovered": 92,
+                "total": 3772
+            },
+            "deaths": {
+                "new": "+10",
+                "total": 120
+            },
+            "tests": {
+                "total": 32630
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Afghanistan",
+            "cases": {
+                "new": "+84",
+                "active": 970,
+                "critical": 7,
+                "recovered": 166,
+                "total": 1176
+            },
+            "deaths": {
+                "new": "+4",
+                "total": 40
+            },
+            "tests": {
+                "total": 6422
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Honduras",
+            "cases": {
+                "new": "+9",
+                "active": 441,
+                "critical": 10,
+                "recovered": 31,
+                "total": 519
+            },
+            "deaths": {
+                "new": "+1",
+                "total": 47
+            },
+            "tests": {
+                "total": 2535
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "DRC",
+            "cases": {
+                "new": "+9",
+                "active": 289,
+                "critical": 0,
+                "recovered": 45,
+                "total": 359
+            },
+            "deaths": {
+                "new": null,
+                "total": 25
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Nigeria",
+            "cases": {
+                "new": "+91",
+                "active": 648,
+                "critical": 2,
+                "recovered": 197,
+                "total": 873
+            },
+            "deaths": {
+                "new": "+3",
+                "total": 28
+            },
+            "tests": {
+                "total": 8003
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Cuba",
+            "cases": {
+                "new": "+52",
+                "active": 808,
+                "critical": 16,
+                "recovered": 341,
+                "total": 1189
+            },
+            "deaths": {
+                "new": "+2",
+                "total": 40
+            },
+            "tests": {
+                "total": 30416
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Ghana",
+            "cases": {
+                "new": "+112",
+                "active": 1046,
+                "critical": 4,
+                "recovered": 99,
+                "total": 1154
+            },
+            "deaths": {
+                "new": null,
+                "total": 9
+            },
+            "tests": {
+                "total": 68591
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Puerto-Rico",
+            "cases": {
+                "new": "+8",
+                "active": 36,
+                "critical": 0,
+                "recovered": 1,
+                "total": 39
+            },
+            "deaths": {
+                "new": null,
+                "total": 2
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-03-25",
+            "time": "2020-03-25T06:00:07+00:00"
+        }, {
+            "country": "Jamaica",
+            "cases": {
+                "new": null,
+                "active": 218,
+                "critical": 0,
+                "recovered": 28,
+                "total": 252
+            },
+            "deaths": {
+                "new": null,
+                "total": 6
+            },
+            "tests": {
+                "total": 2125
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Bolivia",
+            "cases": {
+                "new": "+63",
+                "active": 588,
+                "critical": 3,
+                "recovered": 44,
+                "total": 672
+            },
+            "deaths": {
+                "new": "+3",
+                "total": 40
+            },
+            "tests": {
+                "total": 4420
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Guyana",
+            "cases": {
+                "new": "+1",
+                "active": 51,
+                "critical": 5,
+                "recovered": 9,
+                "total": 67
+            },
+            "deaths": {
+                "new": null,
+                "total": 7
+            },
+            "tests": {
+                "total": 348
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Paraguay",
+            "cases": {
+                "new": "+5",
+                "active": 142,
+                "critical": 1,
+                "recovered": 62,
+                "total": 213
+            },
+            "deaths": {
+                "new": "+1",
+                "total": 9
+            },
+            "tests": {
+                "total": 6292
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Macao",
+            "cases": {
+                "new": null,
+                "active": 19,
+                "critical": 1,
+                "recovered": 26,
+                "total": 45
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Monaco",
+            "cases": {
+                "new": null,
+                "active": 65,
+                "critical": 2,
+                "recovered": 26,
+                "total": 94
+            },
+            "deaths": {
+                "new": null,
+                "total": 3
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "French-Guiana",
+            "cases": {
+                "new": "+10",
+                "active": 22,
+                "critical": 1,
+                "recovered": 84,
+                "total": 107
+            },
+            "deaths": {
+                "new": null,
+                "total": 1
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Guatemala",
+            "cases": {
+                "new": "+26",
+                "active": 307,
+                "critical": 3,
+                "recovered": 25,
+                "total": 342
+            },
+            "deaths": {
+                "new": "+2",
+                "total": 10
+            },
+            "tests": {
+                "total": 7200
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Rwanda",
+            "cases": {
+                "new": "+3",
+                "active": 69,
+                "critical": 0,
+                "recovered": 84,
+                "total": 153
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": 6959
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Montenegro",
+            "cases": {
+                "new": "+2",
+                "active": 194,
+                "critical": 7,
+                "recovered": 116,
+                "total": 315
+            },
+            "deaths": {
+                "new": null,
+                "total": 5
+            },
+            "tests": {
+                "total": 5085
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Togo",
+            "cases": {
+                "new": "+2",
+                "active": 26,
+                "critical": 0,
+                "recovered": 56,
+                "total": 88
+            },
+            "deaths": {
+                "new": null,
+                "total": 6
+            },
+            "tests": {
+                "total": 4733
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "French-Polynesia",
+            "cases": {
+                "new": null,
+                "active": 21,
+                "critical": 1,
+                "recovered": 36,
+                "total": 57
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": 1803
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Guam",
+            "cases": {
+                "new": "+3",
+                "active": 31,
+                "critical": 0,
+                "recovered": 0,
+                "total": 32
+            },
+            "deaths": {
+                "new": null,
+                "total": 1
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-03-25",
+            "time": "2020-03-25T06:00:07+00:00"
+        }, {
+            "country": "Mauritius",
+            "cases": {
+                "new": null,
+                "active": 59,
+                "critical": 3,
+                "recovered": 261,
+                "total": 329
+            },
+            "deaths": {
+                "new": null,
+                "total": 9
+            },
+            "tests": {
+                "total": 12300
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Barbados",
+            "cases": {
+                "new": "+1",
+                "active": 43,
+                "critical": 4,
+                "recovered": 27,
+                "total": 76
+            },
+            "deaths": {
+                "new": "+1",
+                "total": 6
+            },
+            "tests": {
+                "total": 1162
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Ivory-Coast",
+            "cases": {
+                "new": "+36",
+                "active": 628,
+                "critical": 0,
+                "recovered": 310,
+                "total": 952
+            },
+            "deaths": {
+                "new": "+1",
+                "total": 14
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Kyrgyzstan",
+            "cases": {
+                "new": "+22",
+                "active": 351,
+                "critical": 5,
+                "recovered": 254,
+                "total": 612
+            },
+            "deaths": {
+                "new": null,
+                "total": 7
+            },
+            "tests": {
+                "total": 26147
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Maldives",
+            "cases": {
+                "new": null,
+                "active": 70,
+                "critical": 2,
+                "recovered": 16,
+                "total": 86
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": 4139
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Mayotte",
+            "cases": {
+                "new": "+15",
+                "active": 197,
+                "critical": 4,
+                "recovered": 125,
+                "total": 326
+            },
+            "deaths": {
+                "new": null,
+                "total": 4
+            },
+            "tests": {
+                "total": 2100
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Gibraltar",
+            "cases": {
+                "new": null,
+                "active": 5,
+                "critical": 1,
+                "recovered": 127,
+                "total": 132
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": 2020
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Mongolia",
+            "cases": {
+                "new": null,
+                "active": 27,
+                "critical": 0,
+                "recovered": 8,
+                "total": 35
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": 7156
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Ethiopia",
+            "cases": {
+                "new": "+2",
+                "active": 92,
+                "critical": 0,
+                "recovered": 21,
+                "total": 116
+            },
+            "deaths": {
+                "new": null,
+                "total": 3
+            },
+            "tests": {
+                "total": 9771
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Kenya",
+            "cases": {
+                "new": null,
+                "active": 206,
+                "critical": 2,
+                "recovered": 83,
+                "total": 303
+            },
+            "deaths": {
+                "new": null,
+                "total": 14
+            },
+            "tests": {
+                "total": 14704
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Seychelles",
+            "cases": {
+                "new": null,
+                "active": 6,
+                "critical": 0,
+                "recovered": 5,
+                "total": 11
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Equatorial-Guinea",
+            "cases": {
+                "new": "+1",
+                "active": 76,
+                "critical": 0,
+                "recovered": 7,
+                "total": 84
+            },
+            "deaths": {
+                "new": "+1",
+                "total": 1
+            },
+            "tests": {
+                "total": 854
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Tanzania",
+            "cases": {
+                "new": "+30",
+                "active": 263,
+                "critical": 7,
+                "recovered": 11,
+                "total": 284
+            },
+            "deaths": {
+                "new": null,
+                "total": 10
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "US-Virgin-Islands",
+            "cases": {
+                "new": "+11",
+                "active": 17,
+                "critical": 0,
+                "recovered": 0,
+                "total": 17
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-03-25",
+            "time": "2020-03-25T06:00:07+00:00"
+        }, {
+            "country": "Gabon",
+            "cases": {
+                "new": "+10",
+                "active": 141,
+                "critical": 2,
+                "recovered": 24,
+                "total": 166
+            },
+            "deaths": {
+                "new": null,
+                "total": 1
+            },
+            "tests": {
+                "total": 572
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Aruba",
+            "cases": {
+                "new": "+3",
+                "active": 30,
+                "critical": 4,
+                "recovered": 68,
+                "total": 100
+            },
+            "deaths": {
+                "new": null,
+                "total": 2
+            },
+            "tests": {
+                "total": 1504
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Saint-Martin",
+            "cases": {
+                "new": "+1",
+                "active": 17,
+                "critical": 3,
+                "recovered": 19,
+                "total": 38
+            },
+            "deaths": {
+                "new": null,
+                "total": 2
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Suriname",
+            "cases": {
+                "new": null,
+                "active": 3,
+                "critical": 0,
+                "recovered": 6,
+                "total": 10
+            },
+            "deaths": {
+                "new": null,
+                "total": 1
+            },
+            "tests": {
+                "total": 404
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Bahamas",
+            "cases": {
+                "new": "+5",
+                "active": 44,
+                "critical": 1,
+                "recovered": 12,
+                "total": 65
+            },
+            "deaths": {
+                "new": null,
+                "total": 9
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "New-Caledonia",
+            "cases": {
+                "new": null,
+                "active": 1,
+                "critical": 1,
+                "recovered": 17,
+                "total": 18
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": 3772
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Cayman-Islands",
+            "cases": {
+                "new": "+5",
+                "active": 58,
+                "critical": 3,
+                "recovered": 7,
+                "total": 66
+            },
+            "deaths": {
+                "new": null,
+                "total": 1
+            },
+            "tests": {
+                "total": 778
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Cura&ccedil;ao",
+            "cases": {
+                "new": null,
+                "active": 2,
+                "critical": 0,
+                "recovered": 11,
+                "total": 14
+            },
+            "deaths": {
+                "new": null,
+                "total": 1
+            },
+            "tests": {
+                "total": 302
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Cabo-Verde",
+            "cases": {
+                "new": "+5",
+                "active": 71,
+                "critical": 0,
+                "recovered": 1,
+                "total": 73
+            },
+            "deaths": {
+                "new": null,
+                "total": 1
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "CAR",
+            "cases": {
+                "new": "+2",
+                "active": 4,
+                "critical": 0,
+                "recovered": 10,
+                "total": 14
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Congo",
+            "cases": {
+                "new": "+21",
+                "active": 164,
+                "critical": 0,
+                "recovered": 16,
+                "total": 186
+            },
+            "deaths": {
+                "new": null,
+                "total": 6
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "El-Salvador",
+            "cases": {
+                "new": null,
+                "active": 166,
+                "critical": 3,
+                "recovered": 63,
+                "total": 237
+            },
+            "deaths": {
+                "new": "+1",
+                "total": 8
+            },
+            "tests": {
+                "total": 14375
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Liberia",
+            "cases": {
+                "new": null,
+                "active": 73,
+                "critical": 0,
+                "recovered": 20,
+                "total": 101
+            },
+            "deaths": {
+                "new": null,
+                "total": 8
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Madagascar",
+            "cases": {
+                "new": null,
+                "active": 69,
+                "critical": 1,
+                "recovered": 52,
+                "total": 121
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": 2357
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Namibia",
+            "cases": {
+                "new": null,
+                "active": 10,
+                "critical": 0,
+                "recovered": 6,
+                "total": 16
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": 524
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "St-Barth",
+            "cases": {
+                "new": null,
+                "active": 0,
+                "critical": 0,
+                "recovered": 6,
+                "total": 6
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Zimbabwe",
+            "cases": {
+                "new": null,
+                "active": 22,
+                "critical": 0,
+                "recovered": 2,
+                "total": 28
+            },
+            "deaths": {
+                "new": null,
+                "total": 4
+            },
+            "tests": {
+                "total": 4990
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Sudan",
+            "cases": {
+                "new": "+22",
+                "active": 135,
+                "critical": 0,
+                "recovered": 14,
+                "total": 162
+            },
+            "deaths": {
+                "new": null,
+                "total": 13
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Angola",
+            "cases": {
+                "new": "+1",
+                "active": 17,
+                "critical": 0,
+                "recovered": 6,
+                "total": 25
+            },
+            "deaths": {
+                "new": null,
+                "total": 2
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Benin",
+            "cases": {
+                "new": "+19",
+                "active": 26,
+                "critical": 0,
+                "recovered": 27,
+                "total": 54
+            },
+            "deaths": {
+                "new": null,
+                "total": 1
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Bermuda",
+            "cases": {
+                "new": "+1",
+                "active": 55,
+                "critical": 10,
+                "recovered": 39,
+                "total": 99
+            },
+            "deaths": {
+                "new": null,
+                "total": 5
+            },
+            "tests": {
+                "total": 949
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Bhutan",
+            "cases": {
+                "new": null,
+                "active": 4,
+                "critical": 0,
+                "recovered": 3,
+                "total": 7
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": 8953
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Fiji",
+            "cases": {
+                "new": null,
+                "active": 10,
+                "critical": 0,
+                "recovered": 8,
+                "total": 18
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Greenland",
+            "cases": {
+                "new": null,
+                "active": 0,
+                "critical": 0,
+                "recovered": 11,
+                "total": 11
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": 1150
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Guinea",
+            "cases": {
+                "new": "+73",
+                "active": 591,
+                "critical": 0,
+                "recovered": 164,
+                "total": 761
+            },
+            "deaths": {
+                "new": null,
+                "total": 6
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Haiti",
+            "cases": {
+                "new": "+5",
+                "active": 56,
+                "critical": 0,
+                "recovered": 2,
+                "total": 62
+            },
+            "deaths": {
+                "new": "+1",
+                "total": 4
+            },
+            "tests": {
+                "total": 642
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Isle-of-Man",
+            "cases": {
+                "new": null,
+                "active": 80,
+                "critical": 20,
+                "recovered": 212,
+                "total": 307
+            },
+            "deaths": {
+                "new": "+6",
+                "total": 15
+            },
+            "tests": {
+                "total": 2654
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Mauritania",
+            "cases": {
+                "new": null,
+                "active": 0,
+                "critical": 0,
+                "recovered": 6,
+                "total": 7
+            },
+            "deaths": {
+                "new": null,
+                "total": 1
+            },
+            "tests": {
+                "total": 969
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Nicaragua",
+            "cases": {
+                "new": null,
+                "active": 1,
+                "critical": 0,
+                "recovered": 7,
+                "total": 10
+            },
+            "deaths": {
+                "new": null,
+                "total": 2
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Saint-Lucia",
+            "cases": {
+                "new": null,
+                "active": 0,
+                "critical": 0,
+                "recovered": 15,
+                "total": 15
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": 364
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Zambia",
+            "cases": {
+                "new": "+4",
+                "active": 36,
+                "critical": 1,
+                "recovered": 35,
+                "total": 74
+            },
+            "deaths": {
+                "new": null,
+                "total": 3
+            },
+            "tests": {
+                "total": 2586
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Nepal",
+            "cases": {
+                "new": "+3",
+                "active": 41,
+                "critical": 0,
+                "recovered": 7,
+                "total": 48
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": 8773
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Antigua-and-Barbuda",
+            "cases": {
+                "new": "+1",
+                "active": 11,
+                "critical": 1,
+                "recovered": 10,
+                "total": 24
+            },
+            "deaths": {
+                "new": null,
+                "total": 3
+            },
+            "tests": {
+                "total": 108
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Chad",
+            "cases": {
+                "new": "+6",
+                "active": 25,
+                "critical": 0,
+                "recovered": 8,
+                "total": 33
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Djibouti",
+            "cases": {
+                "new": "+29",
+                "active": 789,
+                "critical": 0,
+                "recovered": 183,
+                "total": 974
+            },
+            "deaths": {
+                "new": null,
+                "total": 2
+            },
+            "tests": {
+                "total": 10272
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Eritrea",
+            "cases": {
+                "new": null,
+                "active": 33,
+                "critical": 0,
+                "recovered": 6,
+                "total": 39
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Gambia",
+            "cases": {
+                "new": "+1",
+                "active": 7,
+                "critical": 0,
+                "recovered": 2,
+                "total": 10
+            },
+            "deaths": {
+                "new": null,
+                "total": 1
+            },
+            "tests": {
+                "total": 316
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Vatican-City",
+            "cases": {
+                "new": "+1",
+                "active": 7,
+                "critical": 0,
+                "recovered": 2,
+                "total": 9
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Montserrat",
+            "cases": {
+                "new": null,
+                "active": 9,
+                "critical": 1,
+                "recovered": 2,
+                "total": 11
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": 36
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Niger",
+            "cases": {
+                "new": "+5",
+                "active": 447,
+                "critical": 0,
+                "recovered": 193,
+                "total": 662
+            },
+            "deaths": {
+                "new": "+2",
+                "total": 22
+            },
+            "tests": {
+                "total": 4832
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Papua-New-Guinea",
+            "cases": {
+                "new": "+1",
+                "active": 8,
+                "critical": 0,
+                "recovered": 0,
+                "total": 8
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": 604
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "St-Vincent-Grenadines",
+            "cases": {
+                "new": "+1",
+                "active": 10,
+                "critical": 0,
+                "recovered": 3,
+                "total": 13
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": 99
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Sint-Maarten",
+            "cases": {
+                "new": "+2",
+                "active": 39,
+                "critical": 8,
+                "recovered": 22,
+                "total": 73
+            },
+            "deaths": {
+                "new": "+1",
+                "total": 12
+            },
+            "tests": {
+                "total": 266
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Somalia",
+            "cases": {
+                "new": "+49",
+                "active": 274,
+                "critical": 2,
+                "recovered": 4,
+                "total": 286
+            },
+            "deaths": {
+                "new": null,
+                "total": 8
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Eswatini",
+            "cases": {
+                "new": "+7",
+                "active": 22,
+                "critical": 0,
+                "recovered": 8,
+                "total": 31
+            },
+            "deaths": {
+                "new": null,
+                "total": 1
+            },
+            "tests": {
+                "total": 714
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Timor-Leste",
+            "cases": {
+                "new": "+1",
+                "active": 22,
+                "critical": 0,
+                "recovered": 1,
+                "total": 23
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": 322
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Uganda",
+            "cases": {
+                "new": null,
+                "active": 17,
+                "critical": 0,
+                "recovered": 46,
+                "total": 63
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": 16057
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "All",
+            "cases": {
+                "new": "+3406",
+                "active": 1732567,
+                "critical": 58253,
+                "recovered": 722290,
+                "total": 2639122
+            },
+            "deaths": {
+                "new": "+199",
+                "total": 184265
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Mozambique",
+            "cases": {
+                "new": "+2",
+                "active": 33,
+                "critical": 0,
+                "recovered": 8,
+                "total": 41
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": 1247
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Syria",
+            "cases": {
+                "new": "+3",
+                "active": 33,
+                "critical": 0,
+                "recovered": 6,
+                "total": 42
+            },
+            "deaths": {
+                "new": null,
+                "total": 3
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Grenada",
+            "cases": {
+                "new": "+1",
+                "active": 9,
+                "critical": 4,
+                "recovered": 6,
+                "total": 15
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": 92
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Dominica",
+            "cases": {
+                "new": null,
+                "active": 7,
+                "critical": 0,
+                "recovered": 9,
+                "total": 16
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": 377
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Turks-and-Caicos",
+            "cases": {
+                "new": null,
+                "active": 6,
+                "critical": 0,
+                "recovered": 4,
+                "total": 11
+            },
+            "deaths": {
+                "new": null,
+                "total": 1
+            },
+            "tests": {
+                "total": 83
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Belize",
+            "cases": {
+                "new": null,
+                "active": 11,
+                "critical": 1,
+                "recovered": 5,
+                "total": 18
+            },
+            "deaths": {
+                "new": null,
+                "total": 2
+            },
+            "tests": {
+                "total": 816
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Myanmar",
+            "cases": {
+                "new": "+4",
+                "active": 113,
+                "critical": 0,
+                "recovered": 9,
+                "total": 127
+            },
+            "deaths": {
+                "new": null,
+                "total": 5
+            },
+            "tests": {
+                "total": 5270
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Laos",
+            "cases": {
+                "new": null,
+                "active": 15,
+                "critical": 0,
+                "recovered": 4,
+                "total": 19
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": 1461
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Libya",
+            "cases": {
+                "new": "+1",
+                "active": 44,
+                "critical": 0,
+                "recovered": 15,
+                "total": 60
+            },
+            "deaths": {
+                "new": null,
+                "total": 1
+            },
+            "tests": {
+                "total": 1181
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Mali",
+            "cases": {
+                "new": "+35",
+                "active": 203,
+                "critical": 0,
+                "recovered": 73,
+                "total": 293
+            },
+            "deaths": {
+                "new": "+3",
+                "total": 17
+            },
+            "tests": {
+                "total": 2023
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Guinea-Bissau",
+            "cases": {
+                "new": "+4",
+                "active": 47,
+                "critical": 0,
+                "recovered": 3,
+                "total": 50
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": 1500
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "British-Virgin-Islands",
+            "cases": {
+                "new": "+1",
+                "active": 1,
+                "critical": 0,
+                "recovered": 3,
+                "total": 5
+            },
+            "deaths": {
+                "new": null,
+                "total": 1
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Saint-Kitts-and-Nevis",
+            "cases": {
+                "new": null,
+                "active": 14,
+                "critical": 0,
+                "recovered": 1,
+                "total": 15
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": 257
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Anguilla",
+            "cases": {
+                "new": null,
+                "active": 2,
+                "critical": 0,
+                "recovered": 1,
+                "total": 3
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "MS-Zaandam-",
+            "cases": {
+                "new": "+7",
+                "active": 7,
+                "critical": 0,
+                "recovered": 0,
+                "total": 9
+            },
+            "deaths": {
+                "new": "+2",
+                "total": 2
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-09",
+            "time": "2020-04-09T15:45:06+00:00"
+        }, {
+            "country": "MS-Zaandam",
+            "cases": {
+                "new": null,
+                "active": 7,
+                "critical": 0,
+                "recovered": 0,
+                "total": 9
+            },
+            "deaths": {
+                "new": null,
+                "total": 2
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Botswana",
+            "cases": {
+                "new": "+2",
+                "active": 21,
+                "critical": 0,
+                "recovered": 0,
+                "total": 22
+            },
+            "deaths": {
+                "new": null,
+                "total": 1
+            },
+            "tests": {
+                "total": 4432
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Sierra-Leone",
+            "cases": {
+                "new": "+11",
+                "active": 55,
+                "critical": 0,
+                "recovered": 6,
+                "total": 61
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Burundi",
+            "cases": {
+                "new": "+6",
+                "active": 6,
+                "critical": 0,
+                "recovered": 4,
+                "total": 11
+            },
+            "deaths": {
+                "new": null,
+                "total": 1
+            },
+            "tests": {
+                "total": 284
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Caribbean-Netherlands",
+            "cases": {
+                "new": "+2",
+                "active": 5,
+                "critical": 0,
+                "recovered": 0,
+                "total": 5
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": 110
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Malawi",
+            "cases": {
+                "new": "+5",
+                "active": 17,
+                "critical": 1,
+                "recovered": 3,
+                "total": 23
+            },
+            "deaths": {
+                "new": "+1",
+                "total": 3
+            },
+            "tests": {
+                "total": 519
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Falkland-Islands",
+            "cases": {
+                "new": null,
+                "active": 8,
+                "critical": 0,
+                "recovered": 3,
+                "total": 11
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": 319
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Western-Sahara",
+            "cases": {
+                "new": null,
+                "active": 1,
+                "critical": 0,
+                "recovered": 5,
+                "total": 6
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "South-Sudan",
+            "cases": {
+                "new": "+1",
+                "active": 4,
+                "critical": 0,
+                "recovered": 0,
+                "total": 4
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Saint-Pierre-Miquelon",
+            "cases": {
+                "new": "+1",
+                "active": 1,
+                "critical": 0,
+                "recovered": 0,
+                "total": 1
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Sao-Tome-and-Principe",
+            "cases": {
+                "new": "+4",
+                "active": 4,
+                "critical": 0,
+                "recovered": 0,
+                "total": 4
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": 19
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "North-America",
+            "cases": {
+                "new": "+1626",
+                "active": 760663,
+                "critical": 15280,
+                "recovered": 102643,
+                "total": 914537
+            },
+            "deaths": {
+                "new": "+143",
+                "total": 51231
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Europe",
+            "cases": {
+                "new": "+203",
+                "active": 692420,
+                "critical": 27089,
+                "recovered": 364850,
+                "total": 1168487
+            },
+            "deaths": {
+                "new": "+15",
+                "total": 111217
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Asia",
+            "cases": {
+                "new": "+1053",
+                "active": 208218,
+                "critical": 6157,
+                "recovered": 199251,
+                "total": 423340
+            },
+            "deaths": {
+                "new": "+17",
+                "total": 15871
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "South-America",
+            "cases": {
+                "new": "+488",
+                "active": 51151,
+                "critical": 9499,
+                "recovered": 41402,
+                "total": 97149
+            },
+            "deaths": {
+                "new": "+21",
+                "total": 4596
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Oceania",
+            "cases": {
+                "new": "+14",
+                "active": 1954,
+                "critical": 50,
+                "recovered": 6167,
+                "total": 8212
+            },
+            "deaths": {
+                "new": "+3",
+                "total": 91
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Africa",
+            "cases": {
+                "new": "+22",
+                "active": 18100,
+                "critical": 174,
+                "recovered": 7332,
+                "total": 26676
+            },
+            "deaths": {
+                "new": null,
+                "total": 1244
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Diamond-Princess",
+            "cases": {
+                "new": null,
+                "active": 54,
+                "critical": 4,
+                "recovered": 645,
+                "total": 712
+            },
+            "deaths": {
+                "new": null,
+                "total": 13
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }, {
+            "country": "Yemen",
+            "cases": {
+                "new": "+1",
+                "active": 1,
+                "critical": 0,
+                "recovered": 0,
+                "total": 1
+            },
+            "deaths": {
+                "new": null,
+                "total": 0
+            },
+            "tests": {
+                "total": null
+            },
+            "day": "2020-04-23",
+            "time": "2020-04-23T06:30:05+00:00"
+        }]
+    }
+    
 }
 
 

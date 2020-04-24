@@ -16,7 +16,7 @@ class GenerateGraphComponent extends React.Component {
 
     componentDidMount() {
         this.setMaxYaxis();
-        setTimeout(this.generateGraph(), 2000)
+        setTimeout(() => this.generateGraph(), 1000)
         window.addEventListener('resize', this.screenChanged)
     }
 
@@ -43,8 +43,6 @@ class GenerateGraphComponent extends React.Component {
 
     }
 
-
-
     componentDidUpdate(prevProps) {
 
         console.log(this.props.graphType, 'graphType');
@@ -56,31 +54,25 @@ class GenerateGraphComponent extends React.Component {
             prevProps.yAxisLabel !== this.props.yAxisLabel ||
             prevProps.sortType !== this.props.sortType
         ) {
-            // this.removeGraph()
+            // this.removeLineGraph();
+            setTimeout(() => this.generateGraph(), 1000)
         }
         if (prevProps.graphData !== this.props.graphData) {
             console.log(this.props.graphData, 'this.state.chart')
-
             this.setMaxYaxis();
-
-            if (this.props.graphType === 'pie')
-                setTimeout(() => this.generatePieChart(), 0)
-            else
-                setTimeout(() => this.generateGraph(), 0)
-
+            this.removeLineGraph();
+            setTimeout(() => this.generateGraph(), 1500)
         }
         if (prevProps.graphType !== this.props.graphType) {
             this.setMaxYaxis();
-            if (this.props.graphType === 'pie' || this.props.graphType === 'doughnut')
-                setTimeout(() => this.generatePieChart(), 0)
-            else
-                setTimeout(() => this.generateGraph(), 0)
+            setTimeout(() => this.generateGraph(), 0)
         }
     }
 
-    removeGraph = () => {
+    removeLineGraph = () => {
         var parent = document.getElementById('resultsGraph');
         var child = document.getElementById('canvas');
+        if(child)
         parent.removeChild(child);
         parent.innerHTML = '<canvas id="canvas" width="350px" height="99px" ></canvas>';
     }
@@ -146,6 +138,15 @@ class GenerateGraphComponent extends React.Component {
                         gridLines: {
                             color: 'rgba(200, 200, 200, 0.05)',
                             lineWidth: 1
+                        },
+                        ticks: {
+                            callback: function(tick) {
+                                var characterLimit = 10;
+                                if (tick.length >= characterLimit) {
+                                    return tick.slice(0, tick.length).substring(0, characterLimit - 1).trim() + '...';
+                                }
+                                return tick;
+                            }
                         }
                     }],
                     yAxes: [{
@@ -186,80 +187,11 @@ class GenerateGraphComponent extends React.Component {
         this.setState({ chart: chart })
     }
 
-    randomColor = () => {
-        let color = 'rgb(' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ')';
-
-        return color;
-    }
-
-    generatePieChart = () => {
-        let xlabelData = (this.props.graphData) ? this.props.graphData.map(e => e[this.props.xAxisLabel]).slice(0, 30) : [1, 2, 3];
-        let ylabelData = (this.props.graphData) ? this.props.graphData.map(e => e[this.props.yAxisLabel]).slice(0, 30) : [1, 1, 1];
-        let colors = [];
-
-        if (ylabelData) {
-            for (let i = 0; i < ylabelData.length; i++)
-                colors.push(this.randomColor())
-        }
-
-        console.log(colors, 'colors')
-
-        var canvas = document.getElementById("pieChart");
-        if (canvas)
-            var ctx = canvas.getContext('2d');
-
-        // Chart.defaults.global.defaultFontColor = 'red';
-        // Chart.defaults.global.defaultFontSize = 16;
-
-        var data = {
-            labels: xlabelData,
-            datasets: [
-                {
-                    fill: true,
-                    backgroundColor: colors,
-                    data: ylabelData,
-                    borderColor: colors,
-                    borderWidth: [2, 2]
-                }
-            ]
-        };
-
-        var options = {
-            responsive: true,
-            maintainAspectRatio: true,
-            animation: {
-                easing: 'easeInOutQuad',
-                duration: 520
-            },
-            title: {
-                display: true,
-                position: 'top'
-            },
-            rotation: -0.7 * Math.PI
-        };
-
-
-        if (window.myPieChart != undefined) {
-            window.myPieChart.destroy()
-        }
-
-        window.myPieChart = new Chart(ctx, {
-            type: this.props.graphType,
-            data: data,
-            options: options
-        });
-
-
-    }
-
-
     render() {
         return (
             <div id="resultsGraph">
-                {(this.props.graphType === 'line' || this.props.graphType === 'bar') ?
-                    <canvas id="canvas" width="300" height="300"></canvas>
-                    :
-                    <canvas id="pieChart" width="300" height="300"></canvas>
+                {
+                <canvas id="canvas" width="300" height="300"></canvas>
                 }
             </div>
         )

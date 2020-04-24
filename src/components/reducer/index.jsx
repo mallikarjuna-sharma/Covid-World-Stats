@@ -8,7 +8,7 @@ let defaultState = {
     getindiageojson: stringConstants.INDIA_STATE,
     getCountryjson: stringConstants.US_STATE,
     selectedState: false,
-    getWorldStats: false,
+    getWorldStats:  stringConstants.WORLD_STATS,
     xAxisLabel:'state',
     yAxisLabel:'confirmed'
 }
