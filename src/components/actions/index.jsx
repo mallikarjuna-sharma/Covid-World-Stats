@@ -121,7 +121,6 @@ export function setXaxisLabel(xAxisLabel) {
 
 
 export function setYaxisLabel(yAxisLabel) {
-    console.log(yAxisLabel)
     const action = {
         type: stringConstants.Y_LABEL,
         yAxisLabel

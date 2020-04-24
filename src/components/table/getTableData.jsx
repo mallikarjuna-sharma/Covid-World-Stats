@@ -17,17 +17,19 @@ function getIndiaDistrictjson(apiResponse, statename) {
                 })
             }
         }
-
         else {
-            if (values.DistrictReport && statename == values.state) {
-                values.DistrictReport.map(dist => {
-                    arr.push(createData(dist.District, dist.confirmed))
-                })
-            }
-
+            if (statename == values.state)
+                if (values.DistrictReport) {
+                    values.DistrictReport.map(dist => {
+                        arr.push(createData(dist.District, dist.confirmed))
+                    })
+                }
+                else {
+                    arr.push(createData(values.state, values.confirmed))
+                }
         }
-
     })
+    console.log(arr, 'stateRecords');
     return arr;
 }
 

@@ -209,7 +209,7 @@ export default function GenerateTableComponent(props) {
           </Table>
         </TableContainer>
 
-        {tableData && <TableRow>
+        {tableData && tableData.length > 10 && <TableRow>
           <TablePagination
             rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
             colSpan={9}

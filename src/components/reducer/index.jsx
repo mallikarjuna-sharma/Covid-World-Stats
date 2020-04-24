@@ -4,7 +4,7 @@ let defaultState = {
     num: 0,
     graphType: "line",
     sortType: 'india_state',
-    getIndiaDistrictjson: [stringConstants.INDIA_STATE],
+    getIndiaDistrictjson: stringConstants.INDIA_DIST,
     getindiageojson: stringConstants.INDIA_STATE,
     getCountryjson: stringConstants.US_STATE,
     selectedState: false,
