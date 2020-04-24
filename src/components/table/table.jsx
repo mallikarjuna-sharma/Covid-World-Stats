@@ -16,7 +16,25 @@ import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import LastPageIcon from '@material-ui/icons/LastPage';
 import TableSortLabel from '@material-ui/core/TableSortLabel';
 
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+
 export default function GenerateTableComponent(props) {
+
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const prefersLightMode = useMediaQuery('(prefers-color-scheme: light)');
+
+  const change = 0;
+
+  const theme = React.useMemo(
+    () =>
+      createMuiTheme({
+        palette: {
+          type: change ? 'dark' : 'light',
+        },
+      }),
+    [prefersDarkMode],
+  );
 
   const [order, setOrder] = React.useState('asc');
   const [orderBy, setOrderBy] = React.useState('state');
@@ -80,11 +98,6 @@ export default function GenerateTableComponent(props) {
     );
   }
 
-  function createData(state, confirmed, recovered, deaths, active) {
-    return { state, confirmed, recovered, deaths, active };
-  }
-
-
 
 
   const useStyles = makeStyles({
@@ -119,13 +132,13 @@ export default function GenerateTableComponent(props) {
     }
     return 0;
   }
-  
+
   function getComparator(order, orderBy) {
     return order === 'desc'
       ? (a, b) => descendingComparator(a, b, orderBy)
       : (a, b) => -descendingComparator(a, b, orderBy);
   }
-  
+
   function stableSort(array, comparator) {
     const stabilizedThis = array.map((el, index) => [el, index]);
     stabilizedThis.sort((a, b) => {
@@ -144,73 +157,77 @@ export default function GenerateTableComponent(props) {
 
 
   return (
-    <Paper className={classes.root}>
-      <TableContainer className={classes.container}>
-        <Table stickyHeader aria-label="sticky table"  >
-          <TableHead>
-            <TableRow>
-              {columns && columns.map((column) => (
-                <TableCell
-                  key={column.id}
-                  align={column.align}
-                  style={{ minWidth: column.minWidth }}
-                  sortDirection={orderBy === column.id ? order : false}
-                >
+    <ThemeProvider theme={theme}>
+      <Paper className={classes.root}>
+
+        <TableContainer className={classes.container}>
+          <Table stickyHeader aria-label="sticky table"  >
+            <TableHead>
+              <TableRow>
+                {columns && columns.map((column, index) => (
+                  <TableCell
+                    key={index}
+                    align={column.align}
+                    style={{ minWidth: column.minWidth }}
+                    sortDirection={orderBy === column.id ? order : false}
+                  >
                     <TableSortLabel
-              active={orderBy === column.id}
-              direction={orderBy === column.id ? order : 'asc'}
-              onClick={e => createSortHandler(e,column.id)}
-            >
-                    {column.label}
-              {orderBy === column.id ? (
-                <span className={classes.visuallyHidden}>
-                  {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
-                </span>
-              ) : null}
-            </TableSortLabel>
-                </TableCell>
-              ))}
-            </TableRow>
-          </TableHead>
-          {tableData && <TableBody>
-            {
-            stableSort(tableData, getComparator(order, orderBy))
-            .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
-              return (
-                <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
-                  {columns.map((column) => {
-                    const value = row[column.id];
+                      key={index}
+                      active={orderBy === column.id}
+                      direction={orderBy === column.id ? order : 'asc'}
+                      onClick={e => createSortHandler(e, column.id)}
+                    >
+                      {column.label}
+                      {orderBy === column.id ? (
+                        <span className={classes.visuallyHidden}>
+                          {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
+                        </span>
+                      ) : null}
+                    </TableSortLabel>
+                  </TableCell>
+                ))}
+              </TableRow>
+            </TableHead>
+            {tableData && <TableBody>
+              {
+                stableSort(tableData, getComparator(order, orderBy))
+                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row, rowindex) => {
                     return (
-                      <TableCell key={column.id} align={column.align}>
-                        {column.format && typeof value === 'number' ? column.format(value) : value}
-                      </TableCell>
+                      <TableRow hover role="checkbox" tabIndex={-1} key={rowindex}>
+                        {columns.map((column, index) => {
+                          const value = row[column.id];
+                          return (
+                            <TableCell key={index} align={column.align}>
+                              {column.format && typeof value === 'number' ? column.format(value) : value}
+                            </TableCell>
+                          );
+                        })}
+                      </TableRow>
                     );
                   })}
-                </TableRow>
-              );
-            })}
-          </TableBody>}
-        </Table>
-      </TableContainer>
+            </TableBody>}
+          </Table>
+        </TableContainer>
 
-      {tableData && <TableRow>
-        <TablePagination
-          rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
-          colSpan={9}
-          count={tableData.length}
-          rowsPerPage={rowsPerPage}
-          page={page}
-          SelectProps={{
-            inputProps: { 'aria-label': 'rows per page' },
-            native: true,
-          }}
-          align="right"
-          onChangePage={handleChangePage}
-          onChangeRowsPerPage={handleChangeRowsPerPage}
-          ActionsComponent={TablePaginationActions}
-        />
-      </TableRow>}
-    </Paper>
+        {tableData && <TableRow>
+          <TablePagination
+            rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
+            colSpan={9}
+            count={tableData.length}
+            rowsPerPage={rowsPerPage}
+            page={page}
+            SelectProps={{
+              inputProps: { 'aria-label': 'rows per page' },
+              native: true,
+            }}
+            align="right"
+            onChangePage={handleChangePage}
+            onChangeRowsPerPage={handleChangeRowsPerPage}
+            ActionsComponent={TablePaginationActions}
+          />
+        </TableRow>}
+      </Paper>
+    </ThemeProvider>
   );
 
 

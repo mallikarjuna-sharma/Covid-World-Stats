@@ -6,7 +6,8 @@ import { bindActionCreators } from 'redux';
 import {
     getgraphTypeAction, getSortTypes,
     loadIndiaGeojson, loadCountryjson, loadIndiaDistrictjson,
-    setSelectedState
+    setSelectedState, loadWorldStats, setXaxisLabel,
+    setYaxisLabel
 } from './actions/index.jsx'
 import {
     Grid, NativeSelect, FormControl,
@@ -19,6 +20,7 @@ import getTableData from './table/getTableData.jsx'
 import SearchIndiaStates from '../components/search-select/SearchIndiaStates.jsx'
 import getGroupedData from '../components/search-select/getGroupedData.jsx'
 import SearchCountry from '../components/search-select/SearchCountry.jsx'
+import { getXaxisLabels, getYaxisLabels } from '../components/graph/getAxisLabels.jsx'
 
 
 class Dashboard extends React.Component {
@@ -30,23 +32,41 @@ class Dashboard extends React.Component {
 
     toggleGraphType = (e, type) => {
 
-        if (type !== 'content') {
+        if (type === 'graph') {
             this.props.getgraphTypeAction(e.target.value)
         }
-        else {
-
+        else if (type === 'content') {
             this.props.getSortTypes(e.target.value);
-
             switch (e.target.value) {
-                case 'india_district':
+                case 'india_district': {
+                    this.props.setXaxisLabel('district');
+                    this.props.setYaxisLabel('confirmed')
                     return this.props.loadIndiaDistrictjson();
-                case 'india_state':
+                }
+                case 'india_state': {
+                    this.props.setXaxisLabel('state');
+                    this.props.setYaxisLabel('confirmed')
                     return this.props.loadIndiaGeojson();
-                case 'world_country':
+                }
+                case 'world_country': {
+                    this.props.setXaxisLabel('city');
+                    this.props.setYaxisLabel('confirmed')
                     return this.props.loadCountryjson();
+                }
+                case 'world_stats': {
+                    this.props.setXaxisLabel('country');
+                    this.props.setYaxisLabel('newcases')
+                    return this.props.loadWorldStats();
+                }
                 default:
                     return 0;
             }
+        }
+        else if (type === 'xlabel') {
+            this.props.setXaxisLabel(e.target.value)
+        }
+        else if (type === 'ylabel') {
+            this.props.setYaxisLabel(e.target.value)
         }
     }
 
@@ -59,6 +79,8 @@ class Dashboard extends React.Component {
                 return stringConstants.INDIA_GEO_JSON_COLUMNS;
             case 'world_country':
                 return stringConstants.WORLD_JSON_COLUMNS;
+            case 'world_stats':
+                return stringConstants.WORLD_COUNTRY_STATS_COLUMNS;
             default:
                 return null
         }
@@ -74,6 +96,8 @@ class Dashboard extends React.Component {
                 return this.props.getindiageojson;
             case 'world_country':
                 return this.props.getCountryjson;
+            case 'world_stats':
+                return this.props.getWorldStats;
             default:
                 return 0;
         }
@@ -81,7 +105,6 @@ class Dashboard extends React.Component {
 
     selectedState_Country = (selectedItem) => {
 
-        console.log(selectedItem, "selectedItem");
         this.props.setSelectedState(selectedItem)
 
         if (this.props.sortType === 'world_country')
@@ -93,25 +116,6 @@ class Dashboard extends React.Component {
         const { classes } = this.props;
         return (
             <Grid >
-
-                <FormControl className={classes.formControl}>
-                    <InputLabel htmlFor="uncontrolled-native">Graph Type</InputLabel>
-                    <NativeSelect
-                        defaultValue={'line'}
-                        onChange={e => this.toggleGraphType(e, 'graph')}
-                        inputProps={{
-                            name: 'name',
-                            id: 'uncontrolled-native',
-                        }}
-                    >
-
-                        {stringConstants.GRAPHTYPES.map((e, index) => {
-                            return <option value={e.value} key={index}  >{e.label}</option>
-                        })}
-
-                    </NativeSelect>
-                </FormControl>
-
 
                 <FormControl className={classes.formControl}>
                     <InputLabel htmlFor="uncontrolled-native">Select Type</InputLabel>
@@ -149,20 +153,87 @@ class Dashboard extends React.Component {
                 }
 
                 <Grid>
-                    {(this.props.sortType || this.props.selectedState) && <GenerateTableComponent
-                        columns={this.getColForTable()}
-                        tableData={
-                            getTableData(
-                                this.props.sortType,
-                                this.getApiData_Table(),
-                                this.props.selectedState)
-                        }
-                        {...this.state} />}
+                    {(this.props.sortType || this.props.selectedState) &&
+                        <GenerateTableComponent
+                            columns={this.getColForTable()}
+                            tableData={
+                                getTableData(
+                                    this.props.sortType,
+                                    this.getApiData_Table(),
+                                    this.props.selectedState)
+                            }
+                            {...this.state} />}
                 </Grid>
 
                 <Grid>
+
+                    <Grid container>
+
+                        <Grid md={4} xs={4} item>
+
+                            <FormControl className={classes.formControl}>
+                                <InputLabel htmlFor="uncontrolled-native">X Axis</InputLabel>
+                                <NativeSelect
+                                    defaultValue={'line'}
+                                    onChange={(e) => this.toggleGraphType(e, 'xlabel')}
+                                    inputProps={{
+                                        name: 'name',
+                                        id: 'uncontrolled-native',
+                                    }}
+                                >
+                                    {getXaxisLabels(this.props.sortType).map((e, index) => {
+                                        return <option value={e.value} key={index}>{e.label}</option>
+                                    })}
+                                </NativeSelect>
+                            </FormControl>
+                        </Grid>
+                        <Grid md={4} xs={4} item>
+
+                            <FormControl className={classes.formControl}>
+                                <InputLabel htmlFor="uncontrolled-native"> Y Axis </InputLabel>
+                                <NativeSelect
+                                    defaultValue={'line'}
+                                    onChange={(e) => this.toggleGraphType(e, 'ylabel')}
+                                    inputProps={{
+                                        name: 'name',
+                                        id: 'uncontrolled-native',
+                                    }}
+                                >
+                                    {getYaxisLabels(this.props.sortType).map((e, index) => {
+                                        return <option value={e.value} key={index} >{e.label}</option>
+                                    })}
+                                </NativeSelect>
+                            </FormControl>
+
+                        </Grid>
+
+                        <Grid md={4} xs={4} item>
+
+                            <FormControl className={classes.formControl}>
+                                <InputLabel htmlFor="uncontrolled-native"> Graph Type </InputLabel>
+                                <NativeSelect
+                                    defaultValue={'line'}
+                                    onChange={e => this.toggleGraphType(e, 'graph')}
+                                    inputProps={{
+                                        name: 'name',
+                                        id: 'uncontrolled-native',
+                                    }}
+                                >
+                                    {stringConstants.GRAPHTYPES.map((e, index) => {
+                                        return <option value={e.value} key={index}  >{e.label}</option>
+                                    })}
+                                </NativeSelect>
+                            </FormControl>
+
+                        </Grid>
+                    </Grid>
+
                     <GenerateGraphComponent
-                        {...this.state}
+                        graphData={getTableData(
+                            this.props.sortType,
+                            this.getApiData_Table(),
+                            this.props.selectedState)
+                        }
                     />
                 </Grid>
 
@@ -177,7 +248,10 @@ function mapStateToProps(state) {
         getIndiaDistrictjson: state.getIndiaDistrictjson,
         getCountryjson: state.getCountryjson,
         sortType: state.sortType,
-        selectedState: state.selectedState
+        selectedState: state.selectedState,
+        getWorldStats: state.getWorldStats,
+        xAxisLabel: state.xAxisLabel,
+        yAxisLabel: state.yAxisLabel,
     }
 }
 
@@ -185,8 +259,10 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         getgraphTypeAction, getSortTypes,
         loadIndiaGeojson, loadCountryjson, loadIndiaDistrictjson,
-        setSelectedState
+        setSelectedState, loadWorldStats, setXaxisLabel, setYaxisLabel
     }, dispatch)
 }
+
+
 
 export default compose(withStyles(Styles), connect(mapStateToProps, mapDispatchToProps))(Dashboard)

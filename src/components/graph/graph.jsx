@@ -9,42 +9,137 @@ class GenerateGraphComponent extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            chart: ''
+            chart: false
         }
     }
 
     componentDidMount() {
         this.generateGraph();
+        window.addEventListener('resize', this.screenChanged)
+
     }
 
+    screenChanged = () => {
+        console.log('screenChanged');
+    }
+
+
+
     componentDidUpdate(prevProps) {
+
+        console.log(this.props.graphType, 'graphType');
+        console.log(this.props.graphData, 'graphData');
+        console.log(this.props.xAxisLabel, 'xAxisLabel');
+        console.log(this.props.yAxisLabel, 'yAxisLabel');
+
+        if (prevProps.xAxisLabel !== this.props.xAxisLabel ||
+            prevProps.yAxisLabel !== this.props.yAxisLabel ||
+            prevProps.sortType !== this.props.sortType
+        ) {
+            // this.removeGraph()
+        }
+        if (prevProps.graphData !== this.props.graphData) {
+            console.log(this.state.chart, 'this.state.chart')
+            // this.removeGraph()
+            // window.chart.update();
+            this.generateGraph()
+            // setTimeout(() =>  this.generateGraph() ,200)
+        }
         if (prevProps.graphType !== this.props.graphType) {
-            if (this.state.chart) chart.destroy();
-            this.generateGraph();
+            // this.removeGraph()
+            setTimeout(() => this.generateGraph(), 0)
         }
     }
 
+    removeGraph = () => {
+        var parent = document.getElementById('resultsGraph');
+        var child = document.getElementById('canvas');
+        parent.removeChild(child);
+        parent.innerHTML = '<canvas id="canvas" width="350px" height="99px" ></canvas>';
+    }
+
+
     generateGraph = () => {
-        let canvasObj = document.getElementById('canvas').getContext('2d');
+
+        let xlabelData = (this.props.graphData) ? this.props.graphData.map(e => e[this.props.xAxisLabel]).slice(0, 30) : [1, 2, 3];
+        let ylabelData = (this.props.graphData) ? this.props.graphData.map(e => e[this.props.yAxisLabel]).slice(0, 30) : [1, 1, 1];
+
+        if (window.chart != undefined) {
+            window.chart.destroy()
+        }
+
+        let canvasObj = ''
+
+        canvasObj = document.getElementById('canvas').getContext('2d');
+        var width = window.innerWidth || document.body.clientWidth;
+        const gradient = canvasObj.createLinearGradient(0, 0, width, 0);
+        gradient.addColorStop(0, "#7C4DFF");
+        gradient.addColorStop(0.3, "#448AFF");
+        gradient.addColorStop(0.6, "#00BCD4");
+        gradient.addColorStop(1, "#1DE9B6");
 
         let chart = '';
-
-
-        if (window.chart)
-            window.chart.destroy();
 
         window.chart = new Chart(canvasObj, {
             type: this.props.graphType,
             data: {
-                labels: ["mallik", 'kedar', 'amma', 'anna', 'ganesh', "murali", 'abcs', 'jedar', 'india'],
+                labels: xlabelData,
                 datasets: [{
-                    data: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+                    data: ylabelData,
+                    backgroundColor: gradient,
+                    pointBackgroundColor: 'white',
+                    borderWidth: 1,
+                    borderColor: '#911215',
+                    lineTension: .25,
+                    aspectRatio: 1,
+                    pointHoverBorderColor: 2,
+                    showLine: true,
+                    borderColor: gradient,
+                    pointBorderWidth: 4,
+                    pointHoverRadius: 4,
+                    pointHoverBorderWidth: 1,
                 }]
             },
             options: {
                 responsive: true,
+                maintainAspectRatio: true,
+                animation: {
+                    easing: 'easeInOutQuad',
+                    duration: 520
+                },
+                scales: {
+                    xAxes: [{
+                        gridLines: {
+                            color: 'rgba(200, 200, 200, 0.05)',
+                            lineWidth: 1
+                        }
+                    }],
+                    yAxes: [{
+                        gridLines: {
+                            color: 'rgba(200, 200, 200, 0.08)',
+                            lineWidth: 1
+                        }
+                    }]
+                },
+                elements: {
+                    line: {
+                        tension: 0.4
+                    }
+                },
                 legend: {
                     display: false
+                },
+                point: {
+                    backgroundColor: 'white'
+                },
+                tooltips: {
+                    titleFontFamily: 'Open Sans',
+                    backgroundColor: 'rgba(0,0,0,0.3)',
+                    titleFontColor: 'red',
+                    caretSize: 5,
+                    cornerRadius: 2,
+                    xPadding: 10,
+                    yPadding: 10
                 }
             }
         });
@@ -53,11 +148,10 @@ class GenerateGraphComponent extends React.Component {
     }
 
 
-
     render() {
         return (
-            <div>
-                <canvas id="canvas" > </canvas>
+            <div id="resultsGraph">
+                <canvas id="canvas" width="300" height="300"></canvas>
             </div>
         )
     }
@@ -67,9 +161,10 @@ class GenerateGraphComponent extends React.Component {
 function mapStateToProps(state) {
     console.log('stateingraph', state)
     return {
-        num: state.num,
+        sortType: state.sortType,
         graphType: state.graphType,
-        searchedText: state.searchedText,
+        xAxisLabel: state.xAxisLabel,
+        yAxisLabel: state.yAxisLabel,
     }
 }
 

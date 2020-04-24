@@ -11,11 +11,39 @@ const stringConstants = {
     ],
     GETGRAPHTYPE: 'GETGRAPHTYPE',
     SORT_TYPES: [
-        { value: 'india_state', label: ' states in india' },
-        { value: 'india_district', label: 'districts in india' },
-        { value: 'world_country', label: 'countries in world' },
+        { value: 'india_state', label: ' States in India' },
+        { value: 'india_district', label: 'Districts in India' },
+        { value: 'world_country', label: 'Countries in World' },
+        { value: 'world_stats', label: 'Get Stats for World Countries' },
     ],
     SORT_TYPES_ACTION: 'SORT_TYPES',
+
+    X_AXIS_LABELS_INDIA_DISTRICT:[ { value: 'district', label: 'Districts India'}],
+    X_AXIS_LABELS_INDIA_STATE:[ { value: 'state', label: 'States India' } ],
+    X_AXIS_LABELS_WORLD_COUNTRY:[{ value: 'cities', label: 'Cities from selected Countries' } ],
+    X_AXIS_LABELS_WORLD_STATS:[{ value: 'countries', label: 'Countries' }],
+
+    Y_AYIS_LABELS_INDIA_DISTRICT:[{ value: 'confirmed', label: 'Confirmed'}],
+    Y_AYIS_LABELS_INDIA_STATE:[
+        { value: 'confirmed', label: 'Confirmed'},
+        { value: 'recovered', label: 'Recovered'},
+        { value: 'deaths', label: 'Deaths'},
+        { value: 'active', label: 'Active'},
+    ],
+    Y_AYIS_LABELS_WORLD_COUNTRY:[
+        { value: 'confirmed', label: 'Confirmed'},
+        { value: 'recovered', label: 'Recovered'},
+        { value: 'deaths', label: 'Deaths'}],
+    Y_AXIS_LABELS_WORLD_STATS:[
+        { value: 'new', label: 'New'},
+        { value: 'active', label: 'Active'},
+        { value: 'critical', label: 'Critical'},
+        { value: 'recovered', label: 'Recovered'},
+        { value: 'total', label: 'Total'},
+        { value: 'deaths', label: 'Deaths'}],
+
+    X_LABEL : 'X_LABEL',
+    Y_LABEL : 'Y_LABEL',
 
     /* rapid api headers constants*/
     RAPID_API_INDIA_STATE_WISE: {
@@ -26,13 +54,16 @@ const stringConstants = {
         'X-RapidAPI-Host': 'covid-19-coronavirus-statistics.p.rapidapi.com',
         'X-RapidAPI-Key': 'd55fe518a0mshfaba210c9470cefp1be9e7jsn4ee844d0190d'
     },
-
+    RAPID_API_WORLD_COUNTRY_STATS: {
+    "x-rapidapi-host": "covid-193.p.rapidapi.com",
+	"x-rapidapi-key": "d55fe518a0mshfaba210c9470cefp1be9e7jsn4ee844d0190d"
+    },
 
     /* api constants*/
     INDIA_STATE_WISE: 'https://covid19-data.p.rapidapi.com/india',
     INDIA_DISTRICT_WISE: 'https://covid19-data.p.rapidapi.com/in-dist',
     COUNTRY_STATE_WISE: 'https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats/?country=',
-
+    WORLD_COUNTRY_STATS_API:'https://covid-193.p.rapidapi.com/statistics',
 
 
     /* action constants*/
@@ -41,6 +72,8 @@ const stringConstants = {
     INDIA_DISTRICT_JSON_ACTION: 'INDIA_DISTRICT_JSON_ACTION',
     COUNTRYJSONACTION: 'COUNTRYJSONACTION',
     SELECTEDSTATE:'SELECTEDSTATE',
+    WORLD_COUNTRY_STATS:'WORLD_COUNTRY_STATS',
+
 
     /* table constants    */
 
@@ -87,6 +120,16 @@ const stringConstants = {
         { id: 'confirmed', label: 'confirmed', minWidth: "10%" },
         { id: 'deaths', label: 'deaths', minWidth: "10%" },
         { id: 'recovered', label: 'recovered', minWidth: "10%" },
+    ],
+
+    WORLD_COUNTRY_STATS_COLUMNS: [
+        { id: 'country', label: 'country', minWidth: "10%" },
+        { id: 'newcases', label: 'new', minWidth: "10%" },
+        { id: 'active', label: 'active', minWidth: "10%" },
+        { id: 'critical', label: 'critical', minWidth: "10%" },
+        { id: 'recovered', label: 'recovered', minWidth: "10%" },
+        { id: 'total', label: 'total', minWidth: "10%" },
+        { id: 'deaths', label: 'deaths', minWidth: "10%" },
     ],
 
 

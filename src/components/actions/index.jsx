@@ -37,6 +37,16 @@ export function loadIndiaDistrictjson() {
     }
 }
 
+export function loadWorldStats() {
+    return (dispatch) => {
+        return axios.get(stringConstants.WORLD_COUNTRY_STATS_API, {
+            headers: stringConstants.RAPID_API_WORLD_COUNTRY_STATS,
+        })
+            .then(res => {
+                dispatch(getWorldStats(res.data));
+            })
+    }
+}
 
 
 /* api actions */
@@ -92,3 +102,29 @@ export function setSelectedState(selectedState) {
     return action
 }
 
+
+export function getWorldStats(getWorldStats) {
+    const action = {
+        type: stringConstants.WORLD_COUNTRY_STATS,
+        getWorldStats
+    }
+    return action
+}
+
+export function setXaxisLabel(xAxisLabel) {
+    const action = {
+        type: stringConstants.X_LABEL,
+        xAxisLabel
+    }
+    return action
+}
+
+
+export function setYaxisLabel(yAxisLabel) {
+    console.log(yAxisLabel)
+    const action = {
+        type: stringConstants.Y_LABEL,
+        yAxisLabel
+    }
+    return action
+}
