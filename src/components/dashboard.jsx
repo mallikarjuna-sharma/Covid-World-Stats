@@ -8,11 +8,11 @@ import {
     getgraphTypeAction, getSortTypes,
     loadIndiaGeojson, loadCountryjson, loadIndiaDistrictjson,
     setSelectedState, loadWorldStats, setXaxisLabel,
-    setYaxisLabel,setGraphSlice
+    setYaxisLabel, setGraphSlice, setTableData, setSelectedCountry
 } from './actions/index.jsx'
 import {
     Grid, NativeSelect, FormControl,
-    InputLabel, withStyles, Button
+    InputLabel, withStyles, Button, 
 } from '@material-ui/core';
 import Styles from './styles.jsx'
 import { compose } from 'recompose'
@@ -22,6 +22,7 @@ import SearchIndiaStates from '../components/search-select/SearchIndiaStates.jsx
 import getGroupedData from '../components/search-select/getGroupedData.jsx'
 import SearchCountry from '../components/search-select/SearchCountry.jsx'
 import { getXaxisLabels, getYaxisLabels } from '../components/graph/getAxisLabels.jsx'
+import DisplayBoard from './displayBoard.jsx'
 
 
 class Dashboard extends React.Component {
@@ -88,6 +89,32 @@ class Dashboard extends React.Component {
 
     }
 
+    componentWillMount() {
+        this.props.setTableData(getTableData(
+            this.props.sortType,
+            this.getApiData_Table(),
+            this.props.selectedState,
+        ))
+    }
+
+    componentDidUpdate(prevProps) {
+        if ((prevProps.getindiageojson !== this.props.getindiageojson) ||
+            (prevProps.getIndiaDistrictjson !== this.props.getIndiaDistrictjson) ||
+            (prevProps.getCountryjson !== this.props.getCountryjson) ||
+            (prevProps.sortType !== this.props.sortType) ||
+            (prevProps.selectedState !== this.props.selectedState) ||
+            (prevProps.getWorldStats !== this.props.getWorldStats) ||
+            (prevProps.selectedCountry !== this.props.selectedCountry)) {
+            const tabData = getTableData(
+                this.props.sortType,
+                this.getApiData_Table(),
+                this.props.selectedState,
+                this.props.selectedCountry);
+                if(tabData && tabData.length ) this.props.setTableData(tabData)
+        }
+        console.log(this.props,"componentDidUpdate")
+    }
+
     getApiData_Table = () => {
 
         switch (this.props.sortType) {
@@ -105,37 +132,73 @@ class Dashboard extends React.Component {
     }
 
     selectedState_Country = (selectedItem) => {
-
-        this.props.setSelectedState(selectedItem)
-
-        if (this.props.sortType === 'world_country')
+        if (this.props.sortType === 'world_country'){
+            this.props.setSelectedCountry(selectedItem)
             this.props.loadCountryjson(selectedItem)
+        }
+        else{
+            this.props.setSelectedState(selectedItem)
+        }
     }
 
     sliceGraphData = (type) => {
-
-        if(type === 'next' ){
-
-            let arr =  getTableData(
-                this.props.sortType,
-                this.getApiData_Table(),
-                this.props.selectedState)
-
-                console.log(arr,'arr')
-
+        if (type === 'next') {
+            let arr = this.props.tableData
             let count = this.props.graphStart + 1;
-            if( !(count * 30 > arr.length) )
-            this.props.setGraphSlice(count)
-
+            if (!(count * 30 > arr.length))
+                this.props.setGraphSlice(count)
         }
-        else if(type === 'previous') {
-
+        else if (type === 'previous') {
             let count = this.props.graphStart - 1;
-            if(count >= 0)
-             this.props.setGraphSlice(count)
-        
-
+            if (count >= 0)
+                this.props.setGraphSlice(count)
         }
+    }
+
+    getHeadData = () => {
+
+        switch (this.props.sortType) {
+            case 'india_district':{
+                const tabData = getTableData(
+                    "india_state",
+                    this.props.getindiageojson,
+                    this.props.selectedState,
+                    false)
+                    console.log(tabData,"tabData")
+                    return tabData;
+            }
+            case 'india_state':{
+                const tabData = getTableData(
+                    'world_stats',
+                    this.props.getWorldStats,
+                    false,
+                    'India')
+                    return tabData;
+            }
+               
+            case 'world_country':{
+
+                const tabData = getTableData(
+                    'world_stats',
+                    this.props.getWorldStats,
+                    false,
+                    this.props.selectedCountry)
+                    return tabData;
+            }
+              
+            case 'world_stats':{
+                const tabData = getTableData(
+                    this.props.sortType,
+                    this.getApiData_Table(),
+                    false,
+                    'All')
+                    return tabData;
+            }
+            default:
+                return null
+        }
+
+      
 
     }
 
@@ -143,27 +206,14 @@ class Dashboard extends React.Component {
     render() {
         const { classes } = this.props;
         return (
-            <Grid >
+            <Grid container spacing={8} >
 
-                <FormControl className={classes.formControl}>
-                    <InputLabel htmlFor="uncontrolled-native">Select Type</InputLabel>
-                    <NativeSelect
-                        defaultValue={'line'}
-                        onChange={e => this.toggleGraphType(e, 'content')}
-                        inputProps={{
-                            name: 'name',
-                            id: 'uncontrolled-native',
-                        }}
-                    >
-                        {stringConstants.SORT_TYPES.map((e, index) => {
-                            return <option value={e.value} key={index}  >{e.label}</option>
-                        })}
-
-                    </NativeSelect>
-                </FormControl>
+                <DisplayBoard  
+                    tableData = {this.getHeadData()}
+                />
 
                 {this.props.sortType === ('india_district') &&
-                    <Grid>
+                    <Grid item md={12} xs={12} >
                         <SearchIndiaStates
                             items={getGroupedData(this.props.sortType, this.getApiData_Table())}
                             selectedState_india={(item) => this.selectedState_Country(item)}
@@ -171,8 +221,9 @@ class Dashboard extends React.Component {
                     </Grid>
                 }
 
-                {this.props.sortType === ('world_country') &&
-                    <Grid>
+                {
+                    this.props.sortType === ('world_country') &&
+                    <Grid item item md={12} xs={12} >
                         <SearchCountry
                             items={getGroupedData(this.props.sortType, this.getApiData_Table())}
                             selectedCountry={(item) => this.selectedState_Country(item)}
@@ -180,20 +231,15 @@ class Dashboard extends React.Component {
                     </Grid>
                 }
 
-                <Grid>
+                <Grid item md={12} xs={12}  >
                     {(this.props.sortType || this.props.selectedState) &&
                         <GenerateTableComponent
                             columns={this.getColForTable()}
-                            tableData={
-                                getTableData(
-                                    this.props.sortType,
-                                    this.getApiData_Table(),
-                                    this.props.selectedState)
-                            }
+                            tableData={this.props.tableData }
                             {...this.state} />}
                 </Grid>
 
-                <Grid>
+                <Grid item>
 
                     <Grid container>
 
@@ -258,7 +304,7 @@ class Dashboard extends React.Component {
                         {(this.props.graphType === 'pie' ||
                             this.props.graphType === 'doughnut') && <Grid md={4} xs={4} item>
 
-                                <Button onClick={e => { 
+                                <Button onClick={e => {
                                     if (this.props.graphType === 'pie')
                                         this.props.getgraphTypeAction('doughnut')
                                     else
@@ -269,7 +315,7 @@ class Dashboard extends React.Component {
 
                     </Grid>
                     <Grid item md={12} xs={12} >
-                        <Button onClick={e => { this.sliceGraphData('next')}}>
+                        <Button onClick={e => { this.sliceGraphData('next') }}>
                             Load more Data
                     </Button>
                         <Button onClick={e => { this.sliceGraphData('previous') }}>
@@ -279,29 +325,21 @@ class Dashboard extends React.Component {
                     {(this.props.graphType === 'pie' ||
                         this.props.graphType === 'doughnut') &&
                         <GeneratePieComponent
-                            count = {this.props.graphStart}
-                            graphData={getTableData(
-                                this.props.sortType,
-                                this.getApiData_Table(),
-                                this.props.selectedState)
-                            }
+                            count={this.props.graphStart}
+                            graphData={this.props.tableData}
                         />
                     }
                     {(this.props.graphType === 'line' ||
                         this.props.graphType === 'bar')
                         &&
                         <GenerateGraphComponent
-                            count = {this.props.graphStart}
-                            graphData={getTableData(
-                                this.props.sortType,
-                                this.getApiData_Table(),
-                                this.props.selectedState)
-                            }
+                            count={this.props.graphStart}
+                            graphData={this.props.tableData}
                         />
                     }
                 </Grid>
 
-            </Grid>
+            </Grid >
         );
     }
 }
@@ -317,7 +355,9 @@ function mapStateToProps(state) {
         xAxisLabel: state.xAxisLabel,
         yAxisLabel: state.yAxisLabel,
         graphType: state.graphType,
-        graphStart: state.graphStart
+        graphStart: state.graphStart,
+        tableData: state.tableData,
+        selectedCountry: state.selectedCountry
     }
 }
 
@@ -326,7 +366,7 @@ function mapDispatchToProps(dispatch) {
         getgraphTypeAction, getSortTypes,
         loadIndiaGeojson, loadCountryjson, loadIndiaDistrictjson,
         setSelectedState, loadWorldStats, setXaxisLabel, setYaxisLabel,
-        setGraphSlice
+        setGraphSlice, setTableData, setSelectedCountry
     }, dispatch)
 }
 

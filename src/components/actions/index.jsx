@@ -135,3 +135,21 @@ export function setGraphSlice(graphStart) {
     }
     return action
 }
+
+
+export function setTableData(tableData) {
+    const action = {
+        type: stringConstants.TABLE_DATA,
+        tableData
+    }
+    return action
+}
+
+
+export function setSelectedCountry(selectedCountry) {
+    const action = {
+        type: stringConstants.SELECTEDCOUNTRY,
+        selectedCountry
+    }
+    return action
+}

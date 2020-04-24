@@ -11,7 +11,9 @@ let defaultState = {
     getWorldStats: stringConstants.WORLD_STATS,
     xAxisLabel: 'state',
     yAxisLabel: 'confirmed',
-    graphStart: 0
+    graphStart: 0,
+    tableData: [],
+    selectedCountry: "USA"
 }
 export default function performAction(state = defaultState, action) {
     switch (action.type) {
@@ -56,6 +58,14 @@ export default function performAction(state = defaultState, action) {
         case stringConstants.GRAPH_SLICE:
             return Object.assign({}, state, {
                 graphStart: action.graphStart
+            })
+        case stringConstants.TABLE_DATA:
+            return Object.assign({}, state, {
+                tableData: action.tableData
+            })
+        case stringConstants.SELECTEDCOUNTRY:
+            return Object.assign({}, state, {
+                selectedCountry: action.selectedCountry
             })
         default:
             return state

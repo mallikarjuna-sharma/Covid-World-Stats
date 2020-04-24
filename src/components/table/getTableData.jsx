@@ -31,12 +31,12 @@ function getIndiaDistrictjson(apiResponse, statename) {
                 }
         }
     })
-    console.log(arr, 'stateRecords');
+
     return arr;
 }
 
 
-function getIndiaGeojson(apiResponse) {
+function getIndiaGeojson(apiResponse,statename) {
 
     let arr = [];
 
@@ -44,17 +44,28 @@ function getIndiaGeojson(apiResponse) {
         return { state, confirmed, recovered, deaths, active };
     }
 
+    console.log(statename,"statename")
+
+    
 
     apiResponse.map(values => {
+        if(!statename)
+
         arr.push(createData(values.state, values.confirmed,
             values.recovered, values.deaths, values.active))
+
+        else if(statename && statename===values.state)
+        
+            arr.push(createData(values.state, values.confirmed,
+            values.recovered, values.deaths, values.active))
     })
+
 
     return arr;
 }
 
 
-function getCountryjson(apiResponse) {
+function getCountryjson(apiResponse,selectedCountry) {
 
     let arr = [];
 
@@ -62,16 +73,20 @@ function getCountryjson(apiResponse) {
         return { city, province, confirmed, deaths, recovered };
     }
 
+    console.log(selectedCountry,'selectedCountry')
 
     apiResponse.map(values => {
 
+        if(selectedCountry === values.country)
         arr.push(createData(
             values.city ? values.city : values.country,
             values.province ? values.province : values.country,
             values.confirmed ? values.confirmed : 0,
             values.deaths ? values.deaths : 0,
             values.recovered ? values.recovered : 0))
+
     })
+
 
     return arr;
 
@@ -79,31 +94,45 @@ function getCountryjson(apiResponse) {
 
 
 
-function getWorldStats(apiResponse) {
+function getWorldStats(apiResponse,countryName) {
 
     let arr = [];
+    let countryDatas = [];
+    
 
     function createData(country, newcases, active, critical, recovered, total, deaths) {
         return { country, newcases, active, critical, recovered, total, deaths };
     }
+    console.log(countryName,'countryDatas');
 
     apiResponse.map(values => {
 
+        if(values.country !== 'All' && values.country && !countryName)
         arr.push(createData(
-            values.country ? values.country : 'unknown ',
+            values.country,
             values.cases.new ? parseInt(values.cases.new.substring(1)) : 0,
             values.cases.active ? values.cases.active : 0,
             values.cases.critical ? values.cases.critical : 0,
             values.cases.recovered ? values.cases.recovered : 0,
             values.cases.total ? values.cases.total : 0,
             values.deaths.total ? values.deaths.total : 0))
+        else if(countryName && (countryName == values.country)){
+            countryDatas.push(createData(
+                values.country,
+                values.cases.new ? parseInt(values.cases.new.substring(1)) : 0,
+                values.cases.active ? values.cases.active : 0,
+                values.cases.critical ? values.cases.critical : 0,
+                values.cases.recovered ? values.cases.recovered : 0,
+                values.cases.total ? values.cases.total : 0,
+                values.deaths.total ? values.deaths.total : 0))
+        }
     })
 
-    return arr;
+    return !countryName ? arr :countryDatas ;
 }
 
 
-export default function getTableData(sortTypes, apiResponse, statename = false) {
+export default function getTableData(sortTypes, apiResponse, statename = false,selectedCountry) {
 
     console.log('getTableData')
     console.log(apiResponse)
@@ -113,11 +142,11 @@ export default function getTableData(sortTypes, apiResponse, statename = false) 
             case 'india_district':
                 return getIndiaDistrictjson(apiResponse, statename)
             case 'india_state':
-                return getIndiaGeojson(apiResponse)
+                return getIndiaGeojson(apiResponse,statename)
             case 'world_country':
-                return getCountryjson(apiResponse.data.covid19Stats);
+                return getCountryjson(apiResponse.data.covid19Stats,selectedCountry);
             case 'world_stats':
-                return getWorldStats(apiResponse.response);
+                return getWorldStats(apiResponse.response,selectedCountry);
             default:
                 return 0;
         }

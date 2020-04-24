@@ -74,9 +74,11 @@ const stringConstants = {
     COUNTRYJSONACTION: 'COUNTRYJSONACTION',
     SELECTEDSTATE:'SELECTEDSTATE',
     WORLD_COUNTRY_STATS:'WORLD_COUNTRY_STATS',
-
+    SELECTEDCOUNTRY:"SELECTEDCOUNTRY",
 
     /* table constants    */
+
+    TABLE_DATA : 'TABLE_DATA',
 
     INDIA_GEO_JSON_COLUMNS: [
         { id: 'state', label: 'State', minWidth: 120 },

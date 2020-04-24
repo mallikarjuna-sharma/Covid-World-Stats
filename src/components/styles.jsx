@@ -2,6 +2,18 @@
 
 const Styles = theme => ({
 
+    paperRoot: {
+        root: {
+            display: 'flex',
+            '& > *': {
+                margin: theme.spacing(1),
+                width: theme.spacing(16),
+                height: theme.spacing(16),
+            },
+            padingBottom:"10%"
+        },
+    },
+
     formControl: {
         margin: theme.spacing(1),
         minWidth: 120,
@@ -16,7 +28,7 @@ const Styles = theme => ({
         position: 'absolute',
         top: 20,
         width: 1,
-      }
+    }
 
 
 })
