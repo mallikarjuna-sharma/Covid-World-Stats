@@ -35,20 +35,11 @@ class GenerateGraphComponent extends React.Component {
                 }
             })
 
-        console.log(max, 'max');
-
         this.setState({ maxYaxisValue: max })
-
-
     }
 
     componentDidUpdate(prevProps) {
 
-        console.log(this.props.graphType, 'graphType');
-        console.log(this.props.graphData, 'graphData');
-        console.log(this.props.xAxisLabel, 'xAxisLabel');
-        console.log(this.props.yAxisLabel, 'yAxisLabel');
-        console.log(this.props.count, 'yAxisLabel');
 
         if (prevProps.xAxisLabel !== this.props.xAxisLabel ||
             prevProps.yAxisLabel !== this.props.yAxisLabel ||
@@ -59,7 +50,6 @@ class GenerateGraphComponent extends React.Component {
             setTimeout(() => this.generateGraph(), 1000)
         }
         if (prevProps.graphData !== this.props.graphData) {
-            console.log(this.props.graphData, 'this.state.chart')
             this.setMaxYaxis();
             this.removeLineGraph();
             setTimeout(() => this.generateGraph(), 1500)
@@ -180,7 +170,7 @@ class GenerateGraphComponent extends React.Component {
                 tooltips: {
                     titleFontFamily: 'Open Sans',
                     backgroundColor: 'rgba(0,0,0,0.3)',
-                    titleFontColor: 'red',
+                    titleFontColor: 'blue',
                     caretSize: 5,
                     cornerRadius: 2,
                     xPadding: 10,
@@ -207,7 +197,6 @@ class GenerateGraphComponent extends React.Component {
 
 
 function mapStateToProps(state) {
-    console.log('stateingraph', state)
     return {
         sortType: state.sortType,
         graphType: state.graphType,

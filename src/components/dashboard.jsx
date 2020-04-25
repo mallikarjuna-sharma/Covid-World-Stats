@@ -118,7 +118,12 @@ class Dashboard extends React.Component {
             console.log(tabData, 'tabData')
             if (tabData && tabData.length) this.props.setTableData(tabData)
         }
-        console.log(this.props, "componentDidUpdate")
+
+        if (prevProps.sortType !== this.props.sortType) {
+            this.props.setGraphSlice(0);
+        }
+
+
     }
 
     getApiData_Table = () => {
@@ -304,29 +309,33 @@ class Dashboard extends React.Component {
                             </Grid>
 
                             {(this.props.graphType === 'pie' ||
-                                this.props.graphType === 'doughnut') && <Grid md={3} xs={3} item style={{ padding: "4%", paddingTop: "6%" }}>
+                                this.props.graphType === 'doughnut') && <Grid md={3} xs={3} item >
 
-                                    <ToggleButton
+                                    <FormControl className={classes.formControlGraph}>
+                                        <ToggleButton
 
-                                        value="check"
-                                        selected={false}
-                                        onChange={() => {
-                                            if (this.props.graphType === 'pie')
-                                                this.props.getgraphTypeAction('doughnut')
-                                            else
-                                                this.props.getgraphTypeAction('pie')
-                                        }}
-                                    >
-                                        {this.props.graphType === 'pie' ?
-                                            <DonutLargeIcon color={'secondary'} /> :
-                                            <RadioButtonUncheckedIcon color={'secondary'} />
-                                        }
-                                    </ToggleButton>
-                                    <span style={{
-                                        background: 'linear-gradient(to right, #430089, #82ffa1)',
-                                        WebkitBackgroundClip: "text",
-                                        WebkitTextFillColor: "transparent"
-                                    }}> Toggle View </span>
+                                            value="check"
+                                            selected={false}
+                                            onChange={() => {
+                                                if (this.props.graphType === 'pie')
+                                                    this.props.getgraphTypeAction('doughnut')
+                                                else
+                                                    this.props.getgraphTypeAction('pie')
+                                            }}
+                                        >
+                                            {this.props.graphType === 'pie' ?
+                                                <DonutLargeIcon color={'secondary'} /> :
+                                                <RadioButtonUncheckedIcon color={'secondary'} />
+                                            }
+                                            <span style={{
+                                                background: 'linear-gradient(to right, #430089, #82ffa1)',
+                                                WebkitBackgroundClip: "text",
+                                                WebkitTextFillColor: "transparent"
+                                            }}> Toggle View </span>
+                                        </ToggleButton>
+
+
+                                    </FormControl>
                                 </Grid>}
 
                         </Grid>
@@ -334,31 +343,31 @@ class Dashboard extends React.Component {
                     </Grid >
                 </Grid>
 
-                <Grid container >
+                <Grid container spacing={2}>
 
                     <Grid item md={6} xs={6} alignContent="center" justify="center">
                         <MyButton className={classes.graphButton}
                             onClick={e => { this.sliceGraphData('previous') }}
                             style={{
-                                marginLeft: "70%", background: 'linear-gradient(to right, #430089, #82ffa1)',
+                                marginLeft: "80%", background: 'linear-gradient(to right, #430089, #82ffa1)',
                                 WebkitBackgroundClip: "text",
                                 WebkitTextFillColor: "transparent"
                             }}>
                             <ArrowBackIcon color="primary" />
-                                Load previous Data
+                                Previous
                              </MyButton>
                     </Grid>
 
                     <Grid item md={6} xs={6} >
                         <MyButton
-                        style={{
-                            background: 'linear-gradient(to right, #430089, #82ffa1)',
+                            style={{
+                                background: 'linear-gradient(to right, #430089, #82ffa1)',
                                 WebkitBackgroundClip: "text",
                                 WebkitTextFillColor: "transparent"
-                        }}
+                            }}
                             className={classes.graphButton}
                             onClick={e => { this.sliceGraphData('next') }}>
-                            Load more Data  <ArrowForwardIcon color="primary" />
+                            Next  <ArrowForwardIcon color="primary" />
                         </MyButton>
                     </Grid>
 

@@ -45,7 +45,7 @@ export default function DisplayBoard(props) {
             }} >
 
                 <div className="video__icon">
-                    <div className="circle--inner"></div>     <div >LIVE</div>
+                    <div className="circle--inner"></div>     
                 </div>
 
 

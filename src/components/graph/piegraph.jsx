@@ -21,7 +21,6 @@ class GeneratePieComponent extends React.Component {
     }
 
     screenChanged = () => {
-        // console.log('screenChanged');
     }
 
 
