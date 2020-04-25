@@ -93,7 +93,7 @@ class Dashboard extends React.Component {
         this.props.setTableData(getTableData(
             this.props.sortType,
             this.getApiData_Table(),
-            this.props.selectedState,
+           false,
         ))
     }
 
@@ -108,8 +108,10 @@ class Dashboard extends React.Component {
             const tabData = getTableData(
                 this.props.sortType,
                 this.getApiData_Table(),
-                this.props.selectedState,
-                this.props.selectedCountry);
+                !(this.props.sortType==='india_state') ? this.props.selectedState : false,
+                !(this.props.sortType==='world_stats') ? this.props.selectedCountry : false,
+                );
+                console.log(tabData,'tabData')
                 if(tabData && tabData.length ) this.props.setTableData(tabData)
         }
         console.log(this.props,"componentDidUpdate")
@@ -164,7 +166,6 @@ class Dashboard extends React.Component {
                     this.props.getindiageojson,
                     this.props.selectedState,
                     false)
-                    console.log(tabData,"tabData")
                     return tabData;
             }
             case 'india_state':{
@@ -208,28 +209,17 @@ class Dashboard extends React.Component {
         return (
             <Grid container spacing={8} >
 
+                <Grid item md={12} xs={12}>
+
                 <DisplayBoard  
                     tableData = {this.getHeadData()}
+                    sortType={this.props.sortType}
+                    items={getGroupedData(this.props.sortType, this.getApiData_Table())}
+                    selectedState_Country={(item) => this.selectedState_Country(item)}
                 />
 
-                {this.props.sortType === ('india_district') &&
-                    <Grid item md={12} xs={12} >
-                        <SearchIndiaStates
-                            items={getGroupedData(this.props.sortType, this.getApiData_Table())}
-                            selectedState_india={(item) => this.selectedState_Country(item)}
-                        />
-                    </Grid>
-                }
+                </Grid>
 
-                {
-                    this.props.sortType === ('world_country') &&
-                    <Grid item item md={12} xs={12} >
-                        <SearchCountry
-                            items={getGroupedData(this.props.sortType, this.getApiData_Table())}
-                            selectedCountry={(item) => this.selectedState_Country(item)}
-                        />
-                    </Grid>
-                }
 
                 <Grid item md={12} xs={12}  >
                     {(this.props.sortType || this.props.selectedState) &&

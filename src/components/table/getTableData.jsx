@@ -9,6 +9,8 @@ function getIndiaDistrictjson(apiResponse, statename) {
         return { district, confirmed };
     }
 
+    console.log(statename,'statename')
+
     apiResponse[0].map(values => {
         if (!statename) {
             if (values.DistrictReport) {
@@ -75,9 +77,12 @@ function getCountryjson(apiResponse,selectedCountry) {
 
     console.log(selectedCountry,'selectedCountry')
 
+    if(selectedCountry === 'USA') selectedCountry='US'
+
     apiResponse.map(values => {
 
-        if(selectedCountry === values.country)
+        if(selectedCountry && values.country &&  
+            (selectedCountry.toUpperCase() === values.country.toUpperCase()) )
         arr.push(createData(
             values.city ? values.city : values.country,
             values.province ? values.province : values.country,

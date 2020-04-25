@@ -19,6 +19,7 @@
     "@material-ui/lab": "^4.0.0-alpha.50",
     "axios": "^0.19.2",
     "chart.js": "^2.9.3",
+    "css-loader": "^3.5.3",
     "react": "0.0.0-d7382b6c4",
     "react-axios": "^2.0.3",
     "react-dom": "0.0.0-d7382b6c4",
@@ -26,7 +27,8 @@
     "react-router-dom": "^5.1.2",
     "recompose": "^0.30.0",
     "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "style-loader": "^1.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",

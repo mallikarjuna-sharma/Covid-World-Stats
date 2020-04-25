@@ -7,7 +7,7 @@ let defaultState = {
     getIndiaDistrictjson: stringConstants.INDIA_DIST,
     getindiageojson: stringConstants.INDIA_STATE,
     getCountryjson: stringConstants.US_STATE,
-    selectedState: false,
+    selectedState: 'Maharashtra',
     getWorldStats: stringConstants.WORLD_STATS,
     xAxisLabel: 'state',
     yAxisLabel: 'confirmed',

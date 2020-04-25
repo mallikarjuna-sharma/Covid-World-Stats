@@ -21,16 +21,12 @@ class GeneratePieComponent extends React.Component {
     }
 
     screenChanged = () => {
-        console.log('screenChanged');
+        // console.log('screenChanged');
     }
 
 
     componentDidUpdate(prevProps) {
 
-        console.log(this.props.graphType, 'graphType');
-        console.log(this.props.graphData, 'graphData');
-        console.log(this.props.xAxisLabel, 'xAxisLabel');
-        console.log(this.props.yAxisLabel, 'yAxisLabel');
 
         if (prevProps.xAxisLabel !== this.props.xAxisLabel ||
             prevProps.yAxisLabel !== this.props.yAxisLabel ||
@@ -40,7 +36,6 @@ class GeneratePieComponent extends React.Component {
             setTimeout(() => this.generatePieChart(), 1000)
         }
         if (prevProps.graphData !== this.props.graphData) {
-            console.log(this.props.graphData, 'this.state.chart')
             setTimeout(() => this.generatePieChart(), 0)
         }
         if (prevProps.graphType !== this.props.graphType) {
@@ -77,8 +72,6 @@ class GeneratePieComponent extends React.Component {
             for (let i = 0; i < ylabelData.length; i++)
                 colors.push(this.randomColor())
         }
-
-        console.log(colors, 'colors')
 
         var canvas = document.getElementById("pieChart");
         if (canvas)

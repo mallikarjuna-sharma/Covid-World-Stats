@@ -23,6 +23,9 @@ const options = {
       }
     ]
   },
+  resolve: {
+    extensions: ['.js', '.jsx', '.css']      
+},
   plugins: [
     new webpack.DefinePlugin({ 'process.env.NODE_ENV': JSON.stringify(env.NODE_ENV) }),
     new HtmlWebpackPlugin({
