@@ -22,7 +22,6 @@ import { bindActionCreators } from 'redux';
 import Switch from '@material-ui/core/Switch';
 
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-
 import '../src/components/liveicon.css'
 
 function App(props) {
@@ -46,8 +45,8 @@ function App(props) {
 
     const toggleGraphType = (e, type) => {
         if (type === 'content') {
-            props.getSortTypes(e.target.value);
-            switch (e.target.value) {
+            props.getSortTypes(e);
+            switch (e) {
                 case 'india_district': {
                     props.setXaxisLabel('district');
                     props.setYaxisLabel('confirmed')
@@ -78,8 +77,12 @@ function App(props) {
         <ThemeProvider theme={theme}>
             <Grid style={{ height: "100%" }}>
                 <div >
-                    <AppBar position="static" color={props.mode ? "primary" : "default"} >
-                        <Toolbar>
+                    <AppBar position="static"
+                        color={props.mode ? "" : "default"}
+                    >
+                        <Toolbar
+
+                        >
                             <div
                                 className="rotating"
                                 style={{
@@ -92,26 +95,15 @@ function App(props) {
                                     src={'../src/assests/covid.png'} />
                             </div>
 
-                            <Typography variant="h6" style={{}} className={classes.title} >
-                                Covid - 20
+                            <Typography variant="h5" style={{ fontFamily: "bold" }} className={classes.title} >
+                                Covid <span style={{ color: "red" }}>Tracker</span>
                             </Typography>
 
-                            <FormControl className={classes.formControl}>
-                                <InputLabel htmlFor="uncontrolled-native">Select Type</InputLabel>
-                                <NativeSelect
-                                    defaultValue={'line'}
-                                    onChange={e => toggleGraphType(e, 'content')}
-                                    inputProps={{
-                                        name: 'name',
-                                        id: 'uncontrolled-native',
-                                    }}
-                                >
-                                    {stringConstants.SORT_TYPES.map((e, index) => {
-                                        return <option value={e.value} key={index}  >{e.label}</option>
-                                    })}
+                            <button class="btn btn1" style={{ borderBottom: props.sortType === 'india_state' ? "1px solid #3498db" : '' }} onClick={e => toggleGraphType('india_state', 'content')}>View All Indian States</button>
+                            <button class="btn btn2" style={{ borderBottom: props.sortType === 'india_district' ? "1px solid #3498db" : '' }} onClick={e => toggleGraphType('india_district', 'content')}>View Indian Districts</button>
+                            <button class="btn btn1" style={{ borderBottom: props.sortType === 'world_country' ? "1px solid #3498db" : '' }} onClick={e => toggleGraphType('world_country', 'content')}>View States in World Countries</button>
+                            <button class="btn btn2" style={{ borderBottom: props.sortType === 'world_stats' ? "1px solid #3498db" : '' }} onClick={e => toggleGraphType('world_stats', 'content')}>Get Stats for World Countries</button>
 
-                                </NativeSelect>
-                            </FormControl>
                             <FormGroup>
                                 <FormControlLabel
                                     control={<Switch checked={auth} color={"default"} onChange={e => handleChange(e)} />}

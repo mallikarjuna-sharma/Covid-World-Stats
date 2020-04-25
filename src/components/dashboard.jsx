@@ -350,7 +350,8 @@ class Dashboard extends React.Component {
                         <MyButton className={classes.graphButton}
                             onClick={e => { this.sliceGraphData('previous') }}
                             style={{
-                                marginLeft: "80%", background: 'linear-gradient(to right, #430089, #82ffa1)',
+                                marginLeft: "80%", 
+                                background: 'linear-gradient(to right, #430089, #82ffa1)',
                                 WebkitBackgroundClip: "text",
                                 WebkitTextFillColor: "transparent"
                             }}>
