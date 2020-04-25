@@ -223,6 +223,7 @@ class Dashboard extends React.Component {
                         <DisplayBoard
                             mode={this.props.mode}
                             tableData={this.getHeadData()}
+                            fromTable={ this.getHeadData().length ? false : this.props.tableData}
                             sortType={this.props.sortType}
                             items={getGroupedData(this.props.sortType, this.getApiData_Table())}
                             selectedState_Country={(item) => this.selectedState_Country(item)}

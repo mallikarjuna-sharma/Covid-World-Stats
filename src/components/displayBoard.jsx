@@ -14,7 +14,7 @@ export default function DisplayBoard(props) {
 
     useEffect(() => { console.log(props, 'props'); getCardsData() }, [props]);
 
-    const { sortType, tableData, items, selectedState_Country } = props
+    const { sortType, tableData, items, selectedState_Country, fromTable } = props
 
     const theme = React.useMemo(
         () =>
@@ -45,7 +45,7 @@ export default function DisplayBoard(props) {
             }} >
 
                 <div className="video__icon">
-                    <div className="circle--inner"></div>     
+                    <div className="circle--inner"></div>
                 </div>
 
 
@@ -88,7 +88,7 @@ export default function DisplayBoard(props) {
         switch (sortType) {
             case 'india_district': {
 
-                if (tableData.length) {
+                if (tableData && tableData.length) {
 
                     if (focus)
                         return tableData[0].state
@@ -112,7 +112,7 @@ export default function DisplayBoard(props) {
             }
             case 'india_state': {
 
-                if (tableData.length) {
+                if (tableData && tableData.length) {
 
                     if (focus)
                         return "India"
@@ -138,7 +138,7 @@ export default function DisplayBoard(props) {
             }
             case 'world_country': {
 
-                if (tableData.length) {
+                if (tableData && tableData.length) {
 
                     if (focus)
                         return tableData[0].country
@@ -155,11 +155,25 @@ export default function DisplayBoard(props) {
                     designCards.push(obj4);
                     designCards.push(obj5);
                 }
+                else if (fromTable && fromTable.length) {
+
+                    if (focus)
+                        return fromTable[0].city
+
+                    let obj1 = { label: "Confirmed", value: fromTable[0].confirmed, headerColors: (props.mode) ? 'rgb(255,192,203,0.5)' : 'rgb(255,192,203,0.9)', headerBottom: 'rgb(255,192,203,0.9)', width: "18%" }
+                    let obj2 = { label: "Recovered", value: fromTable[0].recovered, headerColors: (props.mode) ? stringConstants.RECOVERED_CARD_HEADER : stringConstants.RECOVERED_CARD_FOOTER, headerBottom: stringConstants.RECOVERED_CARD_FOOTER, width: "12%" }
+                    let obj3 = { label: "Deaths", value: fromTable[0].deaths, headerColors: (props.mode) ? stringConstants.DEATH_CARD_HEADER : stringConstants.DEATH_CARD_FOOTER, headerBottom: stringConstants.DEATH_CARD_FOOTER, width: "12%" }
+
+                    designCards.push(obj1);
+                    designCards.push(obj2);
+                    designCards.push(obj3);
+
+                }
                 return designCards;
             }
             case 'world_stats': {
 
-                if (tableData.length) {
+                if (tableData && tableData.length) {
 
                     if (focus)
                         return "World Stats"
