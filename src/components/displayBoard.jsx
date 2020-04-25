@@ -8,6 +8,9 @@ import './liveicon.css'
 import SearchIndiaStates from '../components/search-select/SearchIndiaStates.jsx'
 import SearchCountry from '../components/search-select/SearchCountry.jsx'
 
+import stringConstants from './stringConstants.jsx'
+
+
 export default function DisplayBoard(props) {
 
     useEffect(() => { console.log(props, 'props'); getCardsData() }, [props]);
@@ -87,10 +90,10 @@ export default function DisplayBoard(props) {
                         return tableData[0].state
 
 
-                    let obj1 = { label: "Confirmed", value: tableData[0].confirmed, headerColors: 'rgb(230,230,250,0.1)', headerBottom: 'rgb(230,230,250,0.9)' }
-                    let obj2 = { label: "Active", value: tableData[0].active, headerColors: 'rgb(240,248,255,0.5)', headerBottom: 'rgb(240,248,255,0.9)' }
-                    let obj3 = { label: "Recovered", value: tableData[0].recovered, headerColors: 'rgb(0,255,127,0.5)', headerBottom: 'rgb(240,128,128,0.9)' }
-                    let obj4 = { label: "Deaths", value: tableData[0].deaths, headerColors: 'rgb(0,255,127,0.5)', headerBottom: 'rgb(0,255,127,0.9)' }
+                    let obj1 = { label: "Confirmed", value: tableData[0].confirmed, headerColors: 'rgb(255,192,203,0.5)', headerBottom: 'rgb(255,192,203,0.9)',width:"18%" }
+                    let obj2 = { label: "Active", value: tableData[0].active, headerColors:stringConstants.ACTIVE_CARD_HEADER, headerBottom: stringConstants.ACTIVE_CARD_FOOTER  ,width:"18%"  }
+                    let obj3 = { label: "Recovered", value: tableData[0].recovered, headerColors: stringConstants.RECOVERED_CARD_HEADER , headerBottom: stringConstants.RECOVERED_CARD_FOOTER,width:"18%"  }
+                    let obj4 = { label: "Deaths", value: tableData[0].deaths, headerColors: stringConstants.DEATH_CARD_HEADER, headerBottom: stringConstants.DEATH_CARD_FOOTER,width:"18%"  }
 
                     designCards.push(obj1);
                     designCards.push(obj2);
@@ -110,11 +113,11 @@ export default function DisplayBoard(props) {
                     if (focus)
                         return "India"
 
-                    let obj1 = { label: "New", value: tableData[0].newcases, headerColors: 'rgb(230,230,250,0.1)', headerBottom: 'rgb(230,230,250,0.9)' }
-                    let obj2 = { label: "Active", value: tableData[0].active, headerColors: 'rgb(240,248,255,0.5)', headerBottom: 'rgb(240,248,255,0.9)' }
-                    let obj3 = { label: "Recovered", value: tableData[0].recovered, headerColors: 'rgb(0,255,127,0.5)', headerBottom: 'rgb(240,128,128,0.9)' }
-                    let obj4 = { label: "Deaths", value: tableData[0].deaths, headerColors: 'rgb(0,255,127,0.5)', headerBottom: 'rgb(0,255,127,0.9)' }
-                    let obj5 = { label: "Total", value: tableData[0].total, headerColors: 'rgb(192,192,192,0.5)', headerBottom: 'rgb(192,192,192,0.9)' }
+                    let obj1 = { label: "New", value: tableData[0].newcases, headerColors: stringConstants.NEW_CARD_HEADER, headerBottom: stringConstants.NEW_CARD_FOOTER   ,width:"14%"  }
+                    let obj2 = { label: "Active", value: tableData[0].active, headerColors:stringConstants.ACTIVE_CARD_HEADER, headerBottom: stringConstants.ACTIVE_CARD_FOOTER  ,width:"14%"  }
+                    let obj3 = { label: "Recovered", value: tableData[0].recovered, headerColors: stringConstants.RECOVERED_CARD_HEADER , headerBottom: stringConstants.RECOVERED_CARD_FOOTER,width:"14%"  }
+                    let obj4 = { label: "Deaths", value: tableData[0].deaths, headerColors: stringConstants.DEATH_CARD_HEADER, headerBottom: stringConstants.DEATH_CARD_FOOTER,width:"14%"  }
+                    let obj5 = { label: "Total", value: tableData[0].total, headerColors: stringConstants.TOTAL_CARD_HEADER, headerBottom: stringConstants.TOTAL_CARD_FOOTER ,width:"14%"  }
 
                     designCards.push(obj1);
                     designCards.push(obj2);
@@ -136,11 +139,11 @@ export default function DisplayBoard(props) {
                     if (focus)
                         return tableData[0].country
 
-                    let obj1 = { label: "New", value: tableData[0].newcases, headerColors: 'rgb(230,230,250,0.1)', headerBottom: 'rgb(230,230,250,0.9)' }
-                    let obj2 = { label: "Active", value: tableData[0].active, headerColors: 'rgb(240,248,255,0.5)', headerBottom: 'rgb(240,248,255,0.9)' }
-                    let obj3 = { label: "Recovered", value: tableData[0].recovered, headerColors: 'rgb(0,255,127,0.5)', headerBottom: 'rgb(240,128,128,0.9)' }
-                    let obj4 = { label: "Total", value: tableData[0].total, headerColors: 'rgb(0,255,127,0.5)', headerBottom: 'rgb(0,255,127,0.9)' }
-                    let obj5 = { label: "Deaths", value: tableData[0].deaths, headerColors: 'rgb(0,255,127,0.5)', headerBottom: 'rgb(0,255,127,0.9)' }
+                    let obj1 = { label: "New", value: tableData[0].newcases, headerColors: stringConstants.NEW_CARD_HEADER, headerBottom: stringConstants.NEW_CARD_FOOTER ,width:"12%"  }
+                    let obj2 = { label: "Active", value: tableData[0].active, headerColors: stringConstants.ACTIVE_CARD_HEADER, headerBottom: stringConstants.ACTIVE_CARD_FOOTER  ,width:"12%"  }
+                    let obj3 = { label: "Recovered", value: tableData[0].recovered, headerColors: stringConstants.RECOVERED_CARD_HEADER , headerBottom: stringConstants.RECOVERED_CARD_FOOTER,width:"12%"  }
+                    let obj4 = { label: "Total", value: tableData[0].total, headerColors:  stringConstants.TOTAL_CARD_HEADER, headerBottom: stringConstants.TOTAL_CARD_FOOTER ,width:"12%"  }
+                    let obj5 = { label: "Deaths", value: tableData[0].deaths, headerColors: stringConstants.DEATH_CARD_HEADER, headerBottom: stringConstants.DEATH_CARD_FOOTER,width:"12%"  }
 
                     designCards.push(obj1);
                     designCards.push(obj2);
@@ -163,11 +166,11 @@ export default function DisplayBoard(props) {
                     if (focus)
                         return "World Stats"
 
-                    let obj1 = { label: "New", value: tableData[0].newcases, headerColors: 'rgb(230,230,250,0.1)', headerBottom: 'rgb(230,230,250,0.9)' }
-                    let obj2 = { label: "Active", value: tableData[0].active, headerColors: 'rgb(240,248,255,0.5)', headerBottom: 'rgb(240,248,255,0.9)' }
-                    let obj3 = { label: "Recovered", value: tableData[0].recovered, headerColors: 'rgb(0,255,127,0.5)', headerBottom: 'rgb(240,128,128,0.9)' }
-                    let obj4 = { label: "Deaths", value: tableData[0].deaths, headerColors: 'rgb(0,255,127,0.5)', headerBottom: 'rgb(0,255,127,0.9)' }
-                    let obj5 = { label: "Total", value: tableData[0].total, headerColors: 'rgb(0,255,127,0.5)', headerBottom: 'rgb(0,255,127,0.9)' }
+                    let obj1 = { label: "New", value: tableData[0].newcases, headerColors: stringConstants.NEW_CARD_HEADER, headerBottom: stringConstants.NEW_CARD_FOOTER,width:"12%" }
+                    let obj2 = { label: "Active", value: tableData[0].active, headerColors: stringConstants.ACTIVE_CARD_HEADER, headerBottom: stringConstants.ACTIVE_CARD_FOOTER ,width:"12%"}
+                    let obj3 = { label: "Recovered", value: tableData[0].recovered, headerColors: stringConstants.RECOVERED_CARD_HEADER , headerBottom: stringConstants.RECOVERED_CARD_FOOTER ,width:"12%" }
+                    let obj4 = { label: "Deaths", value: tableData[0].deaths, headerColors:stringConstants.DEATH_CARD_HEADER, headerBottom: stringConstants.DEATH_CARD_FOOTER,width:"12%" }
+                    let obj5 = { label: "Total", value: tableData[0].total, headerColors:  stringConstants.TOTAL_CARD_HEADER, headerBottom: stringConstants.TOTAL_CARD_FOOTER ,width:"12%"}
 
 
                     designCards.push(obj1);
@@ -209,7 +212,7 @@ export default function DisplayBoard(props) {
 
                     return <Paper style={{
                         height: "80%",
-                        width: "15%",
+                        width: e.width,
                         padding: 0,
                         marginLeft: '2%'
                     }}>

@@ -76,6 +76,23 @@ const stringConstants = {
     WORLD_COUNTRY_STATS:'WORLD_COUNTRY_STATS',
     SELECTEDCOUNTRY:"SELECTEDCOUNTRY",
 
+    /* header dashboard constants*/
+
+    DEATH_CARD_HEADER:'rgb(192,192,192,0.5)',
+    DEATH_CARD_FOOTER:'rgb(192,192,192,0.9)',
+
+    RECOVERED_CARD_HEADER:'rgb(0,255,127,0.5)',
+    RECOVERED_CARD_FOOTER:'rgb(0,255,127,0.9)',
+
+    NEW_CARD_HEADER:'rgb(240,128,128,0.5)',
+    NEW_CARD_FOOTER:'rgb(240,128,128,0.9)',
+
+    ACTIVE_CARD_HEADER:'rgb(255,255,51,0.5)',
+    ACTIVE_CARD_FOOTER:'rgb(255,255,51,0.9)',
+
+    TOTAL_CARD_HEADER:"rgb(238,130,238,0.5)",
+    TOTAL_CARD_FOOTER:"rgb(238,130,238,0.9)",
+
     /* table constants    */
 
     TABLE_DATA : 'TABLE_DATA',
