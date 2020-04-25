@@ -13,8 +13,8 @@ export default class SearchIndiaStates extends Component {
         options={this.props.items}
         getOptionLabel={(option) => option.value}
         getOptionSelected={(e,value) => {this.props.selectedState_india(value.value) } }
-        style={{ width: 300 }}
-        renderInput={(params) => <TextField {...params} label="Combo box" variant="outlined" />}
+        style={{ width: "100%" }}
+        renderInput={(params) => <TextField {...params} label="Select a State" variant="outlined" />}
       />
     )
   }

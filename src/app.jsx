@@ -21,10 +21,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Switch from '@material-ui/core/Switch';
 
-
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
-import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+
+import '../src/components/liveicon.css'
 
 function App(props) {
     const classes = useStyles();
@@ -81,9 +80,22 @@ function App(props) {
                 <div >
                     <AppBar position="static" color={props.mode ? "primary" : "default"} >
                         <Toolbar>
-                            <Typography variant="h6" className={classes.title}>
+                            <div
+                                className="rotating"
+                                style={{
+                                    width: "30px", height: "30px",
+                                    textAlign: "center"
+                                }}
+                            >
+                                <img
+                                    style={{ width: "30px", height: "30px" }}
+                                    src={'../src/assests/covid.png'} />
+                            </div>
+
+                            <Typography variant="h6" style={{}} className={classes.title} >
                                 Covid - 20
-                        </Typography>
+                            </Typography>
+
                             <FormControl className={classes.formControl}>
                                 <InputLabel htmlFor="uncontrolled-native">Select Type</InputLabel>
                                 <NativeSelect
@@ -103,7 +115,7 @@ function App(props) {
                             <FormGroup>
                                 <FormControlLabel
                                     control={<Switch checked={auth} color={"default"} onChange={e => handleChange(e)} />}
-                                    label={auth ? 'Light' : 'Dark'}
+                                    label={auth ? 'Day' : 'Night'}
                                 />
                             </FormGroup>
                         </Toolbar>

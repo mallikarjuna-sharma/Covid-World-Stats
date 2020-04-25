@@ -165,7 +165,7 @@ export default function GenerateTableComponent(props) {
                 {columns && columns.map((column, index) => (
                   <TableCell
                     key={index}
-                    align={column.align}
+                    align={"center"}
                     style={{ width:"20%" }}
                     sortDirection={orderBy === column.id ? order : false}
                   >
@@ -190,7 +190,7 @@ export default function GenerateTableComponent(props) {
                         {columns.map((column, index) => {
                           const value = row[column.id];
                           return (
-                            <TableCell key={index} align={column.align}>
+                            <TableCell key={index}     align={"center"}>
                               {column.format && typeof value === 'number' ? column.format(value) : value}
                             </TableCell>
                           );

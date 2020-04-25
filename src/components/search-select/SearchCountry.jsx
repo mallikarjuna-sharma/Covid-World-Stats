@@ -28,7 +28,7 @@ export default function SearchCountry(props) {
   return (
     <Autocomplete
       id="country-select-demo"
-      style={{ width: 300 }}
+      style={{ width: "100%" }}
       options={countries}
       onChange={(e,value) => {props.selectedCountry(value.label) }}
       classes={{

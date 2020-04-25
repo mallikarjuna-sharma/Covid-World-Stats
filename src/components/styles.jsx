@@ -3,10 +3,10 @@
 const Styles = theme => ({
 
 
-    root:{
-        backgroundColor:"#121212"
+    root: {
+        backgroundColor: "#121212"
     },
-    
+
     paperRoot: {
         root: {
             display: 'flex',
@@ -15,13 +15,22 @@ const Styles = theme => ({
                 width: theme.spacing(16),
                 height: theme.spacing(16),
             },
-            padingBottom:"10%"
+            padingBottom: "10%"
         },
     },
 
     formControl: {
-        margin: theme.spacing(1),
-        minWidth: 120,
+        margin: theme.spacing(4),
+    },
+
+    formControlGraph: {
+        margin: theme.spacing(12),
+        width: "60%"
+    },
+    graphButton: {
+        '&:hover': {
+            background: "transparent",
+        },
     },
     visuallyHidden: {
         border: 0,

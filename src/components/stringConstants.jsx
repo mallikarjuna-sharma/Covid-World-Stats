@@ -5,9 +5,9 @@ const stringConstants = {
     /* Grpah constants*/
 
     GRAPHTYPES: [
-        { value: 'line', label: 'line' },
-        { value: 'bar', label: 'bar' },
-        { value: 'pie', label: 'pie' },
+        { value: 'line', label: 'Line Chart' },
+        { value: 'bar', label: 'Bar Chart' },
+        { value: 'pie', label: 'Pie Chart' },
     ],
     GETGRAPHTYPE: 'GETGRAPHTYPE',
     SORT_TYPES: [
