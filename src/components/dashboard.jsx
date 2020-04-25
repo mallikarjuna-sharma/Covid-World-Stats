@@ -18,9 +18,7 @@ import Styles from './styles.jsx'
 import { compose } from 'recompose'
 import stringConstants from './stringConstants.jsx'
 import getTableData from './table/getTableData.jsx'
-import SearchIndiaStates from '../components/search-select/SearchIndiaStates.jsx'
 import getGroupedData from '../components/search-select/getGroupedData.jsx'
-import SearchCountry from '../components/search-select/SearchCountry.jsx'
 import { getXaxisLabels, getYaxisLabels } from '../components/graph/getAxisLabels.jsx'
 import DisplayBoard from './displayBoard.jsx'
 
@@ -203,15 +201,16 @@ class Dashboard extends React.Component {
 
     }
 
-
     render() {
-        const { classes } = this.props;
+        const { classes,mode } = this.props;
         return (
-            <Grid container spacing={8} >
+
+            <div className={mode?'':classes.root} >
+            <Grid container spacing={8} style={{height:"100%"}} >
 
                 <Grid item md={12} xs={12}>
-
                 <DisplayBoard  
+                   mode={this.props.mode}
                     tableData = {this.getHeadData()}
                     sortType={this.props.sortType}
                     items={getGroupedData(this.props.sortType, this.getApiData_Table())}
@@ -222,11 +221,13 @@ class Dashboard extends React.Component {
 
 
                 <Grid item md={12} xs={12}  >
-                    {(this.props.sortType || this.props.selectedState) &&
+                    {(this.props.sortType || this.props.selectedState) && <Grid container style={{padding:"1%"}}>
                         <GenerateTableComponent
+                            mode={this.props.mode}
                             columns={this.getColForTable()}
                             tableData={this.props.tableData }
-                            {...this.state} />}
+                       />
+                </Grid>}
                 </Grid>
 
                 <Grid item>
@@ -312,7 +313,9 @@ class Dashboard extends React.Component {
                             Load previous Data
                     </Button>
                     </Grid>
-                    {(this.props.graphType === 'pie' ||
+                    </Grid >
+                </Grid>
+                {(this.props.graphType === 'pie' ||
                         this.props.graphType === 'doughnut') &&
                         <GeneratePieComponent
                             count={this.props.graphStart}
@@ -327,9 +330,8 @@ class Dashboard extends React.Component {
                             graphData={this.props.tableData}
                         />
                     }
-                </Grid>
+                    </div>
 
-            </Grid >
         );
     }
 }
@@ -347,7 +349,8 @@ function mapStateToProps(state) {
         graphType: state.graphType,
         graphStart: state.graphStart,
         tableData: state.tableData,
-        selectedCountry: state.selectedCountry
+        selectedCountry: state.selectedCountry,
+        mode: state.mode
     }
 }
 

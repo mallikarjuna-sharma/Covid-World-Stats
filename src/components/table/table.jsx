@@ -24,16 +24,14 @@ export default function GenerateTableComponent(props) {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   const prefersLightMode = useMediaQuery('(prefers-color-scheme: light)');
 
-  const change = 0;
-
   const theme = React.useMemo(
     () =>
       createMuiTheme({
         palette: {
-          type: change ? 'dark' : 'light',
+          type: !props.mode ? 'dark' : 'light',
         },
       }),
-    [prefersDarkMode],
+    [props.mode],
   );
 
   const [order, setOrder] = React.useState('asc');
@@ -168,7 +166,7 @@ export default function GenerateTableComponent(props) {
                   <TableCell
                     key={index}
                     align={column.align}
-                    style={{ minWidth: column.minWidth }}
+                    style={{ width:"20%" }}
                     sortDirection={orderBy === column.id ? order : false}
                   >
                     <TableSortLabel
@@ -178,11 +176,6 @@ export default function GenerateTableComponent(props) {
                       onClick={e => createSortHandler(e, column.id)}
                     >
                       {column.label}
-                      {orderBy === column.id ? (
-                        <span className={classes.visuallyHidden}>
-                          {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
-                        </span>
-                      ) : null}
                     </TableSortLabel>
                   </TableCell>
                 ))}
@@ -207,25 +200,26 @@ export default function GenerateTableComponent(props) {
                   })}
             </TableBody>}
           </Table>
+          
         </TableContainer>
 
-        {tableData && tableData.length > 10 && <TableRow>
+        {tableData && tableData.length > 10 && 
           <TablePagination
-            rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
-            colSpan={9}
+            rowsPerPageOptions={[5, 10, 25]}
+            colSpan={3}
             count={tableData.length}
             rowsPerPage={rowsPerPage}
             page={page}
+            component="div"
             SelectProps={{
               inputProps: { 'aria-label': 'rows per page' },
               native: true,
             }}
-            align="right"
             onChangePage={handleChangePage}
             onChangeRowsPerPage={handleChangeRowsPerPage}
             ActionsComponent={TablePaginationActions}
           />
-        </TableRow>}
+       }
       </Paper>
     </ThemeProvider>
   );

@@ -153,3 +153,10 @@ export function setSelectedCountry(selectedCountry) {
     }
     return action
 }
+export function setAppMode(mode) {
+    const action = {
+        type: stringConstants.DARKMODE,
+        mode
+    }
+    return action
+}

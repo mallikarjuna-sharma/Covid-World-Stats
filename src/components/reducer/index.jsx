@@ -13,7 +13,8 @@ let defaultState = {
     yAxisLabel: 'confirmed',
     graphStart: 0,
     tableData: [],
-    selectedCountry: "USA"
+    selectedCountry: "USA",
+    mode: true
 }
 export default function performAction(state = defaultState, action) {
     switch (action.type) {
@@ -66,6 +67,10 @@ export default function performAction(state = defaultState, action) {
         case stringConstants.SELECTEDCOUNTRY:
             return Object.assign({}, state, {
                 selectedCountry: action.selectedCountry
+            })
+        case stringConstants.DARKMODE:
+            return Object.assign({}, state, {
+                mode: action.mode
             })
         default:
             return state

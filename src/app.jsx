@@ -4,8 +4,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import {
-    Grid, NativeSelect, FormControl,FormGroup,
-    InputLabel, withStyles, Button, Typography,FormControlLabel
+    Grid, NativeSelect, FormControl, FormGroup,
+    InputLabel, withStyles, Button, Typography, FormControlLabel,
+    Slide
 } from '@material-ui/core';
 import stringConstants from '../src/components/stringConstants.jsx'
 import { compose } from 'recompose'
@@ -13,7 +14,7 @@ import {
     getgraphTypeAction, getSortTypes,
     loadIndiaGeojson, loadCountryjson, loadIndiaDistrictjson,
     setSelectedState, loadWorldStats, setXaxisLabel,
-    setYaxisLabel, setGraphSlice
+    setYaxisLabel, setGraphSlice, setAppMode
 } from '../src/components/actions/index.jsx';
 import Styles from '../src/components/styles.jsx';
 import { connect } from 'react-redux';
@@ -21,13 +22,28 @@ import { bindActionCreators } from 'redux';
 import Switch from '@material-ui/core/Switch';
 
 
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+
 function App(props) {
     const classes = useStyles();
     const [auth, setAuth] = React.useState(true);
 
+    const theme = React.useMemo(
+        () =>
+            createMuiTheme({
+                palette: {
+                    type: !props.mode ? 'dark' : 'light',
+                },
+            }),
+        [props.mode],
+    );
+
     const handleChange = (event) => {
-    setAuth(event.target.checked);
-        };
+        setAuth(event.target.checked);
+        props.setAppMode(event.target.checked)
+    };
 
     const toggleGraphType = (e, type) => {
         if (type === 'content') {
@@ -60,41 +76,43 @@ function App(props) {
     }
 
     return (
-        <Grid >
-            <div className={classes.root}>
-                <AppBar position="static">
-                    <Toolbar>
-                        <Typography variant="h6" className={classes.title}>
-                            Covid - 20
+        <ThemeProvider theme={theme}>
+            <Grid style={{ height: "100%" }}>
+                <div >
+                    <AppBar position="static" color={props.mode ? "primary" : "default"} >
+                        <Toolbar>
+                            <Typography variant="h6" className={classes.title}>
+                                Covid - 20
                         </Typography>
-                        <FormControl className={classes.formControl}>
-                            <InputLabel htmlFor="uncontrolled-native">Select Type</InputLabel>
-                            <NativeSelect
-                                defaultValue={'line'}
-                                onChange={e => toggleGraphType(e, 'content')}
-                                inputProps={{
-                                    name: 'name',
-                                    id: 'uncontrolled-native',
-                                }}
-                            >
-                                {stringConstants.SORT_TYPES.map((e, index) => {
-                                    return <option value={e.value} key={index}  >{e.label}</option>
-                                })}
+                            <FormControl className={classes.formControl}>
+                                <InputLabel htmlFor="uncontrolled-native">Select Type</InputLabel>
+                                <NativeSelect
+                                    defaultValue={'line'}
+                                    onChange={e => toggleGraphType(e, 'content')}
+                                    inputProps={{
+                                        name: 'name',
+                                        id: 'uncontrolled-native',
+                                    }}
+                                >
+                                    {stringConstants.SORT_TYPES.map((e, index) => {
+                                        return <option value={e.value} key={index}  >{e.label}</option>
+                                    })}
 
-                            </NativeSelect>
-                        </FormControl>
-                        <FormGroup>
-                        <FormControlLabel
-                            control={<Switch checked={auth} onChange={e => handleChange(e)} aria-label="login switch" />}
-                            label={auth ? 'Light' : 'Dark'}
-                        />
-                    </FormGroup>
-                    </Toolbar>
-                   
-                </AppBar>
-            </div>
-            <Dashboard />
-        </Grid>
+                                </NativeSelect>
+                            </FormControl>
+                            <FormGroup>
+                                <FormControlLabel
+                                    control={<Switch checked={auth} color={"default"} onChange={e => handleChange(e)} />}
+                                    label={auth ? 'Light' : 'Dark'}
+                                />
+                            </FormGroup>
+                        </Toolbar>
+
+                    </AppBar>
+                </div>
+                <Dashboard />
+            </Grid>
+        </ThemeProvider>
     );
 }
 const useStyles = makeStyles((theme) => ({
@@ -110,6 +128,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function mapStateToProps(state) {
+    console.log(state, 'store in app')
     return {
         getindiageojson: state.getindiageojson,
         getIndiaDistrictjson: state.getIndiaDistrictjson,
@@ -120,7 +139,7 @@ function mapStateToProps(state) {
         xAxisLabel: state.xAxisLabel,
         yAxisLabel: state.yAxisLabel,
         graphType: state.graphType,
-        graphStart: state.graphStart
+        mode: state.mode
     }
 }
 
@@ -129,7 +148,7 @@ function mapDispatchToProps(dispatch) {
         getgraphTypeAction, getSortTypes,
         loadIndiaGeojson, loadCountryjson, loadIndiaDistrictjson,
         setSelectedState, loadWorldStats, setXaxisLabel, setYaxisLabel,
-        setGraphSlice
+        setGraphSlice, setAppMode
     }, dispatch)
 }
 

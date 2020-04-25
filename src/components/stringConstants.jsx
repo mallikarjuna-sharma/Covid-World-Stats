@@ -75,6 +75,7 @@ const stringConstants = {
     SELECTEDSTATE:'SELECTEDSTATE',
     WORLD_COUNTRY_STATS:'WORLD_COUNTRY_STATS',
     SELECTEDCOUNTRY:"SELECTEDCOUNTRY",
+    DARKMODE:"DARKMODE",
 
     /* header dashboard constants*/
 
@@ -92,6 +93,8 @@ const stringConstants = {
 
     TOTAL_CARD_HEADER:"rgb(238,130,238,0.5)",
     TOTAL_CARD_FOOTER:"rgb(238,130,238,0.9)",
+
+
 
     /* table constants    */
 
@@ -127,7 +130,7 @@ const stringConstants = {
 
 
     INDIA_DISTRICT_JSON_COLUMNS: [
-        { id: 'district', label: 'district', minWidth: "30%" },
+        { id: 'district', label: 'District', minWidth: "30%" },
         { id: 'confirmed', label: 'Confirmed', minWidth: "30%" },
     ],
 
@@ -135,21 +138,21 @@ const stringConstants = {
 
 
     WORLD_JSON_COLUMNS: [
-        { id: 'city', label: 'city', minWidth: "25%" },
-        { id: 'province', label: 'province', minWidth: "25%" },
-        { id: 'confirmed', label: 'confirmed', minWidth: "10%" },
-        { id: 'deaths', label: 'deaths', minWidth: "10%" },
-        { id: 'recovered', label: 'recovered', minWidth: "10%" },
+        { id: 'city', label: 'City', minWidth: "25%" },
+        { id: 'province', label: 'Province', minWidth: "25%" },
+        { id: 'confirmed', label: 'Confirmed', minWidth: "10%" },
+        { id: 'deaths', label: 'Deaths', minWidth: "10%" },
+        { id: 'recovered', label: 'Recovered', minWidth: "10%" },
     ],
 
     WORLD_COUNTRY_STATS_COLUMNS: [
-        { id: 'country', label: 'country', minWidth: "10%" },
-        { id: 'newcases', label: 'new', minWidth: "10%" },
-        { id: 'active', label: 'active', minWidth: "10%" },
-        { id: 'critical', label: 'critical', minWidth: "10%" },
-        { id: 'recovered', label: 'recovered', minWidth: "10%" },
-        { id: 'total', label: 'total', minWidth: "10%" },
-        { id: 'deaths', label: 'deaths', minWidth: "10%" },
+        { id: 'country', label: 'Country', minWidth: "10%" },
+        { id: 'newcases', label: 'New', minWidth: "10%" },
+        { id: 'active', label: 'Active', minWidth: "10%" },
+        { id: 'critical', label: 'Critical', minWidth: "10%" },
+        { id: 'recovered', label: 'Recovered', minWidth: "10%" },
+        { id: 'total', label: 'Total', minWidth: "10%" },
+        { id: 'deaths', label: 'Deaths', minWidth: "10%" },
     ],
 
 

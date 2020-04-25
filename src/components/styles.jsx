@@ -2,6 +2,11 @@
 
 const Styles = theme => ({
 
+
+    root:{
+        backgroundColor:"#121212"
+    },
+    
     paperRoot: {
         root: {
             display: 'flex',
