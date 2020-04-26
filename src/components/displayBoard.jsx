@@ -2,13 +2,14 @@
 import React, { useEffect } from 'react';
 import {
     Grid, NativeSelect, FormControl, Box,
-    InputLabel, withStyles, Button, Paper, Typography
+    InputLabel, Hidden, Button, Paper, Typography
 } from '@material-ui/core';
 import './liveicon.css'
 import SearchIndiaStates from '../components/search-select/SearchIndiaStates.jsx'
 import SearchCountry from '../components/search-select/SearchCountry.jsx'
 import stringConstants from './stringConstants.jsx'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import ReplayIcon from '@material-ui/icons/Replay';
 
 export default function DisplayBoard(props) {
 
@@ -48,6 +49,14 @@ export default function DisplayBoard(props) {
                     <div className="circle--inner"></div>
                 </div>
 
+
+               <Hidden mdUp >
+                <Grid item align="right"  >
+
+                <Button onClick={e => window.location.reload()}> <ReplayIcon/></Button>
+
+                </Grid>
+                </Hidden>
 
                 <Typography style={{ paddingTop: "20%", fontWeight: "bold", fontSize: "20px", textAlign: "center" }}>
                     {getCardsData(true)}
@@ -222,7 +231,7 @@ export default function DisplayBoard(props) {
                     <FocusComponent />
 
 
-                    {getCardsData().map(e => {
+                    {getCardsData().map((e,index) => {
 
                         return <Paper style={{
                             height: "80%",
@@ -232,7 +241,7 @@ export default function DisplayBoard(props) {
                             borderRadius: "5px",
                             boxShadow: "0 6px 10px 0 rgba(0, 0, 0, 0.14),0 1px 18px 0 rgba(0, 0, 0, 0.12),0 3px 5px -1px rgba(0, 0, 0, 0.4)",
 
-                        }}>
+                        }} key={index}>
 
                             <Grid item md={12} xs={12} style={{
                                 width: '100%',

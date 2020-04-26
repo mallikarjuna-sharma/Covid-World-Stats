@@ -341,9 +341,9 @@ class Dashboard extends React.Component {
                     </Grid >
                 </Grid>
 
-                <Grid container spacing={2}>
+                <Grid container spacing={2}  alignContent="center" justify="center">
 
-                    <Grid item md={6} xs={6} alignContent="center" justify="center">
+                    <Grid item md={6} xs={6} >
                         <MyButton className={classes.graphButton}
                             onClick={e => { this.sliceGraphData('previous') }}
                             style={{

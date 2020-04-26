@@ -42,6 +42,14 @@ const Styles = theme => ({
         position: 'absolute',
         top: 20,
         width: 1,
+    },
+
+    foot2: {
+        textAlign: 'center',
+
+        height: '60px',
+        width: '100%',
+
     }
 
 

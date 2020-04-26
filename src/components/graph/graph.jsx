@@ -17,7 +17,7 @@ class GenerateGraphComponent extends React.Component {
     componentDidMount() {
         this.setMaxYaxis();
         setTimeout(() => this.generateGraph(), 1000)
-        window.addEventListener('resize', this.screenChanged)
+        // window.addEventListener('resize', this.screenChanged)
     }
 
     screenChanged = () => {

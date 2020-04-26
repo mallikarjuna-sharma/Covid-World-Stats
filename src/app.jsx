@@ -24,6 +24,8 @@ import Switch from '@material-ui/core/Switch';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import '../src/components/liveicon.css'
 
+import FavoriteIcon from '@material-ui/icons/Favorite';
+
 function App(props) {
     const classes = useStyles();
     const [auth, setAuth] = React.useState(true);
@@ -39,6 +41,7 @@ function App(props) {
     );
 
     const handleChange = (event) => {
+
         setAuth(event.target.checked);
         props.setAppMode(event.target.checked)
     };
@@ -78,7 +81,7 @@ function App(props) {
             <Grid style={{ height: "100%" }}>
                 <div >
                     <AppBar position="static"
-                        color={props.mode ? "" : "default"}
+                        color={"default" }
                     >
                         <Toolbar
 
@@ -99,10 +102,10 @@ function App(props) {
                                 Covid <span style={{ color: "red" }}>Tracker</span>
                             </Typography>
 
-                            <button class="btn btn1" style={{ borderBottom: props.sortType === 'india_state' ? "1px solid #3498db" : '' }} onClick={e => toggleGraphType('india_state', 'content')}>View All Indian States</button>
-                            <button class="btn btn2" style={{ borderBottom: props.sortType === 'india_district' ? "1px solid #3498db" : '' }} onClick={e => toggleGraphType('india_district', 'content')}>View Indian Districts</button>
-                            <button class="btn btn1" style={{ borderBottom: props.sortType === 'world_country' ? "1px solid #3498db" : '' }} onClick={e => toggleGraphType('world_country', 'content')}>View States in World Countries</button>
-                            <button class="btn btn2" style={{ borderBottom: props.sortType === 'world_stats' ? "1px solid #3498db" : '' }} onClick={e => toggleGraphType('world_stats', 'content')}>Get Stats for World Countries</button>
+                            <button className="btn btn1" style={{ borderBottom: props.sortType === 'india_state' ? "1px solid #3498db" : '' }} onClick={e => toggleGraphType('india_state', 'content')}>View All Indian States</button>
+                            <button className="btn btn2" style={{ borderBottom: props.sortType === 'india_district' ? "1px solid #3498db" : '' }} onClick={e => toggleGraphType('india_district', 'content')}>View Indian Districts</button>
+                            <button className="btn btn1" style={{ borderBottom: props.sortType === 'world_country' ? "1px solid #3498db" : '' }} onClick={e => toggleGraphType('world_country', 'content')}>View States in World Countries</button>
+                            <button className="btn btn2" style={{ borderBottom: props.sortType === 'world_stats' ? "1px solid #3498db" : '' }} onClick={e => toggleGraphType('world_stats', 'content')}>Get Stats for World Countries</button>
 
                             <FormGroup>
                                 <FormControlLabel
@@ -114,8 +117,29 @@ function App(props) {
 
                     </AppBar>
                 </div>
-                <Dashboard />
+                <Grid item md={12} xs={12}>
+                    <Dashboard />
+                </Grid>
+
+
+
+                <Grid container justify="center" direction="row"  className={classes.foot2} style={{ backgroundColor: props.mode ? "" : "#121212", paddingTop: "4%" }}>
+
+                    <Grid item>
+                        <a style={{ color: props.mode ? 'rgba(233, 236, 244, 1.2)' : 'black' }}>
+                            made by mallikarjuna sharma in      <FavoriteIcon style={{ height: "20px", padding: "0px" }} /> with
+                </a>
+                    </Grid>
+
+                    <Grid item >
+                        <img style={{ height: "20px", padding: "0px", opacity: props.mode ? "0.2" : "1" }} src='../src/assests/react_icon.png' />
+                    </Grid>
+
+                </Grid>
+
+
             </Grid>
+
         </ThemeProvider>
     );
 }
