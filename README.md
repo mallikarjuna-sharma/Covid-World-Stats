@@ -1,4 +1,4 @@
-# [Covid Stats around world](https://github.com/mallikarjuna-sharma/covid-20.git)
+# [Covid Stats World](https://github.com/mallikarjuna-sharma/covid-20.git)
 
 Web app to display covid stats dynamically using various filters for region/city/state/country
 
