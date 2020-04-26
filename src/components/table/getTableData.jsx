@@ -9,7 +9,6 @@ function getIndiaDistrictjson(apiResponse, statename) {
         return { district, confirmed };
     }
 
-    console.log(statename,'statename')
 
     apiResponse[0].map(values => {
         if (!statename) {
@@ -46,9 +45,6 @@ function getIndiaGeojson(apiResponse,statename) {
         return { state, confirmed, recovered, deaths, active };
     }
 
-    console.log(statename,"statename")
-
-    
 
     apiResponse.map(values => {
         if(!statename)
@@ -75,7 +71,6 @@ function getCountryjson(apiResponse,selectedCountry) {
         return { city, province, confirmed, deaths, recovered };
     }
 
-    console.log(selectedCountry,'selectedCountry')
 
     if(selectedCountry === 'USA') selectedCountry='US'
 
@@ -108,7 +103,6 @@ function getWorldStats(apiResponse,countryName) {
     function createData(country, newcases, active, critical, recovered, total, deaths) {
         return { country, newcases, active, critical, recovered, total, deaths };
     }
-    console.log(countryName,'countryDatas');
 
     apiResponse.map(values => {
 
@@ -139,8 +133,6 @@ function getWorldStats(apiResponse,countryName) {
 
 export default function getTableData(sortTypes, apiResponse, statename = false,selectedCountry) {
 
-    console.log('getTableData')
-    console.log(apiResponse)
 
     if (apiResponse)
         switch (sortTypes) {

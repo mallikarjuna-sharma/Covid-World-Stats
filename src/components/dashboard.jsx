@@ -33,7 +33,6 @@ class Dashboard extends React.Component {
 
     constructor(props) {
         super(props)
-
     }
 
     toggleGraphType = (e, type) => {
@@ -115,14 +114,12 @@ class Dashboard extends React.Component {
                 !(this.props.sortType === 'india_state') ? this.props.selectedState : false,
                 !(this.props.sortType === 'world_stats') ? this.props.selectedCountry : false,
             );
-            console.log(tabData, 'tabData')
             if (tabData && tabData.length) this.props.setTableData(tabData)
         }
 
         if (prevProps.sortType !== this.props.sortType) {
             this.props.setGraphSlice(0);
         }
-
 
     }
 

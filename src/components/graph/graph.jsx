@@ -21,7 +21,7 @@ class GenerateGraphComponent extends React.Component {
     }
 
     screenChanged = () => {
-        console.log('screenChanged');
+        // console.log('screenChanged');
     }
 
     setMaxYaxis = () => {

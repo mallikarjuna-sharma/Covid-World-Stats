@@ -132,7 +132,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function mapStateToProps(state) {
-    console.log(state, 'store in app')
     return {
         getindiageojson: state.getindiageojson,
         getIndiaDistrictjson: state.getIndiaDistrictjson,

@@ -12,7 +12,7 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
 export default function DisplayBoard(props) {
 
-    useEffect(() => { console.log(props, 'props'); getCardsData() }, [props]);
+    useEffect(() => {  }, [props]);
 
     const { sortType, tableData, items, selectedState_Country, fromTable } = props
 
@@ -105,7 +105,6 @@ export default function DisplayBoard(props) {
                     designCards.push(obj4);
 
                 }
-                console.log(designCards, 'props')
                 return designCards;
 
 
@@ -128,8 +127,6 @@ export default function DisplayBoard(props) {
                     designCards.push(obj3);
                     designCards.push(obj4);
                     designCards.push(obj5);
-
-                    console.log(designCards, 'props')
 
                 }
 
@@ -192,7 +189,6 @@ export default function DisplayBoard(props) {
                     designCards.push(obj5);
 
                 }
-                console.log(designCards, 'props')
                 return designCards;
 
             }
