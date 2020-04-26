@@ -86,7 +86,7 @@ function App(props) {
                         <Toolbar
 
                         >
-                            <div
+                            {/* <div
                                 className="rotating"
                                 style={{
                                     width: "30px", height: "30px",
@@ -96,7 +96,7 @@ function App(props) {
                                 <img
                                     style={{ width: "30px", height: "30px" }}
                                     src={'../src/assests/covid.png'} />
-                            </div>
+                            </div> */}
 
                             <Typography variant="h5" style={{ fontFamily: "bold" }} className={classes.title} >
                                 Covid <span style={{ color: "red" }}>Tracker</span>
@@ -127,13 +127,13 @@ function App(props) {
 
                     <Grid item>
                         <a style={{ color: props.mode ? 'rgba(233, 236, 244, 1.2)' : 'black' }}>
-                            made by mallikarjuna sharma in      <FavoriteIcon style={{ height: "20px", padding: "0px" }} /> with
+                            made by mallikarjuna sharma in      <FavoriteIcon style={{ height: "20px", padding: "0px" }} /> with React
                 </a>
                     </Grid>
 
-                    <Grid item >
+                    {/* <Grid item >
                         <img style={{ height: "20px", padding: "0px", opacity: props.mode ? "0.2" : "1" }} src='../src/assests/react_icon.png' />
-                    </Grid>
+                    </Grid> */}
 
                 </Grid>
 
