@@ -232,7 +232,7 @@ class Dashboard extends React.Component {
                     </Grid>
 
 
-                    <Grid item md={12} xs={12}  >
+                    <Grid item md={12} xs={12} style={{paddingBottom:0}} >
                         {(this.props.sortType || this.props.selectedState) && <Grid container style={{ padding: "1%" }}>
                             <GenerateTableComponent
                                 mode={this.props.mode}
@@ -242,9 +242,9 @@ class Dashboard extends React.Component {
                         </Grid>}
                     </Grid>
 
-                    <Grid item>
+                    <Grid item  style={{paddingTop:0}}>
 
-                        <Grid container>
+                        <Grid container style={{paddingTop:0}}>
 
                             <Grid md={3} xs={3} item>
 
