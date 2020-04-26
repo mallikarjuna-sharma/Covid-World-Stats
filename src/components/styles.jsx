@@ -46,12 +46,15 @@ const Styles = theme => ({
 
     foot2: {
         textAlign: 'center',
-
         height: '60px',
         width: '100%',
+    },
 
+    spacingComponent:{
+        [theme.breakpoints.down('md')]: {
+            marginTop: "20%",
+          },
     }
-
 
 })
 

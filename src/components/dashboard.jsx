@@ -12,7 +12,7 @@ import {
 } from './actions/index.jsx'
 import {
     Grid, NativeSelect, FormControl,
-    InputLabel, withStyles, Button, Typography,
+    InputLabel, withStyles, Hidden, Typography,
 } from '@material-ui/core';
 import Styles from './styles.jsx'
 import { compose } from 'recompose'
@@ -216,7 +216,7 @@ class Dashboard extends React.Component {
             <div className={mode ? '' : classes.root} >
                 <Grid container spacing={8} style={{ height: "100%" }} >
 
-                    <Grid item md={12} xs={12}>
+                    <Grid item md={12} xs={12} className={classes.spacingComponent}>
                         <DisplayBoard
                             mode={this.props.mode}
                             tableData={this.getHeadData()}
@@ -229,7 +229,7 @@ class Dashboard extends React.Component {
                     </Grid>
 
 
-                    <Grid item md={12} xs={12} style={{paddingBottom:0}} >
+                    <Grid item md={12} xs={12} style={{paddingBottom:0}} className={classes.spacingComponent} >
                         {(this.props.sortType || this.props.selectedState) && <Grid container style={{ padding: "1%" }}>
                             <GenerateTableComponent
                                 mode={this.props.mode}
@@ -239,7 +239,7 @@ class Dashboard extends React.Component {
                         </Grid>}
                     </Grid>
 
-                    <Grid item  style={{paddingTop:0}}>
+                    <Grid item  style={{paddingTop:0}} className={classes.spacingComponent} >
 
                         <Grid container style={{paddingTop:0}}>
 
