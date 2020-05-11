@@ -18,8 +18,10 @@ const options = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|j?g|svg|gif)?$/,
-        use: 'file-loader'
+        test: /\.(png|jpg|svg|gif)?$/,
+        use: [
+          "file-loader"
+        ]
       }
     ]
   },

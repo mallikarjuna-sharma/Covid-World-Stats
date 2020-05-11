@@ -25,6 +25,8 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import '../src/components/liveicon.css'
 
 import FavoriteIcon from '@material-ui/icons/Favorite';
+import Myimage from './assests/covid.png';
+
 
 function App(props) {
     const classes = useStyles();
@@ -83,20 +85,18 @@ function App(props) {
                     <AppBar position="static"
                         color={"default" }
                     >
-                        <Toolbar
-
-                        >
-                            {/* <div
+                        <Toolbar>
+                            <div
                                 className="rotating"
                                 style={{
-                                    width: "30px", height: "30px",
+                                    width: "30px", height: "30px",paddingRight:"10px",
                                     textAlign: "center"
                                 }}
                             >
                                 <img
                                     style={{ width: "30px", height: "30px" }}
-                                    src={'../src/assests/covid.png'} />
-                            </div> */}
+                                    src={Myimage} />
+                            </div>
 
                             <Typography variant="h5" style={{ fontFamily: "bold" }} className={classes.title} >
                                 Covid <span style={{ color: "red" }}>Tracker</span>
