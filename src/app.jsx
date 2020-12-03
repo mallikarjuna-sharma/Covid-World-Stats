@@ -32,6 +32,9 @@ function App(props) {
     const classes = useStyles();
     const [auth, setAuth] = React.useState(true);
 
+    console.log("env",process.env.NODE_ENV);
+    console.log("API_URL",process.env.API_URL);
+
     const theme = React.useMemo(
         () =>
             createMuiTheme({

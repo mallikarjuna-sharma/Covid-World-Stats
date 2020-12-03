@@ -4,9 +4,9 @@
   "description": "covid india tracker",
   "main": "./index.jsx",
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dev-server --hot",
+    "start": "cross-env NODE_ENV=development  --env.API_URL=https://www.local.com  webpack-dev-server --hot",
     "dev": "webpack-dev-server --mode=development",
-    "build": "cross-env NODE_ENV=production webpack",
+    "build": "cross-env NODE_ENV=production --env.API_URL=https://www.myapi.com webpack",
     "prod": "webpack --mode=production",
     "lint": "eslint ./src"
   },

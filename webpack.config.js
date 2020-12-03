@@ -28,13 +28,13 @@ const options = {
   resolve: {
     extensions: ['.js', '.jsx', '.css']      
 },
-  plugins: [
-    new webpack.DefinePlugin({ 'process.env.NODE_ENV': JSON.stringify(env.NODE_ENV) }),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'public/index.html'),
-      filename: 'index.html'
-    })
-  ],
+plugins: [
+  new webpack.DefinePlugin({ 'process.env.NODE_ENV': JSON.stringify(env.NODE_ENV) , 'process.env.API_URL': JSON.stringify(env.API_URL) }),
+  new HtmlWebpackPlugin({
+    template: path.resolve(__dirname, 'public/index.html'),
+    filename: 'index.html'
+  })
+],
   devServer: {
     historyApiFallback: true,
     hot: true
